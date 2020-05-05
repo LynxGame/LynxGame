@@ -9,6 +9,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Hello kitty == Hola Diablo
+          Jalame la verga con esta prueba
         </p>
         <a
           className="App-link"
