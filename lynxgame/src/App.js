@@ -12,7 +12,7 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://boards.4chan.org/gif/"
+          href="SignIn.js"
           target="_blank"
           rel="noopener noreferrer"
         >
