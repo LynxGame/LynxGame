@@ -8,15 +8,15 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Ewe dale click
+          ewe dale click, nene rico rico
         </p>
         <a
           className="App-link"
-          href="www.xnxx.com"
+          href="https://boards.4chan.org/gif/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          7u7
+          Porno Gay de Negros
         </a>
       </header>
     </div>
