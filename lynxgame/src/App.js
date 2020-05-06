@@ -8,15 +8,15 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          En la noche cuando duermes malcom viene a espiar ten cuidado y pon un gran candado o malcom te vera encuerado
+          Ewe dale click
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="www.xnxx.com"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Aprende algo dinero
+          7u7
         </a>
       </header>
     </div>
