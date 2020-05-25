@@ -19,8 +19,17 @@ export class Toolbar extends Component {
                 <Menu.Item key="lynxPortrait">
                     Lynx Game
                 </Menu.Item>
-                <Menu.Item key="app" disabled>
-                    Lynx Game
+                <Menu.Item key="juegos" disabled>
+                    Mis Juegos
+                </Menu.Item>
+                <Menu.Item key="tienda">
+                    Tienda
+                </Menu.Item>
+                <Menu.Item key="preventas">
+                    Preventas
+                </Menu.Item>
+                <Menu.Item key='ajustes' disabled>
+                    Ajustes
                 </Menu.Item>
             </Menu>
         )
