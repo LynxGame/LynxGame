@@ -24,6 +24,7 @@ CREATE TABLE IF NOT EXISTS videojuegos(
     vj_descripcion VARCHAR(100),
     vj_fecha_lanzamiento DATE,
     vj_class_edad INT NOT NULL,
+	CONSTRAINT vj_class_edad CHECK (vj_class_edad IN ('C','E','E+','T','M','RP','A')),
     vj_des_id INT NOT NULL,
     CONSTRAINT Fk_vj_des_id
     FOREIGN KEY (vj_des_id)
@@ -87,6 +88,7 @@ CREATE TABLE IF NOT EXISTS personal_lynxgame(
 CREATE TABLE IF NOT EXISTS tarjeta_credit_debit(
 	tar_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     tar_banco VARCHAR(20),
+	CONSTRAINT tar_banco CHECK (tar_banco IN ('BBVA','BANAMEX','SANTANDER','SCOTIABANK')),
     tar_numero INT NOT NULL,
     tar_fecha DATE,
 	tar_cvv INT NOT NULL
