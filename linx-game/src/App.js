@@ -18,8 +18,8 @@ function App() {
       <Content>
         Contenido
       </Content>
-      <Footer>
-        Pie de Pagina
+      <Footer style={{ textAlign: 'center' }}>
+      Ant Design ©2018 Created by Ant UED
       </Footer>
       </Layout>
       
