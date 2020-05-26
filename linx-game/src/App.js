@@ -8,7 +8,7 @@ const { Header, Footer, Sider, Content } = Layout;
 function App() {
   return (
     <Layout>
-      <Header style={{position: "sticky", top: "0"}}><Toolbar/></Header>
+      <Header style={{ position: 'sticky', zIndex: 1, width: '100%', top: "0" }}><Toolbar/></Header>
       <Layout hasSider>
         <Sider style={{ overflow: 'auto', left:0, }}theme="light">Lynx Game</Sider>
         <Content>
