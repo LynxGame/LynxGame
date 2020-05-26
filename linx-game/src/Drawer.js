@@ -3,7 +3,6 @@ import {  Avatar, Button } from 'antd'
 import {   FacebookFilled , YoutubeFilled, TwitterCircleFilled, InstagramFilled  ,GithubFilled} from '@ant-design/icons';
 import { createFromIconfontCN } from '@ant-design/icons';
 import { Row, Col } from 'antd';
-import icono from './img/icono.svg';
 
 const IconFont = createFromIconfontCN({scriptUrl:  '//at.alicdn.com/t/font_1842114_fpuw4z74sx.js'});
 
@@ -14,8 +13,8 @@ export class Drawer extends Component {
             <Row gutter={[24, 24]}>
                 <Col>
                     <Avatar style={{ 
-                        background: '#none'
-                    }}src='https://raw.githubusercontent.com/LynxGame/LynxGame/master/linx-game/src/img/icono.png?token=AMFFPBXF4MY7I332GV2O4QK6ZWINM' size={190}/>
+                        background: 'none'
+                    }}src='https://raw.githubusercontent.com/LynxGame/LynxGame/master/linx-game/src/img/icono.png?token=AMFFPBSKQIR7S4ONZDSULIS6ZWJWW' size={190}/>
                 </Col>
             </Row>
             
