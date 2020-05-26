@@ -3,17 +3,18 @@ USE lynxgame_db;
 
 CREATE TABLE IF NOT EXISTS desarrolladores_game(
 	des_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	des_nombre VARCHAR(40) NOT NULL,
     des_email VARCHAR(30),
     des_num_convenio INT NOT NULL
 )ENGINE=INNODB;
 
 CREATE TABLE IF NOT EXISTS genero_game(
-	gen_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	gen_id INT NOT NULL PRIMARY KEY,
     gen_nombre VARCHAR(30)
 )ENGINE=INNODB;
 
 CREATE TABLE IF NOT EXISTS precio_game(
-	pre_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	pre_id INT NOT NULL PRIMARY KEY,
     pre_regular DECIMAL(6,2),
     pre_descuento DECIMAL(6,2),
     pre_apartado DECIMAL(6,2)
@@ -21,19 +22,22 @@ CREATE TABLE IF NOT EXISTS precio_game(
 
 CREATE TABLE IF NOT EXISTS videojuegos(
 	vj_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    vj_descripcion VARCHAR(100),
-    vj_fecha_lanzamiento DATE,
+	vj_gen_id INT NOT NULL,
+	vj_descripcion VARCHAR(100),
+	vj_des_id INT NOT NULL, 
+	vj_fecha_lanzamiento DATE,
     vj_class_edad INT NOT NULL,
+	vj_pre_id INT NOT NULL,
 	CONSTRAINT vj_class_edad CHECK (vj_class_edad IN ('C','E','E+','T','M','RP','A')),
-    vj_des_id INT NOT NULL,
+    
     CONSTRAINT Fk_vj_des_id
     FOREIGN KEY (vj_des_id)
     REFERENCES desarrolladores_game(des_id),
-	vj_gen_id INT NOT NULL,
+	
     CONSTRAINT Fk_vj_gen_id
     FOREIGN KEY (vj_gen_id)
     REFERENCES genero_game(gen_id),
-	vj_pre_id INT NOT NULL,
+	
     CONSTRAINT Fk_vj_pre_id
     FOREIGN KEY (vj_pre_id)
     REFERENCES precio_game(pre_id)
