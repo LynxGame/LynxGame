@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Toolbar from './Toolbar';
 import { Layout } from 'antd';
+import Drawer from './Drawer';
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -10,7 +11,7 @@ function App() {
     <Layout>
       <Header style={{ position: 'sticky', zIndex: 1, width: '100%', top: "0" }}><Toolbar/></Header>
       <Layout hasSider>
-        <Sider style={{ overflow: 'auto', left:0, }}theme="light">Lynx Game</Sider>
+        <Sider style={{ overflow: 'auto', left:0,background:"#A27ACC" }}theme="light"><Drawer/></Sider>
         <Content>
           <div style={{  height: "calc(100vh - 55px)" }}>
           ¿Qué es Lorem Ipsum?
