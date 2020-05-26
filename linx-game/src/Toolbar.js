@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Menu } from 'antd'
+import { Menu, Avatar } from 'antd'
+import { UserOutlined } from '@ant-design/icons';
 
 export class Toolbar extends Component {
     state = {
@@ -15,6 +16,7 @@ export class Toolbar extends Component {
 
     render() {
         return (
+            <>
             <Menu mode="horizontal" onClick={this.handleClick} selectedKeys={[this.state.current]}>
                 <Menu.Item key="lynxPortrait">
                     Lynx Game
@@ -28,10 +30,14 @@ export class Toolbar extends Component {
                 <Menu.Item key="preventas">
                     Preventas
                 </Menu.Item>
-                <Menu.Item key='ajustes' disabled>
-                    Ajustes
-                </Menu.Item>
             </Menu>
+            <Menu>
+                <Menu.Item key="Iniciar Sesion">
+                    Iniciar Sesion
+                </Menu.Item>
+                <Avatar size="large" icon={<UserOutlined/>}/>
+            </Menu>
+            </>
         )
     }
 }
