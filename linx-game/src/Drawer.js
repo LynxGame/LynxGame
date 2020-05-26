@@ -1,39 +1,55 @@
-import React, { Component } from 'react'
-import { Menu, Avatar } from 'antd'
+import React, { Component , } from 'react'
+import {  Avatar, Button } from 'antd'
 import {   FacebookFilled , YoutubeFilled, TwitterCircleFilled, InstagramFilled  ,GithubFilled} from '@ant-design/icons';
 import { createFromIconfontCN } from '@ant-design/icons';
+import { Row, Col } from 'antd';
 
 const IconFont = createFromIconfontCN({scriptUrl:  '//at.alicdn.com/t/font_1842114_fpuw4z74sx.js'});
 
 export class Drawer extends Component {
     render() {
         return (
-            <Menu mode="vertical" style={{background:"#A27ACC",}}>
-                <Menu.Item style={{fontSize:'100px',}}>
-                    <Avatar size={64} src='./imagenes/dummy.png'/>
-                </Menu.Item>
-                <Menu.Item key="Youtube" icon={<YoutubeFilled style={{fontSize: '40px'}}/>} >
-                    <a href="https://www.youtube.com"/>
-                </Menu.Item>
-                <Menu.Item key="Facebook" icon={<FacebookFilled style={{fontSize: '40px'}}/>}>
-                    <a href="https://www.facebook.com/CarlosCata27"/>
-                </Menu.Item>
-                <Menu.Item key="Twitter" icon={<TwitterCircleFilled style={{fontSize: '40px',}}/>}>
-                    <a href="https://www.twitter.com/CarlosCata27"/>
-                </Menu.Item>
-                <Menu.Item key="Instagram" icon={<InstagramFilled style={{fontSize: '40px'}}/>}>
-                <a href="https://www.Instagram.com/Carlos_Cata27"/>
-                </Menu.Item>
-                <Menu.Item key="Twitch" icon={<IconFont type="icon-twitch" style={{fontSize: '40px'}}/>}>
-                <a href="https://www.Twitch.com/CarlosKta27"/>
-                </Menu.Item>
-                <Menu.Item key="Discord" icon={<IconFont type="icon-discord" style={{fontSize: '40px'}}/>}>
-                <a href="https://discord.gg/zAPs4E"/>
-                </Menu.Item>
-                <Menu.Item key="Github" icon={<GithubFilled style={{fontSize: '40px'}}/>}>
-                <a href="https://github.com/LynxGame"/>
-                </Menu.Item>
-            </Menu>
+            <div>
+            <Row gutter={[24, 24]}>
+                <Col>
+                    <Avatar style={{ }} size={190} src='./img/dummy.png'/>
+                </Col>
+            </Row>
+            
+            <Row gutter={[24, 24]}>
+            <Col span={12} key="Github">
+                <Button type="link" icon={<GithubFilled style={{alignContent: 'center',fontSize: '40px'}}/>} href="https://github.com/LynxGame"/>
+                </Col>
+            </Row>
+
+            <Row gutter={[24, 24]}>
+                <Col span={12} key="Youtube">
+                    <Button type="link" icon={<YoutubeFilled style={{fontSize: '40px'}}/>} href="https://www.youtube.com"/>
+                </Col>
+                <Col span={12} key="Facebook">
+                <Button type="link" icon={<FacebookFilled style={{fontSize: '40px'}}/>} href="https://www.facebook.com/CarlosCata27"/>
+                </Col>
+            </Row>
+
+            <Row gutter={[24, 24]}>
+                <Col span={12} key="Twitter">
+                    <Button type="link" icon={<TwitterCircleFilled style={{fontSize: '40px'}}/>} href="https://www.twitter.com/CarlosCata27"/>
+                </Col>
+                <Col span={12} key="Instagram">
+                <Button type="link" icon={<InstagramFilled style={{fontSize: '40px'}}/>} href="https://www.Instagram.com/Carlos_Cata27"/>
+                </Col>
+            </Row>
+
+            <Row gutter={[24, 24]}>
+                <Col span={12} key="Twitch">
+                    <Button type="link" icon={<IconFont type="icon-twitch" style={{fontSize: '40px'}}/>} href="https://www.Twitch.com/CarlosKta27"/>
+                </Col>
+                <Col span={12} key="Discord">
+                    <Button type="link" icon={<IconFont type="icon-discord" style={{fontSize: '40px'}}/>} href="https://discord.gg/zAPs4E"/>
+                </Col>
+            </Row>
+            </div>
+
         )
     }
 }
