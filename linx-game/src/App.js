@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Toolbar from './Toolbar';
-import { Layout, Carousel } from 'antd';
+import { Layout, Avatar } from 'antd';
 import Drawer from './Drawer';
 import Principal from './Principal';
 
@@ -20,7 +20,7 @@ function App() {
           </div>
       </Content>
       </Layout>
-      <Footer style={{ position: "sticky", bottom: "0" }}>Todos los derechos reservados Ant Design ©2018 Created by Ant UED</Footer>
+      <Footer style={{ position: "sticky", bottom: "0" }}><Avatar src='./src/logo.png' size={25} /></Footer>
     </Layout>
   );
 }

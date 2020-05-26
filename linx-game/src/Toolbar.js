@@ -48,7 +48,7 @@ export class Toolbar extends Component {
                 <Col span={20}>
                     <Menu  mode="horizontal" onClick={this.handleClick} selectedKeys={[this.state.current]}>
                         <Menu.Item key="lynxPortrait">
-                            Lynx Game
+                        <Avatar style={{ }} size={25} src='./img/logo.png'/>
                         </Menu.Item>
                         <Menu.Item key="juegos" disabled>
                             Mis Juegos
@@ -63,7 +63,7 @@ export class Toolbar extends Component {
                 </Col>
                 <Col span={2}>
                 <Button type="primary" onClick={this.showDrawer}><UserAddOutlined />Crear Cuenta</Button>
-                <Drawer title="Crear una nueva cuenta" width={720} onClose={this.onClose} visible={this.state.visible} bodyStyle={{ paddingBottom: 80 }}>
+                <Drawer title="Crear una nueva cuenta" width={720} onClose={this.onClose} visible={this.state.visible} bodyStyle={{ paddingBottom: 80 }} style={{ }}>
                     <Form layout="vertical" hideRequiredMark>
                         <Row gutter={16}>
                         <Col span={12}>

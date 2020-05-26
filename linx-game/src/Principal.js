@@ -1,14 +1,23 @@
 import React, { Component } from 'react'
-import {  Carousel, Row, Col , Avatar} from 'antd'
+import {  Carousel, Row, Col , Avatar, Descriptions, List, Card, Button} from 'antd'
+import {   FacebookFilled , YoutubeFilled, TwitterCircleFilled, InstagramFilled  ,GithubFilled} from '@ant-design/icons';
+
+const data = [
+    {title: 'RAINBOW SIX SIEGE',},
+    {title: 'Title 2',},
+    {title: 'Title 3',},
+    {title: 'Title 4',},
+    {title: 'Title 5',},
+  ];
 
 export class Principal extends Component {
     render() {
         return (
             <div>
                 <h2>Juegos del Momento</h2>
-                <Carousel autoplay>
+                <Carousel autoplay style={{width:'auto',height:'auto'}}>
                 <div>
-                    <h3>1</h3>
+                    <h3>Obviamente el rainbow</h3>
                 </div>
                 <div>
                     <h3>2</h3>
@@ -21,17 +30,10 @@ export class Principal extends Component {
                 </div>
                 </Carousel>
 
-                <Row gutter={[24, 24]}>
-                    <Col span={6} ><Avatar style={{ }} size={190} src='./img/dummy.png'/></Col>
-                    <Col span={6} ><Avatar style={{ }} size={190} src='./img/dummy.png'/></Col>
-                    <Col span={6} ><Avatar style={{ }} size={190} src='./img/dummy.png'/></Col>
-                    <Col span={6} ><Avatar style={{ }} size={190} src='./img/dummy.png'/></Col>
-                </Row>
-
-                <h2>Top Juegos Gratis</h2>
-                <Carousel autoplay>
+                <h2>Top Juegos Grais</h2>
+                <Carousel autoplay='true' style={{width:'auto',height:'responsive'}}>
                 <div>
-                    <h3>1</h3>
+                    <h3><Avatar  style={{ }} size={190} src='./img/dummy.svg'/></h3>
                 </div>
                 <div>
                     <h3>2</h3>
@@ -43,7 +45,6 @@ export class Principal extends Component {
                     <h3>4</h3>
                 </div>
                 </Carousel>
-
             </div>
         )
     }
