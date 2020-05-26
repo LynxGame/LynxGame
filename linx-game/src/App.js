@@ -8,21 +8,16 @@ const { Header, Footer, Sider, Content } = Layout;
 function App() {
   return (
     <Layout>
-      <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
-        <Toolbar/>
-      </Header>
+      <Header style={{}}><Toolbar/></Header>
       <Layout>
-      <Sider style={{overflow: 'auto', height: '100vh', position: 'fixed', left: 0,}}>
-        Navegacion
-      </Sider>
-      <Content>
-        Contenido
+        <Sider style={{background: "white", overflow: 'auto', left:0}}>Lynx Game</Sider>
+        <Content>
+          <div style={{  height: "calc(100vh - 55px)" }}>
+            A lot of games to me c:
+          </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>
-      Ant Design ©2018 Created by Ant UED
-      </Footer>
       </Layout>
-      
+      <Footer>Todos los derechos reservados Ant Design ©2018 Created by Ant UED</Footer>
     </Layout>
   );
 }
