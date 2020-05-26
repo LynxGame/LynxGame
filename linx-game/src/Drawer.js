@@ -14,7 +14,8 @@ export class Drawer extends Component {
                 <Col>
                     <Avatar style={{ 
                         background: 'none'
-                    }}src='https://raw.githubusercontent.com/LynxGame/LynxGame/master/linx-game/src/img/icono.png?token=AMFFPBSKQIR7S4ONZDSULIS6ZWJWW' size={190}/>
+                    }}src='https://estaticos.muyinteresante.es/media/cache/1140x_thumb/uploads/images/gallery/59c4f5655bafe82c692a7052/gato-marron_0.jpg' size={190}/>
+
                 </Col>
             </Row>
             
@@ -29,7 +30,7 @@ export class Drawer extends Component {
                     <Button type="link" icon={<YoutubeFilled style={{fontSize: '40px'}}/>} href="https://www.youtube.com"/>
                 </Col>
                 <Col span={12} key="Facebook">
-                <Button type="link" icon={<FacebookFilled style={{fontSize: '40px'}}/>} href="https://www.facebook.com/LynxxT"/>
+                <Button type="link" icon={<FacebookFilled style={{fontSize: '40px'}}/>} href="https://www.facebook.com/CarlosCata27"/>
                 </Col>
             </Row>
 
