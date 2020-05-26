@@ -8,17 +8,17 @@ const { Header, Footer, Sider, Content } = Layout;
 function App() {
   return (
     <Layout>
-      <Header>
+      <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
         <Toolbar/>
       </Header>
       <Layout>
-      <Sider>
+      <Sider style={{overflow: 'auto', height: '100vh', position: 'fixed', left: 0,}}>
         Navegacion
       </Sider>
       <Content>
         Contenido
       </Content>
-      <Footer>
+      <Footer >
         Pie de Pagina
       </Footer>
       </Layout>
