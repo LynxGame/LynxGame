@@ -16,11 +16,17 @@ export class Toolbar extends Component {
         });
     };
 
-    state = { visible: false };
+    state = { visible: false, sesion: false };
 
     showDrawer = () => {
         this.setState({
         visible: true,
+        });
+    };
+
+    showSesion = () => {
+        this.setState({
+        sesion: true,
         });
     };
 
@@ -30,10 +36,16 @@ export class Toolbar extends Component {
         });
     };
 
+    closeSesion = () => {
+        this.setState({
+        sesion: false,
+        });
+    }
+
     render() {
         return (
             <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-                <Col span={19}>
+                <Col span={20}>
                     <Menu  mode="horizontal" onClick={this.handleClick} selectedKeys={[this.state.current]}>
                         <Menu.Item key="lynxPortrait">
                             Lynx Game
@@ -100,17 +112,42 @@ export class Toolbar extends Component {
                     </Form>
                     <div style={{ textAlign: 'center'}} >
                         <Button onClick={this.onClose} style={{ marginRight: 8 }}>
-                            Cancel
+                            Cancelar
                         </Button>
                         <Button onClick={this.onClose} type="primary">
-                            Submit
+                            Registrarse
                         </Button>
                     </div>
                     </Drawer>
                 </Col>
                 <Col span={2}>
-                <Button type="primary" onClick={this.showDrawer}><UserOutlined />Iniciar Sesion</Button>
-                
+                <Button type="primary" onClick={this.showSesion}><UserOutlined />Iniciar Sesion</Button>
+                <Drawer title="Inicia Sesion" width={720} onClose={this.closeSesion} visible={this.state.sesion} bodyStyle={{ paddingBottom: 80 }}>
+                    <Form layout="vertical" hideRequiredMark>
+                            <Form.Item
+                            name="username-sesion"
+                            label="Nombre de Usuario"
+                            rules={[{ required: true, message: 'Por favor ingresa tu nombre de usuario' }]}
+                            >
+                            <Input placeholder="Tu nombre de usuario va aqui..." />
+                            </Form.Item>
+                            <Form.Item
+                            name="password-sesion"
+                            label="Constraseña"
+                            rules={[{ required: true, message: 'Por favor ingresa una contraseña' }]}
+                            >
+                            <Input placeholder="Ingresa tu Constraseña" />
+                            </Form.Item>
+                    </Form>
+                    <div style={{ textAlign: 'center'}} >
+                        <Button onClick={this.onClose} style={{ marginRight: 8 }}>
+                            Cancelar
+                        </Button>
+                        <Button onClick={this.onClose} type="primary">
+                            Iniciar Sesion
+                        </Button>
+                    </div>
+                    </Drawer>
                 </Col>
             </Row>
         )
