@@ -18,7 +18,7 @@ export class Drawer extends Component {
             
             <Row gutter={[24, 24]}>
             <Col span={12} key="Github">
-                <Button type="link" icon={<GithubFilled style={{alignContent: 'center',fontSize: '40px'}}/>} href="https://github.com/LynxGame"/>
+                <Button type="link" icon={<GithubFilled style={{fontSize: '40px'}}/>} href="https://github.com/LynxGame"/>
                 </Col>
             </Row>
 
