@@ -16,7 +16,6 @@ export class Toolbar extends Component {
 
     render() {
         return (
-            <>
             <Menu mode="horizontal" onClick={this.handleClick} selectedKeys={[this.state.current]}>
                 <Menu.Item key="lynxPortrait">
                     Lynx Game
@@ -31,13 +30,6 @@ export class Toolbar extends Component {
                     Preventas
                 </Menu.Item>
             </Menu>
-            <Menu>
-                <Menu.Item key="Iniciar Sesion">
-                    Iniciar Sesion
-                </Menu.Item>
-                <Avatar size="large" icon={<UserOutlined/>}/>
-            </Menu>
-            </>
         )
     }
 }
