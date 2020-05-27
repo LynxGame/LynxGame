@@ -7,7 +7,9 @@ export class Principal extends Component {
     render() {
         return (
             <>
-                <h2>Juegos del Momento</h2>
+                <div style={{ textAlign: 'center'}} >
+                    <h2>Juegos del Momento</h2>
+                </div>
                 <Carousel autoplay>
                 <div>
                 <Avatar shape='square' style={{ 
