@@ -4,6 +4,7 @@ import { Space, Card } from 'antd';
 import { Button } from 'antd';
 import {Pay} from './Pay.js';
 import { Link } from 'react-router-dom';
+import {ViewGame} from './ViewGame.js';
 
 export class Principal extends Component {
     render() {
@@ -40,11 +41,14 @@ export class Principal extends Component {
                             Descripcion mamalona del videojuego
                             Descripcion mamalona del videojuego</p>
                             
-                            <Button type="primary">View</Button>
-                            
+                            <Link to="/ViewGame">
+                            <Button type="primary" key="ViewGame">View</Button>
+                            </Link>
+
                             <Link to="/Pay">
                             <Button type="dashed" key="pay">Buy $70USD</Button>
                             </Link>
+
                         
                         </Card>    
                     </Col>

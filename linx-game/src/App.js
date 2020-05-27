@@ -8,6 +8,7 @@ import Pie from './Pie';
 import EditarPerfil from './EditarPerfil';
 import Biblioteca from './Biblioteca';
 import Pay from './Pay';
+import {ViewGame} from './ViewGame.js';
 
 const { Header, Footer, Content } = Layout;
 
@@ -22,6 +23,7 @@ function App() {
             <Route path="/EditarPerfil" component={EditarPerfil} />
             <Route path="/Biblioteca" component={Biblioteca}/>
             <Route path="/Pay" component={Pay}/>
+            <Route path="/ViewGame" component={ViewGame}/>
         </Content>
       </Layout>
       <Footer>
