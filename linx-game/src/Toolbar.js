@@ -46,11 +46,11 @@ export class Toolbar extends Component {
 
     render() {
         return (
-            <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-                <Col span={20}>
+            <Row>
+                <Col xs={{ span: 5, offset: 2 }} md={{ span: 10, offset: 1}} lg={{ span: 15, offset:0 }}>
                     <Menu  mode="horizontal" onClick={this.handleClick} selectedKeys={[this.state.current]}>
                         <Menu.Item key="lynxPortrait">
-                        <Avatar style={{ background: '#000000'}} src='https://scontent-qro1-1.xx.fbcdn.net/v/t1.0-9/101140277_151384123163874_8436367551000215552_n.png?_nc_cat=108&_nc_sid=e007fa&_nc_eui2=AeG8UH92YV3Mp7Q5yWPBxWBNO8RevmpD3b87xF6-akPdv2PMk5a57wZHjwqPVTGBtPjmUvQKSlw7v18sBf0OX7AL&_nc_oc=AQmK5NQO7KklJFoqXinWl0e0BR-uIIN95pjgBs3lTT1PQzutdYJBilncs_iCwvG2R8w&_nc_ht=scontent-qro1-1.xx&oh=02548c771c294b5ba1957470a44e7574&oe=5EF3C1AB' size={25}/>
+                        <Avatar style={{ background: '#000000'}} src='https://scontent-qro1-1.xx.fbcdn.net/v/t1.0-9/101140277_151384123163874_8436367551000215552_n.png?_nc_cat=108&_nc_sid=e007fa&_nc_eui2=AeG8UH92YV3Mp7Q5yWPBxWBNO8RevmpD3b87xF6-akPdv2PMk5a57wZHjwqPVTGBtPjmUvQKSlw7v18sBf0OX7AL&_nc_oc=AQmK5NQO7KklJFoqXinWl0e0BR-uIIN95pjgBs3lTT1PQzutdYJBilncs_iCwvG2R8w&_nc_ht=scontent-qro1-1.xx&oh=02548c771c294b5ba1957470a44e7574&oe=5EF3C1AB' size={40}/>
                         </Menu.Item>
                         <Menu.Item key="juegos" src='./src/Biblioteca.js' type='link' onClick>
                             Mis Juegos
@@ -63,9 +63,11 @@ export class Toolbar extends Component {
                         </Menu.Item>
                     </Menu>
                 </Col>
-                <Col span={2}>
-                <Button type="primary" onClick={this.showDrawer}><UserAddOutlined />Crear Cuenta</Button>
-                <Drawer title="Crear una nueva cuenta" width={720} onClose={this.onClose} visible={this.state.visible} bodyStyle={{ paddingBottom: 80 }} style={{ }}>
+                <Col xs={{ span: 5, offset: 2 }} md={{ span: 10, offset: 1}} lg={{ span: 9, offset:0 }}>
+                    <Menu mode="horizontal" style={{ textAlign: 'right' }}>
+                        <Menu.Item key="crearCuenta">
+                            <Button type="primary" onClick={this.showDrawer}><UserAddOutlined />Crear Cuenta</Button>
+                            <Drawer title="Crear una nueva cuenta" width={720} onClose={this.onClose} visible={this.state.visible} bodyStyle={{ paddingBottom: 80 }} style={{ }}>
                     <Form layout="vertical" hideRequiredMark>
                         <Row gutter={16}>
                         <Col span={12}>
@@ -121,35 +123,37 @@ export class Toolbar extends Component {
                         </Button>
                     </div>
                     </Drawer>
-                </Col>
-                <Col span={2}>
-                <Button type="primary" onClick={this.showSesion}><UserOutlined />Iniciar Sesion</Button>
-                <Drawer title="Inicia Sesion" width={720} onClose={this.closeSesion} visible={this.state.sesion} bodyStyle={{ paddingBottom: 80 }}>
-                    <Form layout="vertical" hideRequiredMark>
-                            <Form.Item
-                            name="username-sesion"
-                            label="Nombre de Usuario"
-                            rules={[{ required: true, message: 'Por favor ingresa tu nombre de usuario' }]}
-                            >
-                            <Input placeholder="Tu nombre de usuario va aqui..." />
-                            </Form.Item>
-                            <Form.Item
-                            name="password-sesion"
-                            label="Constraseña"
-                            rules={[{ required: true, message: 'Por favor ingresa una contraseña' }]}
-                            >
-                            <Input placeholder="Ingresa tu Constraseña" />
-                            </Form.Item>
-                    </Form>
-                    <div style={{ textAlign: 'center'}} >
-                        <Button onClick={this.onClose} style={{ marginRight: 8 }}>
-                            Cancelar
-                        </Button>
-                        <Button onClick={this.onClose} type="primary">
-                            Iniciar Sesion
-                        </Button>
-                    </div>
-                    </Drawer>
+                        </Menu.Item>
+                        <Menu.Item>
+                            <Button type="primary" onClick={this.showSesion}><UserOutlined />Iniciar Sesion</Button>
+                            <Drawer title="Inicia Sesion" width={720} onClose={this.closeSesion} visible={this.state.sesion} bodyStyle={{ paddingBottom: 80 }}>
+                            <Form layout="vertical" hideRequiredMark>
+                                    <Form.Item
+                                    name="username-sesion"
+                                    label="Nombre de Usuario"
+                                    rules={[{ required: true, message: 'Por favor ingresa tu nombre de usuario' }]}
+                                    >
+                                    <Input placeholder="Tu nombre de usuario va aqui..." />
+                                    </Form.Item>
+                                    <Form.Item
+                                    name="password-sesion"
+                                    label="Constraseña"
+                                    rules={[{ required: true, message: 'Por favor ingresa una contraseña' }]}
+                                    >
+                                    <Input placeholder="Ingresa tu Constraseña" />
+                                    </Form.Item>
+                            </Form>
+                            <div style={{ textAlign: 'center'}} >
+                                <Button onClick={this.onClose} style={{ marginRight: 8 }}>
+                                    Cancelar
+                                </Button>
+                                <Button onClick={this.onClose} type="primary">
+                                    Iniciar Sesion
+                                </Button>
+                            </div>
+                            </Drawer>
+                        </Menu.Item>
+                    </Menu>
                 </Col>
             </Row>
         )
