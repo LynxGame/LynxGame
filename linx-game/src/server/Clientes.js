@@ -1,6 +1,6 @@
 const mysql = require("mysql");
 
-class Contacto {
+class Clientes {
     constructor(oConfig){
         this.oConfig=oConfig;
     }
@@ -34,9 +34,9 @@ class Contacto {
                 }
 
             } catch (x) {
-                console.log("Contacto.agregarUsuario.connect -- Error-- "+ x);
+                console.log("Clientes.agregarUsuario.connect -- Error-- "+ x);
             }
         });
     }
 }
-module.exports = Contacto;
+module.exports = Clientes;
