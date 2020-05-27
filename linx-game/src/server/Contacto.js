@@ -34,7 +34,7 @@ class Contacto {
                 }
 
             } catch (x) {
-                
+                console.log("Contacto.agregarUsuario.connect -- Error-- "+ x);
             }
         });
     }
