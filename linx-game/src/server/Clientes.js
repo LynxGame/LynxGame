@@ -1,6 +1,6 @@
 const mysql = require("mysql");
 
-class Contacto {
+class Clientes {
     constructor(oConfig){
         this.oConfig=oConfig;
     }
@@ -20,7 +20,7 @@ class Contacto {
                         else{
                             console.log("Usuarios encontrados: " + res[0].usuario);
                             if(parseInt(res[0].usuario)==0){
-                                con.query('INSET INTO clientes_lynxgame (Nombre,Apellidos,Correo,Contrasenia,Username) values('${Nombre}','${Apellido}','${Username}','${Correo}','${Edad}','${Contraseña}')',function(error,res,campo){
+                                con.query('INSET INTO clientes_lynxgame (cli_nombre,cli_apellido,cli_username,cli_email,cli_edad,cli_contrasenia) values('${Nombre}','${Apellido}','${Username}','${Correo}','${Edad}','${Contraseña}')',function(error,res,campo){
                                     if(error){
                                         console.log("Error al insertar nuevo usuario en la DB --" + console.error());
                                     }
@@ -34,9 +34,9 @@ class Contacto {
                 }
 
             } catch (x) {
-                console.log("Contacto.agregarUsuario.connect -- Error-- "+ x);
+                console.log("Clientes.agregarUsuario.connect -- Error-- "+ x);
             }
         });
     }
 }
-module.exports = Contacto;
+module.exports = Clientes;

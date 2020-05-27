@@ -3,7 +3,8 @@ import { Menu, Avatar, Row, Col, Button, Drawer, Form, Input } from 'antd'
 import { UserOutlined, UserAddOutlined, EditOutlined, SketchOutlined, BookOutlined, TagsOutlined, FireOutlined } from '@ant-design/icons';
 import {Biblioteca} from './Biblioteca';
 import { Link } from 'react-router-dom';
-import FormSignIn from './FormSignIn';
+import LoginForm from './LoginForm';
+import CreateAccountForm from './CreateAccountFrom';
 
 const { Search } = Input;
 const { SubMenu } =  Menu;
@@ -49,7 +50,7 @@ export class Toolbar extends Component {
     render() {
         return (
             <Row>
-                <Col xs={{ span: 5, offset: 2 }} md={{ span: 10, offset: 1}} lg={{ span: 15, offset:0 }}>
+                <Col xs={{ span: 12, offset: 0 }} md={{ span: 14, offset: 0}} lg={{ span: 15, offset:0 }}>
                     <Menu  mode="horizontal" onClick={this.handleClick} selectedKeys={[this.state.current]}>
                         <Menu.Item key="lynxPortrait">
                         <Link to="/">
@@ -73,9 +74,6 @@ export class Toolbar extends Component {
                                 <Menu.Item key="setting:8" icon={<FireOutlined />}>Sales</Menu.Item>
                             </Menu.ItemGroup>
                         </SubMenu>
-                        <Menu.Item key="suscripcion" icon={<SketchOutlined />}>
-                            Suscripcion
-                        </Menu.Item>
                         <Menu.Item key="juegos" src='./src/Biblioteca.js' icon={<BookOutlined />}>
                             <Link to="/Biblioteca">
                                 Mis Juegos
@@ -88,71 +86,18 @@ export class Toolbar extends Component {
                         </Menu.Item>
                     </Menu>
                 </Col>
-                <Col xs={{ span: 5, offset: 2 }} md={{ span: 10, offset: 1}} lg={{ span: 9, offset:0 }}>
+                <Col xs={{ span: 12, offset: 0 }} md={{ span: 10, offset: 0}} lg={{ span: 9, offset:0 }}>
                     <Menu mode="horizontal" style={{ textAlign: 'right' }}>
                         <Menu.Item key="crearCuenta">
                             <Button type="primary" onClick={this.showDrawer}><UserAddOutlined />Crear Cuenta</Button>
                             <Drawer title="Crear una nueva cuenta" width={720} onClose={this.onClose} visible={this.state.visible} bodyStyle={{ paddingBottom: 80 }} style={{ }}>
-                    <Form layout="vertical" hideRequiredMark>
-                        <Row gutter={16}>
-                        <Col span={12}>
-                            <Form.Item
-                            name="nombre"
-                            label="Nombre"
-                            rules={[{ required: true, message: 'Por favor ingresa un nombre' }]}
-                            >
-                            <Input placeholder="Ingresa tu nombre" />
-                            </Form.Item>
-                        </Col>
-                        <Col span={12}>
-                            <Form.Item
-                            name="apellidos"
-                            label="Apellidos"
-                            rules={[{ required: true, message: 'Ingresa tus apellidos' }]}
-                            >
-                            <Input style={{ width: '100%' }} placeholder="Aqui van tus apellidos" />
-                            </Form.Item>
-                        </Col>
-                        </Row>
-                        <Row gutter={16}>
-                        <Col span={12}>
-                            <Form.Item name="correo" label="Correo" rules={[{ required: true, message: 'Por favor, necesitamos tu correo' }]}>
-                            <Input style={{ width: '100%' }} placeholder="Ingresa tu correo"/>
-                            </Form.Item>
-                        </Col>
-                        <Col span={12}>
-                            <Form.Item name="password" label="Contraseña" rules={[{ required: true, message: 'Ingresa una contraseña' }]}>
-                            <Input style={{ width: '100%' }} placeholder="Ingresa tu contraseña"/>
-                            </Form.Item>
-                        </Col>
-                        </Row>
-                        <Row gutter={16}>
-                        <Col span={12}>
-                            <Form.Item name="username" label="Username" rules={[{ required: true, message: 'Danos un nombre de usuario' }]}>
-                            <Input style={{ width: '100%' }} placeholder="Vamos... se original"/>
-                            </Form.Item>
-                        </Col>
-                        <Col span={12}>
-                            <Form.Item name="password2" label="Ingresa tu Contraseña de nuevo" rules={[{ required: true, message: 'debes completar este campo' }]}>
-                            <Input style={{ width: '100%' }} placeholder="Ingresa de nuevo tu contraseña"/>
-                            </Form.Item>
-                        </Col>
-                        </Row>
-                    </Form>
-                    <div style={{ textAlign: 'center'}} >
-                        <Button onClick={this.onClose} style={{ marginRight: 8 }}>
-                            Cancelar
-                        </Button>
-                        <Button onClick={this.onClose} type="primary">
-                            Registrarse
-                        </Button>
-                    </div>
+                        <CreateAccountForm/>
                     </Drawer>
                         </Menu.Item>
                         <Menu.Item>
                             <Button type="primary" onClick={this.showSesion}><UserOutlined />Iniciar Sesion</Button>
-                            <Drawer title="Inicia Sesion" width={720} onClose={this.closeSesion} visible={this.state.sesion} bodyStyle={{ paddingBottom: 80 }}>
-                                <FormSignIn/>
+                            <Drawer title="Inicia Sesion" width={500} onClose={this.closeSesion} visible={this.state.sesion} bodyStyle={{ paddingBottom: 80 }}>
+                                <LoginForm/>
                             </Drawer>
                         </Menu.Item>
                     </Menu>
