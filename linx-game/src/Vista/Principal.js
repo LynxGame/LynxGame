@@ -5,6 +5,7 @@ import { Button } from 'antd';
 import {Pay} from './Pay.js';
 import { Link } from 'react-router-dom';
 import {ViewGame} from './ViewGame.js';
+import SliderGlide from './SliderGlide.js';
 
 export class Principal extends Component {
     render() {
@@ -13,23 +14,7 @@ export class Principal extends Component {
                 <div style={{ textAlign: 'center'}} >
                     <h2>Juegos del Momento</h2>
                 </div>
-                <Carousel autoplay>
-                <div>
-                <Avatar shape='square' style={{ 
-                        background: 'none'
-                        }} src='https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_Fortnite_Chapter2_Season2.jpg' size={220}/>
-                </div>
-                <div>
-                    <h3>2</h3>
-                </div>
-                <div>
-                    <h3>3</h3>
-                </div>
-                <div>
-                    <h3>4</h3>
-                </div>
-                </Carousel>
-
+                <SliderGlide  />
                 <Row gutter={[24, 24]}>
                     <Col span={6} >
                         <Card title="BORDERLANDS 3" style={{ width: 270 }}>
