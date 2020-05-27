@@ -6,6 +6,7 @@ import { Layout } from 'antd';
 import Principal from './Principal';
 import Pie from './Pie';
 import EditarPerfil from './EditarPerfil';
+import Biblioteca from './Biblioteca';
 
 
 const { Header, Footer, Content } = Layout;
@@ -19,6 +20,7 @@ function App() {
         <Content>
             <Route exact path="/" component={Principal} />
             <Route path="/EditarPerfil" component={EditarPerfil} />
+            <Route path="/Biblioteca" component={Biblioteca}/>
         </Content>
       </Layout>
       <Footer style={{ position: "sticky" }}>
