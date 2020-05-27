@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Input, Button ,Col,Row} from 'antd';
-import { UserOutlined, LockOutlined ,EditOutlined,GlobalOutlined} from '@ant-design/icons';
+import { UserOutlined, LockOutlined ,EditOutlined,GlobalOutlined,NumberOutlined} from '@ant-design/icons';
 
 const CreateAccountForm = () => {
   const [form] = Form.useForm();
@@ -15,112 +15,100 @@ const CreateAccountForm = () => {
   };
 
   return(
-
     <Form form={form} name="horizontal_login" layout="horizontal" onFinish={onFinish}>
-    <Row gutter={16}>
-        <Col span={12}>
-                <Form.Item
-                    name="Nombre"
-                    rules={[
-                    {
-                        required: true,
-                        message: 'Por favor ingresa tu nombre!',
-                    },
-                    ]}
-                >
-                    Nombre:
-                <Input prefix={<EditOutlined className="site-form-item-icon" />} placeholder="Nombre" />
-            </Form.Item>
-        </Col>
-        <Col span={12}>
-            <Form.Item
-                name="Apellidos"
-                rules={[
-                {
-                    required: true,
-                    message: 'Por favor ingresa tus apellidos!',
-                },
+        <Form.Item
+            name={"nombre"}
+            label={"Nombre"}
+            rules={[
+              {
+                required: true,
+                message: 'Inserta tu nombre por favor!',
+              },
             ]}
-            >
-                Apellidos:
-                <Input
-                    prefix={<EditOutlined className="site-form-item-icon" />}
-                    type="apellidos"
-                    placeholder="Apellidos"
-                />
-            </Form.Item>
-        </Col>
-    </Row>
+        >
+              
+              <Input placeholder="Nombre" prefix={<UserOutlined className="site-form-item-icon" />} />
+    </Form.Item>
+    <Form.Item
+        name={"apellido"}
+        label={"Apellidos"}
+        rules={[
+            {
+                required: true,
+                message: 'Inserta tus apellidos por favor!',
+            },
+            ]}
+        >  
+        <Input placeholder="Apellidos" prefix={<UserOutlined className="site-form-item-icon" />} />
+    </Form.Item>
     
-    <Row gutter={16}>
-        <Col span={12}>
-                <Form.Item
-                    name="Correo"
-                    rules={[
-                    {
-                        required: true,
-                        message: 'Por favor ingresa tu correo!',
-                    },
-                    ]}
-                >
-                    Correo Electronico:
-                <Input prefix={<GlobalOutlined className="site-form-item-icon" />} placeholder="Email" />
-            </Form.Item>
-        </Col>
-        <Col span={12}>
-            <Form.Item
-                name="Contraseña"
-                rules={[
-                {
-                    required: true,
-                    message: 'Por favor ingresa tu contraseña!',
-                },
+    <Form.Item
+        name={"correo"}
+        label={"Email"}
+        rules={[
+            {
+                required: true,
+                message: 'Inserta tu email por favor!',
+            },
             ]}
-            >
-                Contraseña:
-                <Input
-                    prefix={<LockOutlined className="site-form-item-icon" />}
-                    type="contraseña"
-                    placeholder="Contraseña"
-                />
-            </Form.Item>
-        </Col>
-    </Row>
+        >      
+        <Input placeholder="Email" prefix={<GlobalOutlined className="site-form-item-icon" />} />
+    </Form.Item>
 
-    <Row gutter={16}>
-        <Col span={12}>
-                <Form.Item
-                    name="Username"
-                    rules={[
-                    {
-                        required: true,
-                        message: 'Por favor ingresa tu usuario!',
-                    },
-                    ]}
-                >
-                    Username:
-                <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
-            </Form.Item>
-        </Col>
-        <Col span={12}>
-            <Form.Item
-                name="Contraseña2"
-                rules={[
-                {
-                    required: true,
-                    message: 'Por favor ingresa tu contraseña de nuevo!',
-                },
+    <Form.Item
+        name={"username"}
+        label={"Username"}
+        rules={[
+            {
+                required: true,
+                message: 'Inserta tu username por favor!',
+            },
             ]}
-            >
-                Confirmar Contraseña:
-                <Input
-                    prefix={<LockOutlined className="site-form-item-icon" />}
-                    type="contraseña2"
-                    placeholder="Confirmacion de contraseña"
-                />
-            </Form.Item>
-        </Col>
-    </Row>
+        >  
+        <Input placeholder="Username" prefix={<UserOutlined className="site-form-item-icon" />} />
+    </Form.Item>
+
+    <Form.Item
+            name={"contraseña"}
+            label={"Contraseña"}
+            rules={[
+              {
+                required: true,
+                message: 'Inserta una contraseña por favor!',
+              },
+            ]}
+        >
+              
+              <Input placeholder="Contraseña" prefix={<LockOutlined className="site-form-item-icon" />}type="password" />
+    </Form.Item>
+
+    <Form.Item
+            name={"Contraseña2"}
+            label={"Confirma tu contraseña"}
+            rules={[
+              {
+                required: true,
+                message: 'Inserta una contraseña por favor!',
+              },
+            ]}
+        >
+              
+        <Input placeholder="Confirmacion de contraseña" prefix={<LockOutlined className="site-form-item-icon" />}type="password" />
+    </Form.Item>
+
+    <Form.Item
+            name={"edad"}
+            label={"Edad"}
+            rules={[
+              {
+                required: true,
+                message: 'Inserta tu edad!',
+              },
+            ]}
+        >
+              
+              <Input placeholder="Edad" prefix={<NumberOutlined className="site-form-item-icon" />} />
+    </Form.Item>
 
     <Form.Item shouldUpdate>
         {() => (
