@@ -24,7 +24,7 @@ function App() {
             <Route path="/Pay" component={Pay}/>
         </Content>
       </Layout>
-      <Footer style={{ position: "fixed" }}>
+      <Footer style={{ position: "fixed", left:0, bottom:0 , right:0}}>
         <Pie/>
       </Footer>
     </Layout>

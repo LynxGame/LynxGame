@@ -49,7 +49,7 @@ export class Toolbar extends Component {
     render() {
         return (
             <Row>
-                <Col xs={{ span: 5, offset: 2 }} md={{ span: 10, offset: 1}} lg={{ span: 15, offset:0 }}>
+                <Col xs={{ span: 12, offset: 0 }} md={{ span: 14, offset: 0}} lg={{ span: 15, offset:0 }}>
                     <Menu  mode="horizontal" onClick={this.handleClick} selectedKeys={[this.state.current]}>
                         <Menu.Item key="lynxPortrait">
                         <Link to="/">
@@ -85,7 +85,7 @@ export class Toolbar extends Component {
                         </Menu.Item>
                     </Menu>
                 </Col>
-                <Col xs={{ span: 5, offset: 2 }} md={{ span: 10, offset: 1}} lg={{ span: 9, offset:0 }}>
+                <Col xs={{ span: 12, offset: 0 }} md={{ span: 10, offset: 0}} lg={{ span: 9, offset:0 }}>
                     <Menu mode="horizontal" style={{ textAlign: 'right' }}>
                         <Menu.Item key="crearCuenta">
                             <Button type="primary" onClick={this.showDrawer}><UserAddOutlined />Crear Cuenta</Button>
