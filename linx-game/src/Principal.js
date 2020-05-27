@@ -6,7 +6,7 @@ import { Button } from 'antd';
 export class Principal extends Component {
     render() {
         return (
-            <div>
+            <>
                 <h2>Juegos del Momento</h2>
                 <Carousel autoplay>
                 <div>
@@ -236,7 +236,7 @@ export class Principal extends Component {
                         </Card>  
                     </Col>
                 </Row>
-            </div>
+            </>
         )
     }
 }
