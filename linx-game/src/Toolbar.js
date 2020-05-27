@@ -59,9 +59,6 @@ export class Toolbar extends Component {
                             Mis Juegos
                             </Link>
                         </Menu.Item>
-                        <Menu.Item key="tienda">
-                            Tienda
-                        </Menu.Item>
                         <Menu.Item key="preventas">
                             Preventas
                         </Menu.Item>
