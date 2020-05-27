@@ -17,14 +17,14 @@ function App() {
     <Layout>
       <Header style={{padding:"0rem 0rem", position: 'sticky', zIndex:1,  top: "0" }}><Toolbar/></Header>
       <Layout>
-        <Content>
+        <Content style={{height:'auto',alignContent:'center',}}>
             <Route exact path="/" component={Principal} />
             <Route path="/EditarPerfil" component={EditarPerfil} />
             <Route path="/Biblioteca" component={Biblioteca}/>
             <Route path="/Pay" component={Pay}/>
         </Content>
       </Layout>
-      <Footer style={{ position: "sticky" }}>
+      <Footer style={{ position: "sticky" , width:"100%",height:'50px',}}>
         <Pie/>
       </Footer>
     </Layout>
