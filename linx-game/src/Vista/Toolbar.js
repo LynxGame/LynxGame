@@ -90,7 +90,7 @@ export class Toolbar extends Component {
                     <Menu mode="horizontal" style={{ textAlign: 'right' }}>
                         <Menu.Item key="crearCuenta">
                             <Button type="primary" onClick={this.showDrawer}><UserAddOutlined />Crear Cuenta</Button>
-                            <Drawer title="Crear una nueva cuenta" width={720} onClose={this.onClose} visible={this.state.visible} bodyStyle={{ paddingBottom: 80 }} style={{ }}>
+                            <Drawer title="Crear una nueva cuenta" width={500} onClose={this.onClose} visible={this.state.visible} bodyStyle={{ paddingBottom: 80 }} style={{ }}>
                         <CreateAccountForm/>
                     </Drawer>
                         </Menu.Item>
