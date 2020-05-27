@@ -3,6 +3,7 @@ import { Menu, Avatar, Row, Col, Button, Drawer, Form, Input } from 'antd'
 import { UserOutlined, UserAddOutlined, EditOutlined, SketchOutlined, BookOutlined, TagsOutlined, FireOutlined } from '@ant-design/icons';
 import {Biblioteca} from './Biblioteca';
 import { Link } from 'react-router-dom';
+import FormSignIn from './FormSignIn';
 
 const { Search } = Input;
 const { SubMenu } =  Menu;
@@ -151,30 +152,7 @@ export class Toolbar extends Component {
                         <Menu.Item>
                             <Button type="primary" onClick={this.showSesion}><UserOutlined />Iniciar Sesion</Button>
                             <Drawer title="Inicia Sesion" width={720} onClose={this.closeSesion} visible={this.state.sesion} bodyStyle={{ paddingBottom: 80 }}>
-                            <Form layout="vertical" hideRequiredMark>
-                                    <Form.Item
-                                    name="username-sesion"
-                                    label="Nombre de Usuario"
-                                    rules={[{ required: true, message: 'Por favor ingresa tu nombre de usuario' }]}
-                                    >
-                                    <Input placeholder="Tu nombre de usuario va aqui..." />
-                                    </Form.Item>
-                                    <Form.Item
-                                    name="password-sesion"
-                                    label="Constraseña"
-                                    rules={[{ required: true, message: 'Por favor ingresa una contraseña' }]}
-                                    >
-                                    <Input placeholder="Ingresa tu Constraseña" />
-                                    </Form.Item>
-                            </Form>
-                            <div style={{ textAlign: 'center'}} >
-                                <Button onClick={this.onClose} style={{ marginRight: 8 }}>
-                                    Cancelar
-                                </Button>
-                                <Button onClick={this.onClose} type="primary">
-                                    Iniciar Sesion
-                                </Button>
-                            </div>
+                                <FormSignIn/>
                             </Drawer>
                         </Menu.Item>
                     </Menu>
