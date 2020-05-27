@@ -7,7 +7,7 @@ import Principal from './Principal';
 import Pie from './Pie';
 import EditarPerfil from './EditarPerfil';
 import Biblioteca from './Biblioteca';
-
+import Pay from './Pay';
 
 const { Header, Footer, Content } = Layout;
 
@@ -21,6 +21,7 @@ function App() {
             <Route exact path="/" component={Principal} />
             <Route path="/EditarPerfil" component={EditarPerfil} />
             <Route path="/Biblioteca" component={Biblioteca}/>
+            <Route path="/Pay" component={Pay}/>
         </Content>
       </Layout>
       <Footer style={{ position: "sticky" }}>

@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import {  Carousel, Row, Col , Avatar} from 'antd'
 import { Space, Card } from 'antd';
 import { Button } from 'antd';
+import {Pay} from './Pay.js';
+import { Link } from 'react-router-dom';
 
 export class Principal extends Component {
     render() {
@@ -39,7 +41,11 @@ export class Principal extends Component {
                             Descripcion mamalona del videojuego</p>
                             
                             <Button type="primary">View</Button>
-                            <Button type="dashed">Buy $70USD</Button>
+                            
+                            <Link to="/Pay">
+                            <Button type="dashed" key="pay">Buy $70USD</Button>
+                            </Link>
+                        
                         </Card>    
                     </Col>
 

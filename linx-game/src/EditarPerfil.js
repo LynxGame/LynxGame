@@ -6,7 +6,7 @@ export class EditarPerfil extends Component {
     render() {
         return (
             <Form>
-                            <Row gutter={16}>
+            <Row gutter={16}>
                 <Col span={12}>
                     <Form.Item
                         name="Nombre"
