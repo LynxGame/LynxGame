@@ -4,7 +4,7 @@ import { Layout, Avatar ,Row,Col,Button,Form,Input} from 'antd';
 export class EditarPerfil extends Component {
     render() {
         return (
-            <Form>
+            <Form style={{ }}>
                 <div style={{ textAlign: 'center'}}>
                     <h2>Datos Basicos</h2>
                 </div>
@@ -66,7 +66,7 @@ export class EditarPerfil extends Component {
                         </Form.Item>
                     </Col>
                     <Col span={12}>
-                        <Form.Item name="banco" label="Nombre del banco al que pertenece tu tarjeta" rules={[{ required: true, message: 'Debes completar este campo' }]}>
+                        <Form.Item name="banco" label="Nombre tu banco" rules={[{ required: true, message: 'Debes completar este campo' }]}>
                             <Input style={{ width: '100%' }} placeholder="Ingresa el nombre de tu banco"/>
                         </Form.Item>
                     </Col>
@@ -109,7 +109,6 @@ export class EditarPerfil extends Component {
                         </Button>
                     </div>
             </Form>
-            
         )
     }
 }
