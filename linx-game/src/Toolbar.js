@@ -4,6 +4,7 @@ import { UserOutlined, UserAddOutlined, EditOutlined, SketchOutlined, BookOutlin
 import {Biblioteca} from './Biblioteca';
 import { Link } from 'react-router-dom';
 import LoginForm from './LoginForm';
+import CreateAccountForm from './CreateAccountFrom';
 
 const { Search } = Input;
 const { SubMenu } =  Menu;
@@ -90,60 +91,7 @@ export class Toolbar extends Component {
                         <Menu.Item key="crearCuenta">
                             <Button type="primary" onClick={this.showDrawer}><UserAddOutlined />Crear Cuenta</Button>
                             <Drawer title="Crear una nueva cuenta" width={720} onClose={this.onClose} visible={this.state.visible} bodyStyle={{ paddingBottom: 80 }} style={{ }}>
-                    <Form layout="vertical" hideRequiredMark>
-                        <Row gutter={16}>
-                        <Col span={12}>
-                            <Form.Item
-                            name="nombre"
-                            label="Nombre"
-                            rules={[{ required: true, message: 'Por favor ingresa un nombre' }]}
-                            >
-                            <Input placeholder="Ingresa tu nombre" />
-                            </Form.Item>
-                        </Col>
-                        <Col span={12}>
-                            <Form.Item
-                            name="apellidos"
-                            label="Apellidos"
-                            rules={[{ required: true, message: 'Ingresa tus apellidos' }]}
-                            >
-                            <Input style={{ width: '100%' }} placeholder="Aqui van tus apellidos" />
-                            </Form.Item>
-                        </Col>
-                        </Row>
-                        <Row gutter={16}>
-                        <Col span={12}>
-                            <Form.Item name="correo" label="Correo" rules={[{ required: true, message: 'Por favor, necesitamos tu correo' }]}>
-                            <Input style={{ width: '100%' }} placeholder="Ingresa tu correo"/>
-                            </Form.Item>
-                        </Col>
-                        <Col span={12}>
-                            <Form.Item name="password" label="Contraseña" rules={[{ required: true, message: 'Ingresa una contraseña' }]}>
-                            <Input style={{ width: '100%' }} placeholder="Ingresa tu contraseña"/>
-                            </Form.Item>
-                        </Col>
-                        </Row>
-                        <Row gutter={16}>
-                        <Col span={12}>
-                            <Form.Item name="username" label="Username" rules={[{ required: true, message: 'Danos un nombre de usuario' }]}>
-                            <Input style={{ width: '100%' }} placeholder="Vamos... se original"/>
-                            </Form.Item>
-                        </Col>
-                        <Col span={12}>
-                            <Form.Item name="password2" label="Ingresa tu Contraseña de nuevo" rules={[{ required: true, message: 'debes completar este campo' }]}>
-                            <Input style={{ width: '100%' }} placeholder="Ingresa de nuevo tu contraseña"/>
-                            </Form.Item>
-                        </Col>
-                        </Row>
-                    </Form>
-                    <div style={{ textAlign: 'center'}} >
-                        <Button onClick={this.onClose} style={{ marginRight: 8 }}>
-                            Cancelar
-                        </Button>
-                        <Button onClick={this.onClose} type="primary">
-                            Registrarse
-                        </Button>
-                    </div>
+                        <CreateAccountForm/>
                     </Drawer>
                         </Menu.Item>
                         <Menu.Item>
