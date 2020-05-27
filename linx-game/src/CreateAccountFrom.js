@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Input, Button ,Col,Row} from 'antd';
-import { UserOutlined, LockOutlined ,EditOutlined,FileOutlined} from '@ant-design/icons';
+import { UserOutlined, LockOutlined ,EditOutlined,GlobalOutlined} from '@ant-design/icons';
 
 const CreateAccountForm = () => {
   const [form] = Form.useForm();
@@ -64,7 +64,7 @@ const CreateAccountForm = () => {
                     ]}
                 >
                     Correo Electronico:
-                <Input prefix={<FileOutlined className="site-form-item-icon" />} placeholder="Email" />
+                <Input prefix={<GlobalOutlined className="site-form-item-icon" />} placeholder="Email" />
             </Form.Item>
         </Col>
         <Col span={12}>
