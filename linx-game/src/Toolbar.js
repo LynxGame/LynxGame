@@ -57,9 +57,6 @@ export class Toolbar extends Component {
                         <Menu.Item key="juegos" src='./src/Biblioteca.js' type='link' onClick>
                             Mis Juegos
                         </Menu.Item>
-                        <Menu.Item key="tienda">
-                            Tienda
-                        </Menu.Item>
                         <Menu.Item key="preventas">
                             Preventas
                         </Menu.Item>
