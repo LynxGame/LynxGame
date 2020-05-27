@@ -3,7 +3,7 @@ import './App.css';
 import { Route } from 'react-router-dom'
 import Toolbar from './Toolbar';
 import { Layout } from 'antd';
-//import Principal from './Principal';
+import Principal from './Principal';
 import Pie from './Pie';
 import EditarPerfil from './EditarPerfil';
 
@@ -17,7 +17,8 @@ function App() {
       <Header style={{padding:"0rem 0rem", position: 'sticky', zIndex:1,  top: "0" }}><Toolbar/></Header>
       <Layout>
         <Content>
-            <Route />
+            <Route exact path="/" component={Principal} />
+            <Route path="/EditarPerfil" component={EditarPerfil} />
         </Content>
       </Layout>
       <Footer style={{ position: "sticky" }}>

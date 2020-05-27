@@ -49,28 +49,12 @@ export class EditarPerfil extends Component {
                     <Input style={{ width: '100%' }} placeholder="Ingresa tu contraseña para confirmar cambios"/>
                     </Form.Item>
                 </Col>
-            </Row>
-            <Row>
+            </Row>  
             <div style={{ textAlign: 'center'}} >
-                <Col>
-                <Button onClick={this.onClose} style={{ marginRight: 8 }}>
-                            Cancelar
-                        </Button>
-                      
-                </Col>
-                <Col>
-                <Button onClick={this.onClose} type="primary">
-                            Registrarse
-                        </Button>
-                    
-                </Col>
-                </div>
-            </Row>
-            
-                      
-
-            </Form>
-                        
+                <Button onClick={this.onClose} style={{ marginRight: 8 }}>Cancelar</Button>   
+                <Button onClick={this.onClose} type="primary">Registrarse</Button>
+            </div> 
+            </Form>            
         )
     }
 }
