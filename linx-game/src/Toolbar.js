@@ -95,7 +95,7 @@ export class Toolbar extends Component {
                         </Col>
                         <Col span={12}>
                             <Form.Item name="password" label="Contraseña" rules={[{ required: true, message: 'Ingresa una contraseña' }]}>
-                            <Input style={{ width: '100%' }} placeholder="Ingresa tu correo"/>
+                            <Input style={{ width: '100%' }} placeholder="Ingresa tu contraseña"/>
                             </Form.Item>
                         </Col>
                         </Row>
