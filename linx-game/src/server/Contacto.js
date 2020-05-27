@@ -20,7 +20,9 @@ class Contacto {
                         else{
                             console.log("Usuarios encontrados: " + res[0].usuario);
                             if(parseInt(res[0].usuario)==0){
-                                
+                                con.query('Insert into usuarios (Nombre,Apellidos,Correo,Contrasenia,Username)',function(error,res,campo){
+                                    
+                                })
                             }
                         }
                     })
