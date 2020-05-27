@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Menu, Avatar, Row, Col, Button, Drawer, Form, Input, Select, DatePicker } from 'antd'
 import { UserOutlined, UserAddOutlined } from '@ant-design/icons';
+import {Biblioteca} from './Biblioteca';
+import { BrowserRouter, Route, Link } from "react-router-dom";
 
 const { Option } = Select;
 
@@ -50,7 +52,7 @@ export class Toolbar extends Component {
                         <Menu.Item key="lynxPortrait">
                         <Avatar style={{ }} size={25} src='./img/logo.png'/>
                         </Menu.Item>
-                        <Menu.Item key="juegos" disabled>
+                        <Menu.Item key="juegos" src='./src/Biblioteca.js' type='link' onClick>
                             Mis Juegos
                         </Menu.Item>
                         <Menu.Item key="tienda">
