@@ -19,7 +19,7 @@ export class Pay extends Component {
             <Input />
           </Form.Item>
         
-          <Form.Item label="BANCO">
+          <Form.Item label="Banco">
             <TreeSelect
               treeData={[
                 {
@@ -27,16 +27,20 @@ export class Pay extends Component {
                   value: 'BBVA',
                 },
                 {
-                    title: 'BANAMEX',
-                    value: 'BANAMEX',
+                  title: 'HSBC',
+                  value: 'HSBC',
                 },
                 {
-                    title: 'SANTANDER',
-                    value: 'SANTANDER',
+                    title: 'Banamex',
+                    value: 'Banamex',
                 },
                 {
-                    title: 'SCOTIABANK',
-                    value: 'SCOTIABANK',
+                    title: 'Santander',
+                    value: 'Santander',
+                },
+                {
+                    title: 'Scotiabank',
+                    value: 'Scotiabank',
                 },
               ]}
             />
@@ -47,10 +51,11 @@ export class Pay extends Component {
           </Form.Item>
           
           <Form.Item label="Fecha">
-            <DatePicker />
+            <DatePicker picker='month' bordered={false} className='Mesyaño' />
           </Form.Item>
+
           <br></br>
-          <Form.Item label="->">
+          <Form.Item label="Presiona el siguiente boton">
           <Button type="primary">Comprar!</Button>
           </Form.Item>
         </Form>
