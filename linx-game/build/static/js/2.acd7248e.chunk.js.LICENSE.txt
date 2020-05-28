@@ -10,6 +10,12 @@ object-assign
   http://jedwatson.github.io/classnames
 */
 
+/*!
+ * Glide.js v3.4.1
+ * (c) 2013-2019 Jędrzej Chałubek <jedrzej.chalubek@gmail.com> (http://jedrzejchalubek.com/)
+ * Released under the MIT License.
+ */
+
 /** @license React v0.19.1
  * scheduler.production.min.js
  *
