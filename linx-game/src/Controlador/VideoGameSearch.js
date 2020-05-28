@@ -9,11 +9,11 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
-function busqueda(nombre){
-    connection.query("Select * from Videojuego where videojuego_nombre="+nombre,(error,results)=>{
+
+    connection.query("Select * from Videojuego where videojuego_nombre='Age of Empires'",(error,results)=>{
         if(error) throw error;
         console.log(results);
     })
-}
+
 
 connection.end();  

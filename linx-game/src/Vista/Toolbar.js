@@ -5,7 +5,6 @@ import {Biblioteca} from './Biblioteca';
 import { Link } from 'react-router-dom';
 import LoginForm from './LoginForm';
 import CreateAccountForm from './CreateAccountFrom';
-import VideoGameSearch from '../Controlador/VideoGameSearch'
 
 const { Search } = Input;
 const { SubMenu } =  Menu;
@@ -59,7 +58,7 @@ export class Toolbar extends Component {
                         </Link>
                         </Menu.Item>
                         <Menu.Item>
-                            <Search style={{ verticalAlign: "middle" }} placeholder="Introduce un juego..." onSearch={value => VideoGameSearch.busqueda(value)} enterButton />
+                            <Search style={{ verticalAlign: "middle" }} placeholder="Introduce un juego..."  enterButton />
                         </Menu.Item>
                         <SubMenu icon={<TagsOutlined />} title="Juegos">
                             <Menu.ItemGroup title="Por Genero">
