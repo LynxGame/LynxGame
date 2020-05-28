@@ -13,6 +13,20 @@ export class Principal extends Component {
                 <div style={{ textAlign: 'center'}} >
                     <h2>Juegos del Momento</h2>
                 </div>
+                <Carousel autoplay effect fade>
+                 <div>
+                     <img src='https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_Minecraft.jpg'></img>
+                 </div>
+                 <div>
+                 <img src='https://generacionxbox.com/wp-content/uploads/2016/11/rainbow-six-siege-expansiones-generacion-xbox-940x529.jpg.webp'></img>
+                 </div>
+                 <div>
+                     <img src='https://areajugones.sport.es/wp-content/uploads/2019/07/borderlands-3-normal-hero-01-ps4-us-02apr19.jpg.webp'></img>
+                 </div>
+                 <div>
+                    <img src='https://media.vandal.net/i/1200x630/4-2020/2020471014495_1.jpg'></img>
+                 </div>
+                 </Carousel>
                 <Row gutter={[24, 24]} justify="space-between">
                     <Col span={5} offset={2}>
                         <Card title="BORDERLANDS 3" style={{ width: 270 }}>
@@ -81,18 +95,18 @@ export class Principal extends Component {
                 </Row>
 
                 <h2>Top Ahi dice Gratis</h2>
-                <Carousel autoplay>
+                <Carousel autoplay effect fade>
                 <div>
-                    <h3>1</h3>
+                <img src='https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_Minecraft.jpg'></img>
                 </div>
                 <div>
-                    <h3>2</h3>
+                <img src='https://generacionxbox.com/wp-content/uploads/2016/11/rainbow-six-siege-expansiones-generacion-xbox-940x529.jpg.webp'></img>
                 </div>
                 <div>
-                    <h3>3</h3>
+                <img src='https://areajugones.sport.es/wp-content/uploads/2019/07/borderlands-3-normal-hero-01-ps4-us-02apr19.jpg.webp'></img>
                 </div>
                 <div>
-                    <h3>4</h3>
+                <img src='https://media.vandal.net/i/1200x630/4-2020/2020471014495_1.jpg'></img>
                 </div>
                 </Carousel>
 
@@ -157,18 +171,18 @@ export class Principal extends Component {
                 </Row>
 
                 <h2>Top Mas Vendidos</h2>
-                <Carousel autoplay>
+                <Carousel autoplay effect fade>
                 <div>
-                    <h3>1</h3>
+                <img src='https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_Minecraft.jpg'></img>
                 </div>
                 <div>
-                    <h3>2</h3>
+                <img src='https://generacionxbox.com/wp-content/uploads/2016/11/rainbow-six-siege-expansiones-generacion-xbox-940x529.jpg.webp'></img>
                 </div>
                 <div>
-                    <h3>3</h3>
+                <img src='https://areajugones.sport.es/wp-content/uploads/2019/07/borderlands-3-normal-hero-01-ps4-us-02apr19.jpg.webp'></img>
                 </div>
                 <div>
-                    <h3>4</h3>
+                <img src='https://media.vandal.net/i/1200x630/4-2020/2020471014495_1.jpg'></img>
                 </div>
                 </Carousel>
 
