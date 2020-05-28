@@ -5,41 +5,16 @@ import { Button } from 'antd';
 import {Pay} from './Pay.js';
 import { Link } from 'react-router-dom';
 import {ViewGame} from './ViewGame.js';
-import SliderGlide from './SliderGlide.js';
-import ImagenSlider from './ImagenSlider.js';
 
 export class Principal extends Component {
-    state = {
-        myPlans: [
-          { id: 0, text: "plan 0", price: 0 },
-          { id: 1, text: "plan 1", price: 1 },
-          { id: 2, text: "plan 2", price: 2 },
-          { id: 3, text: "plan 3", price: 3 }
-        ]
-      };
-      handleOffer = id => {
-        console.log("handleOffer clicked, id: ", id);
-      };
-
     render() {
-        const carouselOptions = { type: "slide", perView: 1, startAt: 0 };
-
         return (
             <>
                 <div style={{ textAlign: 'center'}} >
                     <h2>Juegos del Momento</h2>
                 </div>
-                <SliderGlide options={carouselOptions}>
-                    {this.state.myPlans.map(plan => (
-                    <ImagenSlider
-                    key={plan.id}
-                    plan={plan}
-                    handleOffer={this.handleOffer}
-                    />
-          ))}
-        </SliderGlide>
-                <Row gutter={[24, 24]}>
-                    <Col span={6} >
+                <Row gutter={[24, 24]} justify="space-between">
+                    <Col span={5} offset={2}>
                         <Card title="BORDERLANDS 3" style={{ width: 270 }}>
                         <Avatar shape='square' style={{ 
                         background: 'none'
@@ -89,7 +64,7 @@ export class Principal extends Component {
                             <Button type="dashed">Buy $70USD</Button>
                         </Card>    
                     </Col>
-                    <Col span={6} >
+                    <Col span={5} >
                     <Card title="MAINCRA" style={{ width: 270 }}>
                         <Avatar shape='square' style={{ 
                         background: 'none'
