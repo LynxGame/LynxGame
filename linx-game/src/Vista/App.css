@@ -2,10 +2,17 @@
 
 .ant-carousel .slick-slide {
   text-align: center;
-  height: 600px;
-  line-height: 160px;
+  width:100%;
+  line-height: 0px;
   background: #364d79;
   align-items: center;
+}
+.ant-carousel div{
+  min-height: 100px;
+  max-height: 500px;
+}
+.ant-carousel div img{
+  width:100%;
 }
 
 .ant-layout-footer {
@@ -14,6 +21,7 @@
   left:0;
   bottom:0;
   right:0;
+  
 }
 
 .ant-layout-content {
@@ -27,3 +35,8 @@
 .ant-typography {
   line-height: 2.5rem;
 }
+
+
+
+
+

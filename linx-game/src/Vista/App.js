@@ -10,6 +10,8 @@ import Biblioteca from './Biblioteca';
 import Pay from './Pay';
 import {ViewGame} from './ViewGame.js';
 
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import {Carousel} from 'react-responsive-carousel'
 const { Header, Footer, Content } = Layout;
 
 
