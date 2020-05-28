@@ -51,7 +51,7 @@ export class Pay extends Component {
           </Form.Item>
           
           <Form.Item label="Fecha">
-            <DatePicker picker='month' bordered={false} className='Mesyaño' />
+            <DatePicker picker='month' bordered={false} />
           </Form.Item>
 
           <br></br>
