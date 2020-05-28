@@ -7,7 +7,6 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "@types/mysql": "^2.15.13",
     "antd": "^4.2.5",
     "mysql": "^2.18.1",
     "react": "^16.13.1",
@@ -37,8 +36,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/express": "^4.17.6"
   }
 }
