@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+/*import React, { Component } from 'react'
 import Glide from '@glidejs/glide'
 
 export default class SliderGlide extends Component {
@@ -39,3 +39,4 @@ export default class SliderGlide extends Component {
 SliderGlide.defaultProps = {
   options: {},
 }
+*/
