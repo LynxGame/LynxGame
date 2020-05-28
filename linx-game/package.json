@@ -9,13 +9,15 @@
     "@testing-library/user-event": "^7.2.1",
     "@types/mysql": "^2.15.13",
     "antd": "^4.2.5",
+    "express": "^4.17.1",
     "mysql": "^2.18.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-glidejs": "^1.0.7",
     "react-responsive-carousel": "^3.2.7",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "typescript": "^3.9.3"
   },
   "scripts": {
     "start": "react-scripts start",
