@@ -14,7 +14,9 @@
     "react-glidejs": "^1.0.7",
     "react-responsive-carousel": "^3.2.7",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.25"
   },
   "scripts": {
     "start": "react-scripts start",
