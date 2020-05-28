@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import {Route, BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './Vista/App';
 import * as serviceWorker from './Vista/serviceWorker';
+import Admin from './Vista/Admin';
 
 ReactDOM.render(
   <Router>
-    <App />
+    <Route path="/" component={App} />
+    <Route path="/Vista/Admin" component={Admin} />
   </Router>,
   document.getElementById('root')
 );
