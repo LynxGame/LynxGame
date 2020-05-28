@@ -1,21 +1,17 @@
-const mysql = require("mysql");
+var mysql = require('mysql');
 
-let con =mysql.createConnection({
+var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
     database: 'lynxgame_db'
-
 });
 
-con.connect();
+connection.connect();
 
-con.query("Select * from videojuego",(err,res)=>{
-    
-    if(err) throw err;
-    console.log(res);
+connection.query("Select * from videojuego",(error,results)=>{
+    if(error) throw error;
+    console.log(results);
 })
 
-con.end();  
-
-module.exports = Contacto;
+connection.end();  
