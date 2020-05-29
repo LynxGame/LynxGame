@@ -6,10 +6,10 @@ import {
     OneToOne,
     JoinColumn
 } from "typeorm";
-import { direccion } from './Direccion';
+import { Direccion } from './Direccion';
 
 @Entity()
-export class personal extends BaseEntity {
+export class Personal extends BaseEntity {
     
     @PrimaryGeneratedColumn()
     id: number;
@@ -23,13 +23,13 @@ export class personal extends BaseEntity {
     @Column({type:"int" , width: 10 })
     telefono: number;
 
-    @Column("int")
+    @Column({type:'decimal', precision: 7, scale: 2, default: 0,})
     salario: number;
 
     @Column("varchar", { length: 20 })
     password: string;
 
-    @OneToOne(type => direccion)
+    @OneToOne(type => Direccion)
     @JoinColumn()
-    direccion: direccion;
+    Direccion: Direccion;
 }

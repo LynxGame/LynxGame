@@ -1,8 +1,8 @@
 import * as functions from 'firebase-functions';
 import { connect } from './config';
 
-import { direccion } from './entidades/Direccion';
-import { personal } from './entidades/Personal';
+import { Direccion } from './entidades/Direccion';
+import { Personal } from './entidades/Personal';
 
 export const crearPersonal = functions.https.onRequest(async (request,response) => {
 
@@ -11,9 +11,9 @@ export const crearPersonal = functions.https.onRequest(async (request,response) 
     try {
         const connection = await connect();
 
-        const repo = connection.getRepository(direccion);
+        const repo = connection.getRepository(Direccion);
 
-        const nuevaDireccion = new direccion();
+        const nuevaDireccion = new Direccion();
         nuevaDireccion.CP = cp;
         nuevaDireccion.calle = calle;
         nuevaDireccion.numero = numero;
@@ -23,9 +23,9 @@ export const crearPersonal = functions.https.onRequest(async (request,response) 
 
         response.send(guardarDireccion);
 
-        const repoUser = connection.getRepository(personal);
+        const repoUser = connection.getRepository(Personal);
 
-        const nuevoUsuario = new personal();
+        const nuevoUsuario = new Personal();
         nuevoUsuario.nombre = nombre;
         nuevoUsuario.apellidos = apellidos;
         nuevoUsuario.telefono = telefono;
@@ -44,17 +44,10 @@ export const crearPersonal = functions.https.onRequest(async (request,response) 
 
 export const getPersonal = functions.https.onRequest(async (request,response) => {
     const connection = await connect();
-    const repoPersonal = connection.getRepository(personal);
+    const repoPersonal = connection.getRepository(Personal);
 
     // Get all rows
     const allPersonal = await repoPersonal.find();
 
     response.send(allPersonal);
 })
-
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-// export const helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });

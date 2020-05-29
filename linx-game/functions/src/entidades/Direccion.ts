@@ -6,7 +6,7 @@ import {
 } from "typeorm";
 
 @Entity()
-export class direccion extends BaseEntity {
+export class Direccion extends BaseEntity {
     
     @PrimaryGeneratedColumn()
     id: number;
