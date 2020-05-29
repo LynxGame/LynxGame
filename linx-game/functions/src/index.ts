@@ -6,22 +6,10 @@ import { Personal } from './entidades/Personal';
 
 export const crearPersonal = functions.https.onRequest(async (request,response) => {
 
-    const { cp, calle, numero, ciudad, nombre, apellidos, telefono, salario, pass } = request.body;
+    const { nombre, apellidos, telefono, salario, pass } = request.body;
 
     try {
         const connection = await connect();
-
-        const repo = connection.getRepository(Direccion);
-
-        const nuevaDireccion = new Direccion();
-        nuevaDireccion.CP = cp;
-        nuevaDireccion.calle = calle;
-        nuevaDireccion.numero = numero;
-        nuevaDireccion.ciudad = ciudad;
-        
-        const guardarDireccion = await repo.save(nuevaDireccion);
-
-        response.send(guardarDireccion);
 
         const repoUser = connection.getRepository(Personal);
 
@@ -31,7 +19,6 @@ export const crearPersonal = functions.https.onRequest(async (request,response) 
         nuevoUsuario.telefono = telefono;
         nuevoUsuario.salario = salario;
         nuevoUsuario.password = pass;
-        nuevoUsuario.direccion = nuevaDireccion;
 
         const guardarUsuario = await repoUser.save(nuevoUsuario);
 
