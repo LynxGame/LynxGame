@@ -3,10 +3,7 @@ import {
     PrimaryGeneratedColumn, 
     Column, 
     BaseEntity,
-    OneToOne,
-    JoinColumn
 } from "typeorm";
-import { Direccion } from './Direccion';
 
 @Entity()
 export class Personal extends BaseEntity {
