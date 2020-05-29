@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "lynx-game",
+  "private_key_id": "8992f595bfe0383cab3d7c2315a7d44bd4f2ee48",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDMBL+IG+xZFpvm\nTacxkC62lzc9Yqc6IV7MfAVVOBMnQdIbX+LXdwyBrkIK/uoTFnPtxFovxMIPEHKM\nvLHhaNotPlmYyfjuAjZRP2ZbBNEeIDbLCbjKWA6RwCnL/EUBXdCp4eODzXkRCC6F\nTDi0b/dalh0C61XVspDxGpQcDKzM2Az2rEHaehbKIWJpF6H6rUcD2BIsV/7Aa3+b\nyjyW0Owl8O9iCxYe/MgKPNdHBTcUmcw09lbEbOmIMT7avEahLwTH2WBByhtiQyru\nIofrUeIOMJ37hEnvBVGn2ID4RwfCgna1kvUj/LXDGmjmYq4cDfq5hlFOhuxESV0g\nNF+Y9X9PAgMBAAECggEAYhsEaTSYPizXkfMUa4p8VBQ6HXwjkxn55pXa0KRy3WVS\n3hQJVngqXO/JVVVIhR4+Z/8MKT1R3gGYO+H/HbgYdjotxoGVAQqySPaWRz11O6nc\n/1yw7ihS9TZ1QuCP5DzTOuXjTH2RcqW/DR1ehTH0PazCzaUR9P11omMYBrb3n1aG\n6XQHmANxEXZtZdX5y84TxyM2fR8kkwg9G/NDNCA4XHQENAF+sub1C3CXi9dtVpWN\ndEv/qldxmfhrXaxbShtCf86hp1tfPaOJiSkQwGwwA3cg6F8g6liRwC3kFyzc3UwV\nU7EmciZR6pNITtDt+ZcqN6QRe+0gYTT8bjMcLbVEhQKBgQD1R1GnoP97f64o9g1B\na+UMH8PNPj2MpePMgi2kQrntM1U/gasLOOs3CA8WhumOQogfFJnlMSH0FNIMjs9b\nYHfZDU7C7s24btMJSt+MFs7uvbeZrNxaHLuBABS3zRdvSeZn3naziSppi9msVHOt\nkQBiFgP97qfbzEA/EAOXuJovEwKBgQDU77ofkCyJmWNEdl0tJLjXAoRdbVUicyG/\nZ7zwx4JzRWnXbalBdp/i2NOEFzOeFOErAm5v28zNG3ZBcQ4VGI7PQuB7S8WxIg0O\nCOUSU9odBqXDxrSAShxCVYUUjlF9UFbLSxLt/mwnzuynYkKqRSSxM2817o0aNLkz\nKGXB62JqVQKBgAkYMeDjSVXM8Co4pVktpPqEGwB7NFEIvZ+RnBuhFb/DzX9jUXJD\nFAWgWN7e9b3+nYl5fBNRdQ7VzswEZ4/dzdPQeIEl1Z7nDRAlJJDPL7EOe8ZI8Iqu\n0g0AccQ26I2J0e88Am65wUbUlqebIgbnf3ojktZRiQvPUPqFn3x6rczdAoGBAKHw\nQttYORbYSW86mTgI0m3qIyIuUO2nI4Y+bamsASCLLKhCZNM9VPEfNxUg1AeoF2ov\nKi/1uDZQaUnxoeUXTRyA3tnF0W4Z2FXRG+0pShqDALP4PTPHqOAly9TLO1wTKj7n\nNFk9AaHws3fEubBmbzY4SJ56cmL4r9QhJ+oniiwVAoGBAJZ8dmOSM3kjpsgvRsgR\nlCJEyBOsTi5JT5A9hzMiz1LUW28J9lhZWKLPiIx0TGt+UxOGNfnFwOth04RTibqY\nI8RNRf/zoKkB7r8hpfNuCQV+gZeeuCoFKWiU7DR9V1jIv2faweOVt/3JqZ6LXZop\nH/NQ0qlDBM89fKXVT1lemD0P\n-----END PRIVATE KEY-----\n",
+  "client_email": "lynx-game@appspot.gserviceaccount.com",
+  "client_id": "102601747885991621772",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/lynx-game%40appspot.gserviceaccount.com"
+}
