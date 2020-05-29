@@ -28,8 +28,4 @@ export class Personal extends BaseEntity {
 
     @Column("varchar", { length: 20 })
     password: string;
-
-    @OneToOne(type => Direccion)
-    @JoinColumn()
-    Direccion: Direccion;
 }
