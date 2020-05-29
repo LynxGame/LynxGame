@@ -1,7 +1,6 @@
 import * as functions from 'firebase-functions';
 import { connect } from './config';
 
-import { Direccion } from './entidades/Direccion';
 import { Personal } from './entidades/Personal';
 
 export const crearPersonal = functions.https.onRequest(async (request,response) => {

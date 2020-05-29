@@ -7,7 +7,6 @@ import {
    JoinColumn
 } from "typeorm";
 
-import { Tarjeta } from './Tarjeta';
 import { Genero } from "./genero";
 import { Desarrolladores } from "./Desarrolladores";
 import { Precio } from "./Precio";
