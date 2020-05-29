@@ -5,7 +5,7 @@ import {
     BaseEntity
  } from "typeorm";
 
- export type UserRoleType = "BBVA" | "BANAMEX" | "SANTANDER" | "SCOTIABANK"| "HSBC",
+ export type UserRoleType = "BBVA" | "BANAMEX" | "SANTANDER" | "SCOTIABANK"| "HSBC";
 
  @Entity()
  export class Tarjeta extends BaseEntity {
