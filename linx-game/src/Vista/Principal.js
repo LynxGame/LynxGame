@@ -1,18 +1,13 @@
 import React, { Component } from 'react'
 import {  Carousel, Row, Col , Avatar} from 'antd'
-import { Space, Card } from 'antd';
+import { Card } from 'antd';
 import { Button } from 'antd';
-import {Pay} from './Pay.js';
 import { Link } from 'react-router-dom';
-import {ViewGame} from './ViewGame.js';
 
 export class Principal extends Component {
     render() {
         return (
             <>
-                <div style={{ textAlign: 'center'}} >
-                    <h2>Juegos del Momento</h2>
-                </div>
                 <Carousel autoplay effect fade>
                  <div>
                      <img src='https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_Minecraft.jpg'></img>

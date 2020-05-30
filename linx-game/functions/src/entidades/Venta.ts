@@ -7,7 +7,7 @@ import {
     JoinColumn
 } from "typeorm";
 
-import { VideoJuegos } from "./Videojuegos";
+import { Videojuegos } from "./Videojuegos";
 import { Cliente } from "./Cliente";
 
 @Entity()
@@ -23,7 +23,7 @@ export class Venta extends BaseEntity {
     @Column({type:"date"})
     fecha: Date;
 
-    @OneToOne(type => VideoJuegos)
+    @OneToOne(type => Videojuegos)
     @JoinColumn()
-    VideoJuegos: VideoJuegos;
+    VideoJuegos: Videojuegos;
 }

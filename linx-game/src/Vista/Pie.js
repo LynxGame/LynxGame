@@ -3,7 +3,7 @@ import { Row, Col, Button, Avatar, Typography } from 'antd';
 import { FacebookFilled , YoutubeFilled, TwitterCircleFilled, InstagramFilled  ,GithubFilled, createFromIconfontCN } from '@ant-design/icons';
 
 const IconFont = createFromIconfontCN({scriptUrl:  '//at.alicdn.com/t/font_1842114_fpuw4z74sx.js'});
-const { Title, Text } = Typography;
+const { Text } = Typography;
 
 export class Pie extends Component {
     render() {

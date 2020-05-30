@@ -13,7 +13,7 @@ import { Precio } from "./Precio";
 import { Media } from "./Media";
 
 @Entity()
-export class VideoJuegos extends BaseEntity {
+export class Videojuegos extends BaseEntity {
    
    @PrimaryGeneratedColumn()
    id: number;
