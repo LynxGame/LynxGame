@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import * as firebase from 'firebase';
+import axios from 'axios';
 
 
 const LoginForm = () => {
@@ -14,10 +14,11 @@ const LoginForm = () => {
 
   const onFinish = values => {
     console.log('Finish:', values);
-    const login = firebase.functions().httpsCallable('getOnePersonal');
-    login({values}).then(result => {
-      console.log('API REST', result.data);
-    })
+    axios.post('https://us-central1-lynx-game.cloudfunctions.net/getOnePersonal',values).then(response => {
+      console.log(response)
+    }).catch(error => {
+      console.log(error)
+    });
   };
 
   return (
