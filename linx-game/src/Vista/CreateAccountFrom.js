@@ -5,25 +5,15 @@ import axios from 'axios';
 
 const CreateAccountForm = () => {
 
-  constructor(props); {
-    super(props);
-  
-    this.state = {
-       posts: []
-    }
-  }
 
-  componentDidMount(); {
     axios.get('https://us-central1-lynx-game.cloudfunctions.net/getAllPersonal')
     .then(response =>{
       console.log(response);
-      this.setState({
-        posts: response.data});
     })
     .catch(error =>{
       console.log(error);
     });
-  }
+  
   
   const [form] = Form.useForm();
   const [, forceUpdate] = useState(); // To disable submit button at the beginning.
