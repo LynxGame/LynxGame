@@ -7,7 +7,7 @@ import {
     JoinColumn
 } from "typeorm";
 
-import { VideoJuegos } from "./Videojuegos";
+import { Videojuegos } from "./Videojuegos";
 
 @Entity()
 export class Compra extends BaseEntity {
@@ -15,9 +15,9 @@ export class Compra extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @OneToOne(type => VideoJuegos)
+    @OneToOne(type => Videojuegos)
     @JoinColumn()
-    VideoJuegos: VideoJuegos;
+    VideoJuegos: Videojuegos;
 
     @Column({type:"date"})
     fecha: Date;

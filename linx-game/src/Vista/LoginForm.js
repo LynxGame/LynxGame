@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import * as firebase from 'firebase';
+
 
 const LoginForm = () => {
   const [form] = Form.useForm();
@@ -12,12 +14,16 @@ const LoginForm = () => {
 
   const onFinish = values => {
     console.log('Finish:', values);
+    const login = firebase.functions().httpsCallable('getOnePersonal');
+    login({values}).then(result => {
+      console.log('API REST', result.data);
+    })
   };
 
   return (
-    <Form form={form} name="horizontal_login" layout="horizontal" onFinish={onFinish}>
+    <Form form={form} name="horizontal" layout="horizontal" onFinish={onFinish}>
       <Form.Item
-        name="Nombre de Usuario"
+        name={['username']}
         rules={[
           {
             required: true,
@@ -28,7 +34,7 @@ const LoginForm = () => {
         <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Nombre de Usuario" />
       </Form.Item>
       <Form.Item
-        name="Contraseña"
+        name={['password']}
         rules={[
           {
             required: true,

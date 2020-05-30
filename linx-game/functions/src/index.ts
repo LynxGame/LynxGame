@@ -28,11 +28,32 @@ export const crearPersonal = functions.https.onRequest(async (request,response) 
     }
 })
 
-export const getPersonal = functions.https.onRequest(async (request,response) => {
+export const getAllPersonal = functions.https.onRequest(async (request,response) => {
     const connection = await connect();
     const repoPersonal = connection.getRepository(Personal);
 
     const allPersonal = await repoPersonal.find();
 
     response.send(allPersonal);
+})
+
+exports.getOnePersonal = functions.https.onRequest(async (request,response) => {
+
+    const { username , password } = request.body;
+
+    try {
+        const connection = await connect();
+        const repoOnePersonal = connection.getRepository(Personal);
+
+        const onePersonal = await repoOnePersonal.createQueryBuilder("personal")
+                                            .where("personal.apellidos = :apellidos", { apellidos : username })
+                                            .andWhere("personal.password = :password", { password : password})
+                                            .getOne();
+
+        response.send(onePersonal);
+
+    } catch (error) {
+        response.send(error);
+    }
+    //el Return debe ser todo el ObjetoPersonal
 })
