@@ -52,3 +52,23 @@ export class Cliente extends BaseEntity {
     ciudad: string;
 
 }
+
+/*
+@Trigger({
+    name: "DisparadorEdad",
+    fires: "before",
+    insert: true,
+    update: true
+})
+
+export class UserDateUpdater {
+
+    getSql() {
+        return `
+BEGIN
+	...
+END
+`;
+    }
+
+}*/
