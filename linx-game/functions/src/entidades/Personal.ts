@@ -17,7 +17,7 @@ export class Personal extends BaseEntity {
     @Column("varchar", { length: 25 })
     apellidos: string;
 
-    @Column({type:"int" , width: 10 })
+    @Column({type:"bigint" , width: 10 })
     telefono: number;
 
     @Column({type:'decimal', precision: 7, scale: 2, default: 0,})

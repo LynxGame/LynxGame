@@ -5,7 +5,7 @@ import { Personal } from './entidades/Personal';
 
 export const crearPersonal = functions.https.onRequest(async (request,response) => {
 
-    const { nombre, apellidos, telefono, salario, pass } = request.body;
+    const { nombre, apellidos, telefono, salario, password } = request.body;
 
     try {
         const connection = await connect();
@@ -17,7 +17,7 @@ export const crearPersonal = functions.https.onRequest(async (request,response) 
         nuevoUsuario.apellidos = apellidos;
         nuevoUsuario.telefono = telefono;
         nuevoUsuario.salario = salario;
-        nuevoUsuario.password = pass;
+        nuevoUsuario.password = password;
 
         const guardarUsuario = await repoUser.save(nuevoUsuario);
 
@@ -32,7 +32,6 @@ export const getPersonal = functions.https.onRequest(async (request,response) =>
     const connection = await connect();
     const repoPersonal = connection.getRepository(Personal);
 
-    // Get all rows
     const allPersonal = await repoPersonal.find();
 
     response.send(allPersonal);

@@ -7,7 +7,7 @@ import {
    JoinColumn
 } from "typeorm";
 
-import { Genero } from "./genero";
+import { Genero } from "./Genero";
 import { Desarrolladores } from "./Desarrolladores";
 import { Precio } from "./Precio";
 import { Media } from "./Media";

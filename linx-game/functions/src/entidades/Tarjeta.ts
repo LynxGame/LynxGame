@@ -27,7 +27,7 @@ import {
 
     @Column({
         type: "enum",
-        enum: ["BBVA", "BANAMEX", "SANTANDER", "SCOTIABANK", "SCOTIABANK"],
+        enum: ["BBVA", "BANAMEX", "SANTANDER", "SCOTIABANK", "HSBC"],
         /*default: ""*/
     })
     role: UserRoleType
