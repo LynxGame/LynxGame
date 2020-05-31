@@ -1,12 +1,6 @@
 import * as functions from 'firebase-functions';
 import { connect } from './config';
 import {Cliente} from './entidades/Cliente';
-import {Compra} from './entidades/Compra';
-import {Desarrolladores} from './entidades/Desarrolladores';
-import {Genero} from './entidades/Genero';
-import {Media} from './entidades/Media';
-import {Precio} from './entidades/Precio';
-import {Tarjeta} from './entidades/Tarjeta';
 import {Venta} from './entidades/Venta';
 import {Videojuegos} from './entidades/Videojuegos';
 import { Personal } from './entidades/Personal';
@@ -129,7 +123,7 @@ exports.getOneGame = functions.https.onRequest(async(request,response)=>{
 
 export const crearVenta = functions.https.onRequest(async(request,response)=>{
 
-    const { Cliente,fecha,VideoJuegos} = request.body;
+    const {cliente , fecha, videojuegos} = request.body;
 
     try{
         const connection=await connect();
@@ -137,8 +131,8 @@ export const crearVenta = functions.https.onRequest(async(request,response)=>{
         const repoVenta = connection.getRepository(Venta);
 
         const nuevoVenta = new Venta();
-        nuevoVenta.Cliente=Cliente;
-        nuevoVenta.VideoJuegos=VideoJuegos;
+        nuevoVenta.Cliente= cliente;
+        nuevoVenta.Videojuegos= videojuegos;
         nuevoVenta.fecha=fecha;
                 
         const guardarVenta = await repoVenta.save(nuevoVenta);
@@ -160,16 +154,16 @@ export const getAllVentas = functions.https.onRequest(async(request,response)=>{
 
 exports.getOneVenta = functions.https.onRequest(async(request,response)=>{
 
-    const { Cliente,fecha,VideoJuegos} = request.body;
+    const { fecha } = request.body;
 
     try {
         const connection = await connect();
         const repoOneVenta = connection.getRepository(Venta);
 
         const oneVenta = await repoOneVenta.createQueryBuilder("venta")
-                                    .where("venta.Cliente = :Cliente",{Cliente : Cliente})
+                                    .where("venta.Cliente = :Cliente",{cliente : Cliente})
                                     .andWhere("venta.fecha = :fecha",{fecha:fecha})
-                                    .andWhere("venta.VideoJuegos =:Videojuegos",{VideoJuegos:VideoJuegos})
+                                    .andWhere("venta.VideoJuegos =:Videojuegos",{videojuegos:Videojuegos})
                                     .getOne();
 
         response.send(oneVenta);
@@ -221,16 +215,16 @@ export const getAllCliente = functions.https.onRequest(async(request,response)=>
 
 exports.getOneVenta = functions.https.onRequest(async(request,response)=>{
 
-    const { Cliente,fecha,VideoJuegos} = request.body;
+    const {  fecha } = request.body;
 
     try {
         const connection = await connect();
         const repoOneVenta = connection.getRepository(Venta);
 
         const oneVenta = await repoOneVenta.createQueryBuilder("venta")
-                                    .where("venta.Cliente = :Cliente",{Cliente : Cliente})
+                                    .where("venta.Cliente = :Cliente",{cliente : Cliente})
                                     .andWhere("venta.fecha = :fecha",{fecha:fecha})
-                                    .andWhere("venta.VideoJuegos =:Videojuegos",{VideoJuegos:VideoJuegos})
+                                    .andWhere("venta.VideoJuegos =:Videojuegos",{videoJuegos:Videojuegos})
                                     .getOne();
 
         response.send(oneVenta);

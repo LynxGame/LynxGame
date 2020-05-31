@@ -25,5 +25,5 @@ export class Venta extends BaseEntity {
 
     @OneToOne(type => Videojuegos)
     @JoinColumn()
-    VideoJuegos: Videojuegos;
+    Videojuegos: Videojuegos;
 }
