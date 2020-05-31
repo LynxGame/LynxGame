@@ -4,9 +4,11 @@ import {
     Column, 
     BaseEntity,
     OneToOne,
-    JoinColumn
+    JoinColumn,
+    OneToMany
 } from "typeorm";
 import { Tarjeta } from './Tarjeta';
+import { Venta } from './Venta';
 
 @Entity()
 export class Cliente extends BaseEntity {
@@ -50,6 +52,9 @@ export class Cliente extends BaseEntity {
     @OneToOne(type => Tarjeta)
     @JoinColumn()
     Tarjeta: Tarjeta;
+
+    @OneToMany( type => Venta , venta => venta.id)
+    venta: Venta[];
 }
 
 /*

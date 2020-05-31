@@ -5,13 +5,15 @@ import {
    BaseEntity,
    OneToOne,
    JoinColumn,
-   ManyToOne
+   ManyToOne,
+   OneToMany
 } from "typeorm";
 
 import { Genero } from "./Genero";
 import { Desarrolladores } from "./Desarrolladores";
 import { Precio } from "./Precio";
 import { Media } from "./Media";
+import { Venta } from './Venta';
 
 @Entity()
 export class Videojuegos extends BaseEntity {
@@ -31,6 +33,9 @@ export class Videojuegos extends BaseEntity {
    @Column("varchar", { length: 2 })
    clasificion: string;
 
+   @Column({type:"int",  width: 3 })
+   licencias_disp: number;
+
    @ManyToOne(type => Genero, genero => genero.id)
    genero: Genero;
 
@@ -43,4 +48,7 @@ export class Videojuegos extends BaseEntity {
    @OneToOne(type => Media)
    @JoinColumn()
    Media: Media;
+
+   @OneToMany( type => Venta , venta => venta.id)
+    venta: Venta[];
 }

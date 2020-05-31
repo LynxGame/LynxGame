@@ -5,7 +5,7 @@ import {
     BaseEntity
  } from "typeorm";
 
- export type UserRoleType = "BBVA" | "BANAMEX" | "SANTANDER" | "SCOTIABANK"| "HSBC";
+ export type BancoType = "BBVA" | "BANAMEX" | "SANTANDER" | "SCOTIABANK"| "HSBC";
 
  @Entity()
  export class Tarjeta extends BaseEntity {
@@ -15,13 +15,12 @@ import {
 
     @Column({
         type: "enum",
-        enum: ["BBVA", "BANAMEX", "SANTANDER", "SCOTIABANK", "HSBC"],
-        length: 20
+        enum: ["BBVA", "BANAMEX", "SANTANDER", "SCOTIABANK", "HSBC"]
     })
-    banco: string;
+    banco: BancoType;
 
-    @Column({type:"int" , width: 16 })
-    numero: number;
+    @Column({type:"varchar" , width: 16 })
+    numero: string;
 
     @Column({type:"date"})
     fecha: Date;
