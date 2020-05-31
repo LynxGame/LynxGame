@@ -2,8 +2,10 @@ import {
     Entity,
     PrimaryGeneratedColumn, 
     Column, 
-    BaseEntity
+    BaseEntity,
+    OneToMany
  } from "typeorm";
+ import { Videojuegos } from "./Videojuegos";
 
  @Entity()
  export class Genero extends BaseEntity {
@@ -13,5 +15,8 @@ import {
 
     @Column("varchar", { length: 30 })
     nombre:  string;
+
+    @OneToMany(type => Videojuegos, videojuegos => videojuegos.id)
+    videojuegos: Videojuegos[];
     
  }

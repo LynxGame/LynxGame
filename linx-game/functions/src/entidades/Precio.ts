@@ -21,9 +21,9 @@ import { Videojuegos } from "./Videojuegos";
 
     @Column({type:'decimal', precision: 6, scale: 2, default: 0,})
     apartado: number;
-    
-    @OneToMany(type=>Videojuegos,videojuegos=>videojuegos.Precio)
-    videojuego: Videojuegos;
+
+    @OneToMany(type => Videojuegos, videojuegos => videojuegos.id)
+    videojuegos: Videojuegos[];
 }
 
  

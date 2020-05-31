@@ -13,7 +13,11 @@ import {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column("varchar", { length: 20 })
+    @Column({
+        type: "enum",
+        enum: ["BBVA", "BANAMEX", "SANTANDER", "SCOTIABANK", "HSBC"],
+        length: 20
+    })
     banco: string;
 
     @Column({type:"int" , width: 16 })
@@ -25,10 +29,4 @@ import {
     @Column({type:"int" , width: 3 })
     cvv: number;
 
-    @Column({
-        type: "enum",
-        enum: ["BBVA", "BANAMEX", "SANTANDER", "SCOTIABANK", "HSBC"],
-        /*default: ""*/
-    })
-    role: UserRoleType
  }

@@ -2,8 +2,10 @@ import {
     Entity,
     PrimaryGeneratedColumn, 
     Column, 
-    BaseEntity
+    BaseEntity,
+    OneToMany
  } from "typeorm";
+ import { Videojuegos } from "./Videojuegos";
 
  @Entity()
  export class Desarrolladores extends BaseEntity {
@@ -19,5 +21,8 @@ import {
 
     @Column("int")
     convenio: number;
+
+    @OneToMany(type => Videojuegos, videojuegos => videojuegos.id)
+    videojuegos: Videojuegos[];
     
  }

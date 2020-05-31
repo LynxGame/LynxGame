@@ -1,8 +1,5 @@
 import * as functions from 'firebase-functions';
 import { connect } from './config';
-import {Cliente} from './entidades/Cliente';
-import {Venta} from './entidades/Venta';
-import {Videojuegos} from './entidades/Videojuegos';
 import { Personal } from './entidades/Personal';
 
 export const crearPersonal = functions.https.onRequest(async (request,response) => {
@@ -62,6 +59,8 @@ exports.getOnePersonal = functions.https.onRequest(async (request,response) => {
     //el Return debe ser todo el ObjetoPersonal
 })
 
+{
+    /*
 export const crearVideojuego = functions.https.onRequest(async(request,response)=>{
 
     const { Genero , nombre , descripcion , Desarrolladores, fecha, clasificion,Precio} = request.body;
@@ -78,7 +77,7 @@ export const crearVideojuego = functions.https.onRequest(async(request,response)
         nuevoGame.Desarrolladores=Desarrolladores;
         nuevoGame.fecha=fecha;
         nuevoGame.clasificion=clasificion;
-        nuevoGame.Precio=Precio;
+        nuevoGame.precio=Precio;
 
         const guardarGame = await repoGame.save(nuevoGame);
 
@@ -215,7 +214,7 @@ export const getAllCliente = functions.https.onRequest(async(request,response)=>
 
 exports.getOneVenta = functions.https.onRequest(async(request,response)=>{
 
-    const {  fecha } = request.body;
+    const { fecha } = request.body;
 
     try {
         const connection = await connect();
@@ -232,3 +231,6 @@ exports.getOneVenta = functions.https.onRequest(async(request,response)=>{
         response.send(error)
     }
 })
+
+*/
+}

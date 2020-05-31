@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.2.1",
     "antd": "^4.2.5",
     "axios": "^0.19.2",
+    "express": "^4.17.1",
     "firebase": "^7.14.6",
     "firebase-admin": "^8.12.1",
     "firebase-app": "0.0.1",
