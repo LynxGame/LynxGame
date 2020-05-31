@@ -16,12 +16,12 @@ export class Venta extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number;
 
+    @Column({type:"date"})
+    fecha: Date;
+    
     @OneToOne(type => Cliente)
     @JoinColumn()
     Cliente: Cliente;
-
-    @Column({type:"date"})
-    fecha: Date;
 
     @OneToOne(type => Videojuegos)
     @JoinColumn()

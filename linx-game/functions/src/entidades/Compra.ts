@@ -15,13 +15,13 @@ export class Compra extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @OneToOne(type => Videojuegos)
-    @JoinColumn()
-    VideoJuegos: Videojuegos;
-
     @Column({type:"date"})
     fecha: Date;
 
     @Column({type:"int" , width: 3 })
     licencia: number;
+
+    @OneToOne(type => Videojuegos)
+    @JoinColumn()
+    VideoJuegos: Videojuegos;
 }
