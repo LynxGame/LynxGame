@@ -47,6 +47,7 @@ export const getAllPersonal = functions.https.onRequest(async (request,response)
 
 exports.getOnePersonal = functions.https.onRequest(async (request,response) => {
 
+    response.set('Access-Control-Allow-Origin', '*');
     const { username , password } = request.body;
 
     try {
@@ -63,6 +64,7 @@ exports.getOnePersonal = functions.https.onRequest(async (request,response) => {
     } catch (error) {
         response.send(error);
     }
+    
     //el Return debe ser todo el ObjetoPersonal
 })
 
