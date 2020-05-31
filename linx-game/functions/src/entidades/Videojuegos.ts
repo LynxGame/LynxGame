@@ -14,6 +14,7 @@ import { Desarrolladores } from "./Desarrolladores";
 import { Precio } from "./Precio";
 import { Media } from "./Media";
 import { Venta } from './Venta';
+import { Compra } from "./Compra";
 
 @Entity()
 export class Videojuegos extends BaseEntity {
@@ -50,5 +51,8 @@ export class Videojuegos extends BaseEntity {
    Media: Media;
 
    @OneToMany( type => Venta , venta => venta.id)
-    venta: Venta[];
+   venta: Venta[];
+
+   @OneToMany( type => Compra, compra => compra.id)
+   compra: Compra[];
 }

@@ -19,7 +19,7 @@ import {
     })
     banco: BancoType;
 
-    @Column({type:"varchar" , width: 16 })
+    @Column({type:"varchar" , length: 16 })
     numero: string;
 
     @Column({type:"date"})
