@@ -18,9 +18,7 @@ export class Videojuegos extends BaseEntity {
    @PrimaryGeneratedColumn()
    id: number;
 
-   @OneToOne(type => Genero)
-   @JoinColumn()
-   Genero: Genero;
+
 
    @Column("varchar", { length: 50 })
    nombre: string;
@@ -28,15 +26,19 @@ export class Videojuegos extends BaseEntity {
    @Column("varchar", { length: 250 })
    descripcion: string;
 
-   @OneToOne(type => Desarrolladores)
-   @JoinColumn()
-   Desarrolladores: Desarrolladores;
-
    @Column({type:"date"})
    fecha: Date;
 
    @Column("varchar", { length: 2 })
    clasificion: string;
+
+   @OneToOne(type => Genero)
+   @JoinColumn()
+   Genero: Genero;
+
+   @OneToOne(type => Desarrolladores)
+   @JoinColumn()
+   Desarrolladores: Desarrolladores;
 
    @OneToOne(type => Precio)
    @JoinColumn()

@@ -35,10 +35,6 @@ export class Cliente extends BaseEntity {
     @Column({type:'decimal', precision: 7, scale: 2, default: 0,})
     creditos: number;
 
-    @OneToOne(type => Tarjeta)
-    @JoinColumn()
-    Tarjeta: Tarjeta;
-
     @Column("varchar", { length: 30 })
     calle: string;
 
@@ -50,7 +46,10 @@ export class Cliente extends BaseEntity {
 
     @Column("varchar", { length: 20 })
     ciudad: string;
-
+    
+    @OneToOne(type => Tarjeta)
+    @JoinColumn()
+    Tarjeta: Tarjeta;
 }
 
 /*
