@@ -2,6 +2,7 @@ import * as functions from 'firebase-functions';
 import { connect } from './config';
 import { Personal } from './entidades/Personal';
 
+
 export const crearPersonal = functions.https.onRequest(async (request,response) => {
 
     const { nombre, apellidos, telefono, salario, password } = request.body;
