@@ -3,8 +3,7 @@ import {
     PrimaryGeneratedColumn, 
     Column, 
     BaseEntity,
-    OneToOne,
-    JoinColumn
+    ManyToOne,
 } from "typeorm";
 
 import { Videojuegos } from "./Videojuegos";
@@ -21,7 +20,6 @@ export class Compra extends BaseEntity {
     @Column({type:"int" , width: 3 })
     licencia: number;
 
-    @OneToOne(type => Videojuegos)
-    @JoinColumn()
-    VideoJuegos: Videojuegos;
+    @ManyToOne(type => Videojuegos, videojuegos => videojuegos.id)
+    videojuegos: Videojuegos;
 }
