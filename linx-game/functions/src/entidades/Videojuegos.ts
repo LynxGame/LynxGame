@@ -4,7 +4,8 @@ import {
    Column, 
    BaseEntity,
    OneToOne,
-   JoinColumn
+   JoinColumn,
+   ManyToOne
 } from "typeorm";
 
 import { Genero } from "./Genero";
@@ -40,8 +41,7 @@ export class Videojuegos extends BaseEntity {
    @JoinColumn()
    Desarrolladores: Desarrolladores;
 
-   @OneToOne(type => Precio)
-   @JoinColumn()
+   @ManyToOne(type => Precio,Precio=>Precio.id)
    Precio: Precio;
 
    @OneToOne(type => Media)
