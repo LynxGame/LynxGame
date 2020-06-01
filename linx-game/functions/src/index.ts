@@ -117,7 +117,7 @@ export const crearVideojuego = functions.https.onRequest(async(request,response)
 export const getAllGames = functions.https.onRequest(async(request,response)=>{
     const connection = await connect();
     const repoGame = connection.getRepository(Videojuegos).createQueryBuilder("videojuegos")
-    .innerJoinAndSelect("videojuegos.media","id")
+    .innerJoinAndSelect("videojuegos.Media","id")
 
     const allGames = await repoGame.getMany();
 
