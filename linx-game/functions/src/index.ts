@@ -226,11 +226,11 @@ exports.getOneCliente = functions.https.onRequest(async(request,response)=>{
 
     try {
         const connection = await connect();
-        const repoOneCliente = connection.getRepository(Venta);
+        const repoOneCliente = connection.getRepository(Cliente);
 
         const oneCliente = await repoOneCliente.createQueryBuilder("cliente")
                                     .where("cliente.username = :username",{username:username})
-                                    .andWhere("cliente.passworxd = :password",{password:password})
+                                    .andWhere("cliente.password = :password",{password:password})
                                     .getOne();
 
         response.send(oneCliente);
