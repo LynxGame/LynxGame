@@ -169,8 +169,8 @@ export const crearVenta = functions.https.onRequest(async(request,response)=>{
 export const getAllVentas = functions.https.onRequest(async(request,response)=>{
     const connection = await connect();
     const repoVenta = connection.getRepository(Venta).createQueryBuilder("venta")
-    .innerJoinAndSelect("venta.Cliente","cliente")
-    .innerJoinAndSelect("venta.Videojuegos","videojuegos")
+    .innerJoinAndSelect("venta.Cliente","id")
+    .innerJoinAndSelect("venta.Videojuegos","id")
     
     const allVenta = await repoVenta.getMany();
 
