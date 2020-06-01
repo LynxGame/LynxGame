@@ -19,12 +19,13 @@ axios.get('https://us-central1-lynx-game.cloudfunctions.net/getAllGames').then(r
 
     med = cod.Media.baner1;
     console.log(med) 
-
+    return med;
 }).catch(error => {
     console.log(error)
   });
 
 export class Principal extends Component {
+    
     render() {
         return (
             <>
