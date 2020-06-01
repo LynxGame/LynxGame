@@ -17,8 +17,8 @@ const LoginForm = () => {
     console.log('Finish:', values);
     axios.post('https://us-central1-lynx-game.cloudfunctions.net/getOnePersonal',values).then(response => {
       //console.log(response)
-      var x = new Object(response.data);
-      console.log(x.nombre)
+      var Personal = new Object(response.data);
+      console.log(Personal)
     }).catch(error => {
       console.log(error)
     });

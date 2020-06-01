@@ -5,11 +5,22 @@ import { Button } from 'antd';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+var videojuegos=null;
+var cod=null,med=null,ban=null;
+
+
 axios.get('https://us-central1-lynx-game.cloudfunctions.net/getAllGames').then(response => {
     //console.log(response)
-    var videojuego = new Object(response.data);
-    console.log(videojuego)
-  }).catch(error => {
+    videojuegos = response.data;
+    console.log(videojuegos)
+
+    cod = videojuegos[10];
+    console.log(cod)  
+
+    med = cod.Media.baner1;
+    console.log(med) 
+
+}).catch(error => {
     console.log(error)
   });
 
@@ -19,7 +30,7 @@ export class Principal extends Component {
             <>
                 <Carousel autoplay effect fade>
                  <div>
-                     <img src='https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_Minecraft.jpg'></img>
+                     <img src={"med"}></img>
                  </div>
                  <div>
                  <img src='https://generacionxbox.com/wp-content/uploads/2016/11/rainbow-six-siege-expansiones-generacion-xbox-940x529.jpg.webp'></img>
