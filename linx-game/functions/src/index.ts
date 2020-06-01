@@ -239,7 +239,7 @@ export const getAllCliente = functions.https.onRequest(async(request,response)=>
 
 exports.getOneCliente = functions.https.onRequest(async(request,response)=>{
 
-    const { username } = request.body;
+    const { username , password } = request.body;
 
     try {
         const connection = await connect();
@@ -247,6 +247,7 @@ exports.getOneCliente = functions.https.onRequest(async(request,response)=>{
 
         const oneCliente = await repoOneCliente.createQueryBuilder("cliente")
                                     .where("cliente.username =:",{username:username})
+                                    .andWhere("cliente.password =:",{password:password})
                                     .getOne();
 
         response.send(oneCliente);
