@@ -31,7 +31,7 @@ export class Principal extends Component {
             <>
                 <Carousel autoplay effect fade>
                  <div>
-                     <img src={"med"}></img>
+                     <img src={`${med}`}></img>
                  </div>
                  <div>
                  <img src='https://generacionxbox.com/wp-content/uploads/2016/11/rainbow-six-siege-expansiones-generacion-xbox-940x529.jpg.webp'></img>
