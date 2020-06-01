@@ -4,10 +4,10 @@ import { Card } from 'antd';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { getFieldId } from 'antd/lib/form/util';
 
 var videojuegos=null;
-var cod=null,med=null,ban=null;
-
+var cod=null,med=null,ban=null,med2=null,med3=null;
 
 axios.get('https://us-central1-lynx-game.cloudfunctions.net/getAllGames').then(response => {
     //console.log(response)
@@ -19,19 +19,28 @@ axios.get('https://us-central1-lynx-game.cloudfunctions.net/getAllGames').then(r
 
     med = cod.Media.baner1;
     console.log(med) 
-    return med;
+    med2 = cod.Media.preview;
+    console.log(med2) 
+    med3 = cod.nombre;
+    console.log(med3) 
+
+    return med3;
 }).catch(error => {
     console.log(error)
   });
 
+
 export class Principal extends Component {
     
     render() {
+
+
+          
         return (
             <>
                 <Carousel autoplay effect fade>
                  <div>
-                     <img src={`${med}`}></img>
+                     <img src={`${med2}`}></img>
                  </div>
                  <div>
                  <img src='https://generacionxbox.com/wp-content/uploads/2016/11/rainbow-six-siege-expansiones-generacion-xbox-940x529.jpg.webp'></img>
@@ -45,7 +54,7 @@ export class Principal extends Component {
                  </Carousel>
                 <Row gutter={[24, 24]} justify="space-between">
                     <Col span={5} offset={2}>
-                        <Card title="BORDERLANDS 3" style={{ width: 270 }}>
+                        <Card title={`${med3}`} style={{ width: 270 }}>
                         <Avatar shape='square' style={{ 
                         background: 'none'
                         }} src='https://i.blogs.es/a8e05e/bor1/1366_2000.jpg' size={220}/>

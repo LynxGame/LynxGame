@@ -52,6 +52,23 @@ const LoginForm = () => {
           placeholder="Contraseña"
         />
       </Form.Item>
+//
+      <Form.Item
+        name={['id']}
+        rules={[
+          {
+            required: true,
+            message: 'Por favor ingresa tu codigo de seguridad!',
+          },
+        ]}
+      >
+        <Input
+          prefix={<LockOutlined className="site-form-item-icon" />}
+          type="password"
+          placeholder="codigo de seguridad"
+        />
+      </Form.Item>
+//
       <Form.Item shouldUpdate>
         {() => (
           <Button
