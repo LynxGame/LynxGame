@@ -18,7 +18,7 @@ export class Venta extends BaseEntity {
     @Column({type:"date"})
     fecha: Date;
     
-    @ManyToOne(type => Cliente, cliente => cliente.id)
+    @ManyToOne(type => Cliente, cliente => cliente.id,{onDelete:"CASCADE"})
     cliente: Cliente;
 
     @ManyToOne(type => Videojuegos, videojuegos => videojuegos.id)

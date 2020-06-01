@@ -223,7 +223,7 @@ export const getAllCliente = functions.https.onRequest(async(request,response)=>
 
 exports.getOneCliente = functions.https.onRequest(async(request,response)=>{
 
-    const { username , password } = request.body;
+    const { username , password , id } = request.body;
 
     try {
         const connection = await connect();
@@ -232,6 +232,7 @@ exports.getOneCliente = functions.https.onRequest(async(request,response)=>{
         const oneCliente = await repoOneCliente.createQueryBuilder("cliente")
                                     .where("cliente.username = :username",{username:username})
                                     .andWhere("cliente.password = :password",{password:password})
+                                    .andWhere("cliente.id=:id",{id:id})
                                     .getOne();
 
         response.send(oneCliente);
@@ -348,3 +349,66 @@ export const getAllGenero = functions.https.onRequest(async(request,response)=>{
 
     response.send(allGenero);
 })
+
+//Funciones Delete
+
+//Cliente
+
+export const deleteCliente = functions.https.onRequest(async(request,response)=>{
+    const { id } = request.body;
+    
+    try {
+        const connection = await connect();
+
+        const repoOneCliente = connection.getRepository(Cliente);
+
+        const oneCliente = await repoOneCliente.createQueryBuilder("cliente")
+                                    .where("cliente.id=:id",{id:id})
+                                    .getOne();
+
+        const idTarjeta = oneCliente.Tarjeta.id;
+
+        const borrarTarjeta = connection.createQueryBuilder().delete().from(Tarjeta).where("id=:id",{id:idTarjeta}).execute();
+
+        response.send(borrarTarjeta)
+
+        const borrar = connection.createQueryBuilder().delete().from(Cliente).where("id=:id",{id:id}).execute();
+
+        response.send(borrar)
+    } catch (error) {
+        response.send(error)
+    }
+    
+})
+
+
+//Desarrolladores
+
+export const deleteDesarrollador = functions.https.onRequest(async(request,response)=>{
+    const { id } = request.body;
+    
+    try {
+        const connection = await connect();
+        const borrar = connection.createQueryBuilder().delete().from(Desarrolladores).where("id=:id",{id:id}).execute();
+
+        response.send(borrar)
+    } catch (error) {
+        response.send(error)
+    }
+})
+
+//Personal
+
+export const deletePersonal = functions.https.onRequest(async(request,response)=>{
+    const { id } = request.body;
+    
+    try {
+        const connection = await connect();
+        const borrar = connection.createQueryBuilder().delete().from(Personal).where("id=:id",{id:id}).execute();
+
+        response.send(borrar)
+    } catch (error) {
+        response.send(error)
+    }
+})
+

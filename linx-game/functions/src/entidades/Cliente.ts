@@ -53,7 +53,7 @@ export class Cliente extends BaseEntity {
     @JoinColumn()
     Tarjeta: Tarjeta;
 
-    @OneToMany( type => Venta , venta => venta.id)
+    @OneToMany( type => Venta , venta => venta.id,{cascade:true})
     venta: Venta[];
 }
 
