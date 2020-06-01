@@ -3,6 +3,15 @@ import {  Carousel, Row, Col , Avatar} from 'antd'
 import { Card } from 'antd';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+
+axios.get('https://us-central1-lynx-game.cloudfunctions.net/getAllGames').then(response => {
+    //console.log(response)
+    var videojuego = new Object(response.data);
+    console.log(videojuego)
+  }).catch(error => {
+    console.log(error)
+  });
 
 export class Principal extends Component {
     render() {

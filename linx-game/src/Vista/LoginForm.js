@@ -12,10 +12,13 @@ const LoginForm = () => {
     forceUpdate({});
   }, []);
 
+  //Consumo API
   const onFinish = values => {
     console.log('Finish:', values);
     axios.post('https://us-central1-lynx-game.cloudfunctions.net/getOnePersonal',values).then(response => {
-      console.log(response)
+      //console.log(response)
+      var x = new Object(response.data);
+      console.log(x.nombre)
     }).catch(error => {
       console.log(error)
     });
