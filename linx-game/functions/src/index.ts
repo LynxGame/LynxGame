@@ -128,7 +128,7 @@ export const getAllGames = functions.https.onRequest(async(request,response)=>{
 
 exports.getOneGame = functions.https.onRequest(async(request,response)=>{
 
-    const { nombre , descripcion , fecha, clasificion,licencias_disp,genero,desarrolladores,precio,media,venta,compra} = request.body;
+    const { nombre , descripcion , fecha, clasificion,licencias_disp,desarrolladores} = request.body;
 
     try {
         const connection = await connect();
@@ -253,7 +253,7 @@ export const getAllCliente = functions.https.onRequest(async(request,response)=>
 
 exports.getOneCliente = functions.https.onRequest(async(request,response)=>{
 
-    const { nombre,apellidos,username,email,edad,password,creditos,tarjeta,calle,cp,numero,ciudad,venta} = request.body;
+    const { nombre,apellidos,username,email,edad,password,creditos,calle,cp,numero,ciudad} = request.body;
 
     try {
         const connection = await connect();
