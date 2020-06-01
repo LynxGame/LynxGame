@@ -49,11 +49,11 @@ export class Cliente extends BaseEntity {
     @Column("varchar", { length: 20 })
     ciudad: string;
     
-    @OneToOne(type => Tarjeta,{onDelete :"CASCADE"})
+    @OneToOne(type => Tarjeta)
     @JoinColumn()
     Tarjeta: Tarjeta;
 
-    @OneToMany( type => Venta , venta => venta.id)
+    @OneToMany( type => Venta , venta => venta.id,{cascade:true})
     venta: Venta[];
 }
 
