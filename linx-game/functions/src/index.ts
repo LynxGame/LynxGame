@@ -211,9 +211,11 @@ export const crearCliente = functions.https.onRequest(async(request,response)=>{
 
 export const getAllCliente = functions.https.onRequest(async(request,response)=>{
     const connection = await connect();
-    const repoCliente = connection.getRepository(Cliente);
+    const repoCliente = connection.getRepository(Cliente)
+    .createQueryBuilder("cliente")
+    .innerJoinAndSelect("cliente.Tarjeta","id")
 
-    const allCliente = await repoCliente.find();
+    const allCliente = await repoCliente.getMany();
 
     response.send(allCliente);
 })
