@@ -246,8 +246,8 @@ exports.getOneCliente = functions.https.onRequest(async(request,response)=>{
         const repoOneCliente = connection.getRepository(Venta);
 
         const oneCliente = await repoOneCliente.createQueryBuilder("cliente")
-                                    .where("cliente.username =:",{username:username})
-                                    .andWhere("cliente.password =:",{password:password})
+                                    .where("cliente.username =: username",{username:username})
+                                    .andWhere("cliente.password =: password",{password:password})
                                     .getOne();
 
         response.send(oneCliente);
