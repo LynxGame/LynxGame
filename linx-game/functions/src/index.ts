@@ -169,8 +169,8 @@ export const crearVenta = functions.https.onRequest(async(request,response)=>{
 export const getAllVentas = functions.https.onRequest(async(request,response)=>{
     const connection = await connect();
     const repoVenta = connection.getRepository(Venta).createQueryBuilder("venta")
-    .innerJoinAndSelect("venta.cliente","id")
-    .innerJoinAndSelect("venta.videojuegos","id")
+    .innerJoinAndSelect("venta.Cliente","id")
+    .innerJoinAndSelect("venta.Videojuegos","id")
     
     const allVenta = await repoVenta.getMany();
 
@@ -275,7 +275,7 @@ exports.getOneTarjeta = functions.https.onRequest(async(request,response)=>{
 
 
         const oneTarjeta = await connection.getRepository(Cliente).createQueryBuilder("cliente")
-            .innerJoinAndSelect("cliente.tarjetaId","tarjeta").where("user.id = :id", { id: idCliente })
+            .innerJoinAndSelect("cliente.Tarjeta","id").where("user.id = :id", { id: idCliente })
             .getOne();
 
         response.send(oneTarjeta);
