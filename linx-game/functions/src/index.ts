@@ -167,33 +167,14 @@ export const crearVenta = functions.https.onRequest(async(request,response)=>{
 
 export const getAllVentas = functions.https.onRequest(async(request,response)=>{
     const connection = await connect();
-    const repoVenta = connection.getRepository(Venta);
-
-    const allVenta = await repoVenta.find();
+    const repoVenta = connection.getRepository(Venta).createQueryBuilder("venta")
+    .innerJoinAndSelect("venta.cliente","id")
+    .innerJoinAndSelect("venta.videojuegos","id")
+    
+    const allVenta = await repoVenta.getMany();
 
     response.send(allVenta);
 })
-
-exports.getOneVenta = functions.https.onRequest(async(request,response)=>{
-
-    const { fecha } = request.body;
-
-    try {
-        const connection = await connect();
-        const repoOneVenta = connection.getRepository(Venta);
-
-        const oneVenta = await repoOneVenta.createQueryBuilder("venta")
-                                    .where("venta.fecha = :fecha",{fecha:fecha})                            
-                                    .andWhere("venta.cliente = :cliente",{cliente : Cliente})
-                                    .andWhere("venta.VideoJuegos =:Videojuegos",{videojuegos:Videojuegos})
-                                    .getOne();
-
-        response.send(oneVenta);
-    } catch (error) {
-        response.send(error)
-    }
-})
-
 
 //Cambiar Cliente
 export const crearCliente = functions.https.onRequest(async(request,response)=>{
@@ -291,7 +272,7 @@ exports.getOneTarjeta = functions.https.onRequest(async(request,response)=>{
 
 
         const oneTarjeta = await connection.getRepository(Cliente).createQueryBuilder("cliente")
-            .innerJoin("cliente.tarjetaId","tarjeta").where("cliente.id = :id", { id: idCliente })
+            .innerJoinAndSelect("cliente.tarjetaId","tarjeta").where("user.id = :id", { id: idCliente })
             .getOne();
 
         response.send(oneTarjeta);
