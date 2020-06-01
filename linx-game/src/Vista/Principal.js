@@ -3,22 +3,29 @@ import {  Carousel, Row, Col , Avatar} from 'antd'
 import { Card } from 'antd';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
-import { getFieldId } from 'antd/lib/form/util';
 
+var i=0;
 export class Principal extends Component {
 
     state = {
         loading: false,
-        videojuego: null
+        videojuego:{    
+            nombre: null,
+            descripcion: null,
+            Media:{
+                baner1: null,
+                baner2: null,
+                baner3: null,
+                preview: null
+            }
+        }
     }
 
     async componentDidMount() {
         const  url="https://us-central1-lynx-game.cloudfunctions.net/getAllGames";
         const response = await fetch(url);
         const data = await response.json();
-        this.setState({videojuego: data[1], loading: false});
-        console.log(data[1])
+        this.setState({videojuego: data[i], loading: false});
     }
     
     render() {  
@@ -27,38 +34,34 @@ export class Principal extends Component {
             <div>
             </div>
                 <Carousel autoplay effect fade>
-                 <div>
-                    <img src="asdasd"></img>
+                 <div> 
+                    <img src={this.state.videojuego.Media.baner1}></img>
                  </div>
                  <div>
-                 <img src='https://generacionxbox.com/wp-content/uploads/2016/11/rainbow-six-siege-expansiones-generacion-xbox-940x529.jpg.webp'></img>
+                 <img src={this.state.videojuego.Media.baner2}></img>
                  </div>
                  <div>
-                     <img src='https://areajugones.sport.es/wp-content/uploads/2019/07/borderlands-3-normal-hero-01-ps4-us-02apr19.jpg.webp'></img>
+                     <img src={this.state.videojuego.Media.baner3}></img>
                  </div>
                  <div>
-                    <img src='https://media.vandal.net/i/1200x630/4-2020/2020471014495_1.jpg'></img>
+                    <img src={this.state.videojuego.Media.baner1}></img>
                  </div>
                  </Carousel>
                 <Row gutter={[24, 24]} justify="space-between">
                     <Col span={5} offset={2}>
-                        <Card title="ssadas" style={{ width: 270 }}>
+                        <Card title={this.state.videojuego.nombre} style={{ width: 270 }}>
                         <Avatar shape='square' style={{ 
                         background: 'none'
-                        }} src='https://i.blogs.es/a8e05e/bor1/1366_2000.jpg' size={220}/>
-                            <p>Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego</p>
+                        }} src={this.state.videojuego.Media.preview} size={220}/>
+                            <p>{this.state.videojuego.descripcion}</p>
                             
                             <Link to="/ViewGame">
-                            <Button type="primary" key="ViewGame">View</Button>
+                            <Button  type="primary" key="ViewGame">View</Button>
                             </Link>
-
+                    
                             <Link to="/Pay">
                             <Button type="dashed" key="pay">Buy $70USD</Button>
                             </Link>
-
                         
                         </Card>    
                     </Col>
