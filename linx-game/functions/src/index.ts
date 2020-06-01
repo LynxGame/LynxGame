@@ -13,6 +13,7 @@ import { Desarrolladores } from './entidades/Desarrolladores';
 
 //Personal
 
+
 export const crearPersonal = functions.https.onRequest(async (request,response) => {
 
     const { nombre, apellidos, telefono, salario, password } = request.body;
