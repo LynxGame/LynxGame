@@ -49,7 +49,7 @@ export class Cliente extends BaseEntity {
     @Column("varchar", { length: 20 })
     ciudad: string;
     
-    @OneToOne(type => Tarjeta)
+    @OneToOne(type => Tarjeta,{onDelete :"CASCADE"})
     @JoinColumn()
     Tarjeta: Tarjeta;
 
