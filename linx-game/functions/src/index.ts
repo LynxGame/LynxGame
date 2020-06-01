@@ -3,14 +3,12 @@ import { connect } from './config';
 import { Personal } from './entidades/Personal';
 import { Videojuegos} from './entidades/Videojuegos';
 import { Genero } from './entidades/Genero';
-import { Precio } from './entidades/Precio';
 import { Media } from './entidades/Media';
 import { Venta } from './entidades/Venta';
 import { Cliente } from './entidades/Cliente';
 import { Compra } from './entidades/Compra';
 import { Tarjeta } from './entidades/Tarjeta';
 import { Desarrolladores } from './entidades/Desarrolladores';
-import { QueryBuilder } from 'typeorm';
 
 //Personal
 
@@ -275,7 +273,7 @@ export const crearTarjeta = functions.https.onRequest(async(request,response)=>{
                 
         const guardarTarjeta = await repoTarjeta.save(nuevoTarjeta);
 
-        
+
 
         response.send(guardarTarjeta);
     }catch(error){
