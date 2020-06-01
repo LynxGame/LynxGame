@@ -6,41 +6,29 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { getFieldId } from 'antd/lib/form/util';
 
-var videojuegos=null;
-var cod=null,med=null,ban=null,med2=null,med3=null;
-
-axios.get('https://us-central1-lynx-game.cloudfunctions.net/getAllGames').then(response => {
-    //console.log(response)
-    videojuegos = response.data;
-    console.log(videojuegos)
-
-    cod = videojuegos[10];
-    console.log(cod)  
-
-    med = cod.Media.baner1;
-    console.log(med) 
-    med2 = cod.Media.preview;
-    console.log(med2) 
-    med3 = cod.nombre;
-    console.log(med3) 
-
-    return med3;
-}).catch(error => {
-    console.log(error)
-  });
-
-
 export class Principal extends Component {
+
+    state = {
+        loading: false,
+        videojuego: null
+    }
+
+    async componentDidMount() {
+        const  url="https://us-central1-lynx-game.cloudfunctions.net/getAllGames";
+        const response = await fetch(url);
+        const data = await response.json();
+        this.setState({videojuego: data[1], loading: false});
+        console.log(data[1])
+    }
     
-    render() {
-
-
-          
+    render() {  
         return (
             <>
+            <div>
+            </div>
                 <Carousel autoplay effect fade>
                  <div>
-                     <img src={`${med2}`}></img>
+                    <img src="asdasd"></img>
                  </div>
                  <div>
                  <img src='https://generacionxbox.com/wp-content/uploads/2016/11/rainbow-six-siege-expansiones-generacion-xbox-940x529.jpg.webp'></img>
@@ -54,7 +42,7 @@ export class Principal extends Component {
                  </Carousel>
                 <Row gutter={[24, 24]} justify="space-between">
                     <Col span={5} offset={2}>
-                        <Card title={`${med3}`} style={{ width: 270 }}>
+                        <Card title="ssadas" style={{ width: 270 }}>
                         <Avatar shape='square' style={{ 
                         background: 'none'
                         }} src='https://i.blogs.es/a8e05e/bor1/1366_2000.jpg' size={220}/>
