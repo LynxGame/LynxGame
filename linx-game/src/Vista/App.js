@@ -11,6 +11,7 @@ import Pay from './Pay';
 import {ViewGame} from './ViewGame.js';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
  import {Carousel} from 'react-responsive-carousel'
+ import ToolbarAdmin from './ToolbarAdmin';
 
 const { Header, Footer, Content } = Layout;
 
@@ -18,7 +19,7 @@ const { Header, Footer, Content } = Layout;
 function App() {
   return (
     <Layout>
-      <Header style={{padding:"0rem 0rem", position: 'sticky', zIndex:1,  top: "0" }}><Toolbar/></Header>
+      <Header style={{padding:"0rem 0rem", position: 'sticky', zIndex:1,  top: "0" }}><ToolbarAdmin/></Header>
       <Layout>
         <Content style={{height:'auto', alignContent:'center'}}>
             <Route exact path="/" component={Principal} />
