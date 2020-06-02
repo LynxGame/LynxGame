@@ -16,7 +16,7 @@ const data = [
       Calle: 'Tiro al Pichon',
       CP: 2020,
       Numero: 20,
-      Ciudad: Doofania,
+      Ciudad: 'Doofania',
       ID_tarjeta: 1
     }
   ];
