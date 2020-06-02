@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Form,Input,Button,Radio,Select,Cascader,DatePicker,InputNumber,TreeSelect,Switch,} from 'antd';
   
-export class Compra extends Component {
+export class Pay extends Component {
     render() {
     return (
       <div>
