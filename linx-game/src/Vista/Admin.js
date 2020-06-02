@@ -17,6 +17,7 @@ export class Admin extends Component {
                     <Layout>
                         <Content style={{height:'auto', alignContent:'center'}}>
                             <Route exact path="/" component={Compra} />
+                            <Route path="/Compra" component={Compra} />
                             <Route path="/EditGames" component={EditGames} />
                             <Route path="/EditClient" component={EditClient}/>
                         </Content>
