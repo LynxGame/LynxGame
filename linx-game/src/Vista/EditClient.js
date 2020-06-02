@@ -5,56 +5,42 @@ const { Column, ColumnGroup } = Table;
 
 const data = [
     {
-      key: '1',
-      firstName: 'John',
-      lastName: 'Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
-      tags: ['nice', 'developer'],
-    },
-    {
-      key: '2',
-      firstName: 'Jim',
-      lastName: 'Green',
-      age: 42,
-      address: 'London No. 1 Lake Park',
-      tags: ['loser'],
-    },
-    {
-      key: '3',
-      firstName: 'Joe',
-      lastName: 'Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      tags: ['cool', 'teacher'],
-    },
+      Id_cliente: '1',
+      Nombre: 'Eduardo',
+      Apellido: 'Tuculo',
+      Username: 'Eduardin_12',
+      Email: 'eduardin_12@yahoo.com.mx',
+      Edad: 32,
+      Password: 'AngelAlberto:v',
+      Creditos: 0,
+      Calle: 'Tiro al Pichon',
+      CP: 2020,
+      Numero: 20,
+      Ciudad: Doofania,
+      ID_tarjeta: 1
+    }
   ];
 
-class componentName extends Component {
+class EditClient extends Component {
   render() {
     return (
       <>
          <Table dataSource={data}>
+    <Column title="Id_cliente" dataIndex="Id_cliente" key="Id_cliente" />
     <ColumnGroup title="Name">
-      <Column title="First Name" dataIndex="firstName" key="firstName" />
-      <Column title="Last Name" dataIndex="lastName" key="lastName" />
+      <Column title="Nombre" dataIndex="Nombre" key="Nombre" />
+      <Column title="Apellido" dataIndex="Apellido" key="Apellido" />
     </ColumnGroup>
-    <Column title="Age" dataIndex="age" key="age" />
-    <Column title="Address" dataIndex="address" key="address" />
-    <Column
-      title="Tags"
-      dataIndex="tags"
-      key="tags"
-      render={tags => (
-        <>
-          {tags.map(tag => (
-            <Tag color="blue" key={tag}>
-              {tag}
-            </Tag>
-          ))}
-        </>
-      )}
-    />
+    <Column title="Username" dataIndex="Username" key="Username"/>
+    <Column title="Email" dataIndex="Email" key="Email"/>
+    <Column title="Edad" dataIndex="Edad" key="Edad" />
+    <Column title="Password" dataIndex="Password" key="Password"/>
+    <Column title="Creditos" dataIndex="Creditos" key="Creditos"/>
+    <Column title="Calle" dataIndex="Calle" key="Calle"/>
+    <Column title="CP" dataIndex="CP" key="CP"/>
+    <Column title="Numero" dataIndex="Numero" key="Numero"/>
+    <Column title="Ciudad" dataIndex="Ciudad" key="Ciudad"/>
+    <Column title="ID_tarjeta" dataIndex="ID_tarjeta" key="ID_tarjeta"/>
     <Column
       title="Action"
       key="action"
@@ -71,4 +57,4 @@ class componentName extends Component {
   }
 }
 
-export default componentName
+export default EditClient
