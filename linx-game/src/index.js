@@ -8,8 +8,8 @@ import Admin from './Vista/Admin';
 
 ReactDOM.render(
   <Router>
-    <Route path="/" component={App} />
-    <Route path="/Vista/Admin" component={Admin} />
+    //Route path="/" component={App} />
+    <Route path="/" component={Admin} />
   </Router>,
   document.getElementById('root')
 );

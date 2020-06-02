@@ -3,10 +3,11 @@ import {  Carousel, Row, Col , Avatar} from 'antd'
 import { Card } from 'antd';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
-
-var i=0;
+import { Typography, Divider } from 'antd';
+const { Title, Paragraph, Text } = Typography;
+var i=20;
 export class Principal extends Component {
-
+    
     state = {
         loading: false,
         videojuego:{    
@@ -26,9 +27,11 @@ export class Principal extends Component {
         const response = await fetch(url);
         const data = await response.json();
         this.setState({videojuego: data[i], loading: false});
+        console.log(data[i]);
     }
     
     render() {  
+
         return (
             <>
             <div>
@@ -61,6 +64,7 @@ export class Principal extends Component {
                     
                             <Link to="/Pay">
                             <Button type="dashed" key="pay">Buy $70USD</Button>
+                            <Text delete>$50USD</Text>
                             </Link>
                         
                         </Card>    
