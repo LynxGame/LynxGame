@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import LoginForm from './LoginForm';
 import CreateAccountForm from './CreateAccountFrom';
 import Compra from './Compra';
+import Adminprofile from './Adminprofile';
 
 const { Search } = Input;
 const { SubMenu } =  Menu;
