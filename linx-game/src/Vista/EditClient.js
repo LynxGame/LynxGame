@@ -24,6 +24,7 @@ const data = [
     }
   ];
 
+
 class EditClient extends Component {
 
     state = {
