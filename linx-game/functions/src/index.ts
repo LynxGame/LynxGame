@@ -352,6 +352,24 @@ export const getAllGenero = functions.https.onRequest(async(request,response)=>{
 
 //Funciones Delete
 
+//Tarjeta
+
+export const deleteTarjetaCliente = functions.https.onRequest(async(request,response)=>{
+    const { id } = request.body;
+    
+    try {
+        const connection = await connect();
+
+        const borrar = connection.createQueryBuilder().delete().from(Tarjeta).where("id=:id",{id:id}).execute();
+
+        response.send(borrar)
+
+    } catch (error) {
+        response.send(error)
+    }
+    
+})
+
 //Cliente
 
 export const deleteCliente = functions.https.onRequest(async(request,response)=>{
@@ -359,18 +377,6 @@ export const deleteCliente = functions.https.onRequest(async(request,response)=>
     
     try {
         const connection = await connect();
-
-        const repoOneCliente = connection.getRepository(Cliente);
-
-        const oneCliente = await repoOneCliente.createQueryBuilder("cliente")
-                                    .where("cliente.id=:id",{id:id})
-                                    .getOne();
-
-        const idTarjeta = oneCliente.Tarjeta.id;
-
-        const borrarTarjeta = connection.createQueryBuilder().delete().from(Tarjeta).where("id=:id",{id:idTarjeta}).execute();
-
-        response.send(borrarTarjeta)
 
         const borrar = connection.createQueryBuilder().delete().from(Cliente).where("id=:id",{id:id}).execute();
 
@@ -412,3 +418,72 @@ export const deletePersonal = functions.https.onRequest(async(request,response)=
     }
 })
 
+//Updates
+
+//Videojuegos
+
+export const updateVideojuegos = functions.https.onRequest(async(request,response)=>{
+    const { idprecio , id, num_lic} = request.body;
+    
+    try {
+        const connection = await connect();
+        const update = connection.createQueryBuilder().update(Videojuegos).set({precio: idprecio,licencias_disp: num_lic})
+        .where("id=:id",{id:id}).execute();
+
+        response.send(update)
+    } catch (error) {
+        response.send(error)
+    }
+})
+
+
+//Cliente
+
+export const updateCliente = functions.https.onRequest(async(request,response)=>{
+    const { id ,nombre,apellidos,username,email,edad,password,calle,cp,numero,ciudad} = request.body;
+
+    try {
+        const connection = await connect();
+        const update = connection.createQueryBuilder().update(Cliente)
+        .set({nombre:nombre,apellidos:apellidos,username:username,email:email,edad:edad,password:password,calle:calle,cp:cp,numero:numero,ciudad:ciudad})
+        .where("id=:id",{id:id}).execute();
+
+        response.send(update)
+    } catch (error) {
+        response.send(error)
+    }
+})
+
+//Tarjeta
+
+export const updateTarjeta = functions.https.onRequest(async(request,response)=>{
+    const { id ,banco , numero, fecha , cvv } = request.body;
+
+    try {
+        const connection = await connect();
+        const update = connection.createQueryBuilder().update(Tarjeta)
+        .set({banco:banco,numero:numero,fecha:fecha,cvv:cvv})
+        .where("id=:id",{id:id}).execute();
+
+        response.send(update)
+    } catch (error) {
+        response.send(error)
+    }
+})
+
+//Personal
+
+export const updatePersonal = functions.https.onRequest(async(request,response)=>{
+    const { id ,nombre , apellidos , password , salario , telefono } = request.body;
+
+    try {
+        const connection = await connect();
+        const update = connection.createQueryBuilder().update(Personal)
+        .set({nombre:nombre,apellidos:apellidos,telefono:telefono,salario:salario,password:password})
+        .where("id=:id",{id:id}).execute();
+
+        response.send(update)
+    } catch (error) {
+        response.send(error)
+    }
+})
