@@ -12,7 +12,7 @@ import {ViewGame} from './ViewGame.js';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
  import {Carousel} from 'react-responsive-carousel'
  import ToolbarAdmin from './ToolbarAdmin';
-
+ import Compra from './Compra';
 const { Header, Footer, Content } = Layout;
 
 
@@ -27,6 +27,7 @@ function App() {
             <Route path="/Biblioteca" component={Biblioteca}/>
             <Route path="/Pay" component={Pay}/>
             <Route path="/ViewGame" component={ViewGame}/>
+            <Route path="/Compra" component={Compra}/>
         </Content>
       </Layout>
       <Footer>
