@@ -66,7 +66,7 @@ export class Toolbar extends Component {
                         </Menu.Item>
                         <Menu.Item key="editProfile" icon={<EditOutlined />}>
                             <Link to="/EditarPerfil">
-                                Editar Perfil
+                                Editar Clientes
                             </Link>
                         </Menu.Item>
                     </Menu>
