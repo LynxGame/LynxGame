@@ -5,30 +5,19 @@ const { Column, ColumnGroup } = Table;
 
 const data = [
     {
-      key: '1',
-      firstName: 'John',
-      lastName: 'Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
-      tags: ['nice', 'developer'],
-    },
-    {
-      key: '2',
-      firstName: 'Jim',
-      lastName: 'Green',
-      age: 42,
-      address: 'London No. 1 Lake Park',
-      tags: ['loser'],
-    },
-    {
-      key: '3',
-      firstName: 'Joe',
-      lastName: 'Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      tags: ['cool', 'teacher'],
-    },
-    
+      Id: '1',
+      Nombre: 'Escondidas :v',
+      Descripcion: 'Te escondes y que no te atrapen o te la ensartan',
+      Fecha: '1958-11-15',
+      Clasificacion: 'Pa todas las edades jaja',
+      Licencias: 999,
+      Genero: 'Antiguisimo',
+      Desarrollador: 'Quiensabe',
+      Precio: 'Es gratis haha',
+      Media: 'imagen de niño mal escondido.jpg',
+      Venta: 'nose',
+      Compra: 'nosex2'
+    }
   ];
 
 class EditGames extends Component {
@@ -36,36 +25,18 @@ class EditGames extends Component {
     return (
       <>
         <Table dataSource={data}>
-    <ColumnGroup title="Name">
-      <Column title="First Name" dataIndex="firstName" key="firstName" />
-      <Column title="Last Name" dataIndex="lastName" key="lastName" />
-    </ColumnGroup>
-    <Column title="Age" dataIndex="age" key="age" />
-    <Column title="Address" dataIndex="address" key="address" />
-    <Column
-      title="Tags"
-      dataIndex="tags"
-      key="tags"
-      render={tags => (
-        <>
-          {tags.map(tag => (
-            <Tag color="blue" key={tag}>
-              {tag}
-            </Tag>
-          ))}
-        </>
-      )}
-    />
-    <Column
-      title="Action"
-      key="action"
-      render={(text, record) => (
-        <Space size="middle">
-          <a>Invite {record.lastName}</a>
-          <a>Delete</a>
-        </Space>
-      )}
-    />
+      <Column title="Id" dataIndex="Id" key="Id" />
+      <Column title="Nombre" dataIndex="Nombre" key="Nombre" />
+    <Column title="Descripcion" dataIndex="Descripcion" key="Descripcion" />
+    <Column title="Fecha" dataIndex="Fecha" key="Fecha" />
+    <Column title="Clasificacion" dataIndex="Clasificacion" key="Clasificacion" />
+    <Column title="Licencias" dataIndex="Licencias" key="Licencias" />
+    <Column title="Genero" dataIndex="Genero" key="Genero" />
+    <Column title="Desarrollador" dataIndex="Desarrollador" key="Desarrollador" />
+    <Column title="Precio" dataIndex="Precio" key="Precio" />
+    <Column title="Media" dataIndex="Media" key="Media" />
+    <Column title="Venta" dataIndex="Venta" key="Venta" />
+    <Column title="Compra" dataIndex="Compra" key="Compra" />
   </Table>
       </>
     )}
