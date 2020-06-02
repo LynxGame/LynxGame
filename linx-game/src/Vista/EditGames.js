@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Table, Tag, Space } from 'antd';
 
 const { Column, ColumnGroup } = Table;
-
+var i=0;
 const data = [
     {
       Id: '1',
@@ -21,10 +21,33 @@ const data = [
   ];
 
 class EditGames extends Component {
+
+    state = {
+        loading: false,
+        videojuego:{    
+            nombre: null,
+            descripcion: null,
+            Media:{
+                baner1: null,
+                baner2: null,
+                baner3: null,
+                preview: null
+            }
+        }
+    }
+
+    async componentDidMount() {
+        const  url="https://us-central1-lynx-game.cloudfunctions.net/getAllGames";
+        const response = await fetch(url);
+        const data = await response.json();
+        this.setState({videojuego: data[i], loading: false});
+        console.log(data[i]);
+    }
+
   render() {
     return (
       <>
-        <Table dataSource={data}>
+        <Table dataSource={data}scroll={{ x: 1300 }} pagination={{ pageSize: 5 }}>
       <Column title="Id" dataIndex="Id" key="Id" />
       <Column title="Nombre" dataIndex="Nombre" key="Nombre" />
     <Column title="Descripcion" dataIndex="Descripcion" key="Descripcion" />
