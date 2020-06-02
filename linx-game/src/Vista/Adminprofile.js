@@ -5,18 +5,12 @@ const { Column, ColumnGroup } = Table;
 var i=0;
 const data = [
     {
-      Id: '1',
-      Nombre: 'Escondidas :v',
-      Descripcion: 'Te escondes y que no te atrapen o te la ensartan',
-      Fecha: '1958-11-15',
-      Clasificacion: 'Pa todas las edades jaja',
-      Licencias: 999,
-      Genero: 'Antiguisimo',
-      Desarrollador: 'Quiensabe',
-      Precio: 'Es gratis haha',
-      Media: 'imagen de niño mal escondido.jpg',
-      Venta: 'nose',
-      Compra: 'nosex2'
+      id: '1',
+      nombre: 'Tuculo',
+      apellidos: 'unapellidogracioso',
+      telefono: '3570354388',
+      salario: 'Nada por huevon :v',
+      password: 'contraseña jaja salu2'
     }
   ];
 
