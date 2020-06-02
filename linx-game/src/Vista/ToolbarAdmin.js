@@ -63,13 +63,13 @@ export class Toolbar extends Component {
                                 Comprar Licencias
                             </Link>
                         </Menu.Item>
-                        <Menu.Item key="juegos" src='./src/Biblioteca.js' icon={<BookOutlined />}>
-                            <Link to="/Biblioteca">
+                        <Menu.Item key="juegos" src='./src/EditGames.js' icon={<BookOutlined />}>
+                            <Link to="/EditGames">
                                 Editar juegos
                             </Link>
                         </Menu.Item>
                         <Menu.Item key="editProfile" icon={<EditOutlined />}>
-                            <Link to="/EditarPerfil">
+                            <Link to="/EditClient">
                                 Editar Clientes
                             </Link>
                         </Menu.Item>
