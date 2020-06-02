@@ -1,93 +1,67 @@
 import React, { Component } from 'react'
 import { Table, Tag, Space } from 'antd';
+import axios from 'axios';
 
 const { Column, ColumnGroup } = Table;
-var i=0;
-const data = [
+var videojuegos=null;
+var cod=null,med=null,ban=null,med2=null,med3=null,cod2;
+
+
+const columns = [
     {
-      Id: '1',
-      Nombre: 'Escondidas :v',
-      Descripcion: 'Te escondes y que no te atrapen o te la ensartan',
-      Fecha: '1958-11-15',
-      Clasificacion: 'Pa todas las edades jaja',
-      Licencias: 999,
-      Genero: 'Antiguisimo',
-      Desarrollador: 'Quiensabe',
-      Precio: 'Es gratis haha',
-      Media: 'imagen de niño mal escondido.jpg',
-      Venta: 'nose',
-      Compra: 'nosex2'
-    }
+      title: 'id',
+      dataIndex: 'dem',
+      width: 150,
+    },
+    {
+      title: 'nombre',
+      dataIndex: 'cod2',
+      width: 150,
+    },
   ];
 
+  let dem = [];
+const promises = [];
+
+for (let i = 0; i < 5; i++) {  
+  promises .push(
+    
+axios.get('https://us-central1-lynx-game.cloudfunctions.net/getAllGames').then(response => {
+    //console.log(response)
+    videojuegos = response.data;
+    console.log(videojuegos)
+
+    cod = videojuegos[i].id;
+    console.log(cod)  
+
+    cod2 = videojuegos[i].nombre;
+    console.log(cod2)  
+    
+    dem.push(cod2);
+
+}).catch(error => {
+    console.log(error)
+  })
+  
+  )
+}
+
+Promise.all(promises).then(() => console.log(dem));
+
+  const data = [];
+  for (let i = 1; i < 3; i++) {
+    data.push({
+      id: `${dem}`,
+      nombre: `${cod2}`,
+    });
+  }
+
+
 class EditGames extends Component {
-
-    state = {
-        loading: false,
-        videojuego:{ 
-            id: null,   
-            nombre: null,
-            descripcion: null,
-            fecha: null,
-            clasificacion: null,
-            licencias: null,
-            genero:{
-              Genero:null
-            },
-            desarrolladores:{
-              nombre: null,
-              email: null,
-              convenio: null
-            },
-            precio:{
-              regular: null,
-              descuento: null,
-              apartado: null
-            },
-            media:{
-                baner1: null,
-                baner2: null,
-                baner3: null,
-                preview: null
-            },
-            venta:{
-              fecha: null,
-              cliente: null,
-              videojuegos: null
-            },
-            compra:{
-              fecha: null,
-              licencia: null,
-              videojuegos: null
-            }
-        }
-    }
-
-    async componentDidMount() {
-        const  url="https://us-central1-lynx-game.cloudfunctions.net/getAllGames";
-        const response = await fetch(url);
-        const data = await response.json();
-        this.setState({videojuego: data[i], loading: false});
-        console.log(data[i]);
-    }
-
   render() {
     return (
       <>
-        <Table dataSource={data}scroll={{ x: 1300 }} pagination={{ pageSize: 5 }}>
-      <Column title="Id" dataIndex="Id" key="Id" />
-      <Column title="Nombre" dataIndex="Nombre" key="Nombre" />
-    <Column title="Descripcion" dataIndex="Descripcion" key="Descripcion" />
-    <Column title="Fecha" dataIndex="Fecha" key="Fecha" />
-    <Column title="Clasificacion" dataIndex="Clasificacion" key="Clasificacion" />
-    <Column title="Licencias" dataIndex="Licencias" key="Licencias" />
-    <Column title="Genero" dataIndex="Genero" key="Genero" />
-    <Column title="Desarrollador" dataIndex="Desarrollador" key="Desarrollador" />
-    <Column title="Precio" dataIndex="Precio" key="Precio" />
-    <Column title="Media" dataIndex="Media" key="Media" />
-    <Column title="Venta" dataIndex="Venta" key="Venta" />
-    <Column title="Compra" dataIndex="Compra" key="Compra" />
-  </Table>
+      <Table columns={columns} dataSource={dem} pagination={{ pageSize: 50 }} scroll={{ y: 240 }} />
       </>
     )}
 }
