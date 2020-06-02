@@ -24,14 +24,41 @@ class EditGames extends Component {
 
     state = {
         loading: false,
-        videojuego:{    
+        videojuego:{ 
+            id: null,   
             nombre: null,
             descripcion: null,
-            Media:{
+            fecha: null,
+            clasificacion: null,
+            licencias: null,
+            genero:{
+              Genero:null
+            },
+            desarrolladores:{
+              nombre: null,
+              email: null,
+              convenio: null
+            },
+            precio:{
+              regular: null,
+              descuento: null,
+              apartado: null
+            },
+            media:{
                 baner1: null,
                 baner2: null,
                 baner3: null,
                 preview: null
+            },
+            venta:{
+              fecha: null,
+              cliente: null,
+              videojuegos: null
+            },
+            compra:{
+              fecha: null,
+              licencia: null,
+              videojuegos: null
             }
         }
     }
