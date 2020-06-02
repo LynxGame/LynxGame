@@ -487,3 +487,23 @@ export const updatePersonal = functions.https.onRequest(async(request,response)=
         response.send(error)
     }
 })
+
+//GetOneJuego ID
+
+exports.getGameID = functions.https.onRequest(async(request,response)=>{
+
+    const { id } = request.body;
+
+    try {
+        const connection = await connect();
+        const repoOneGame = connection.getRepository(Videojuegos);
+
+        const oneGame = await repoOneGame.createQueryBuilder("games")
+                                    .where("games.id = :id",{id:id})
+                                    .getOne();
+
+        response.send(oneGame);
+    } catch (error) {
+        response.send(error)
+    }
+})
