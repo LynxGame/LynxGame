@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Form,Input,Button,Radio,Select,Cascader,DatePicker,InputNumber,TreeSelect,Switch,} from 'antd';
   
-export class Pay extends Component {
+export class Compra extends Component {
     render() {
     return (
       <div>
@@ -15,38 +15,12 @@ export class Pay extends Component {
           layout="horizontal"
         >
           <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-          <Form.Item label="Numero de Tarjeta">
-            <Input />
-          </Form.Item>
-        
-          <Form.Item label="Banco">
-            <TreeSelect
-              treeData={[
-                {
-                  title: 'BBVA',
-                  value: 'BBVA',
-                },
-                {
-                  title: 'HSBC',
-                  value: 'HSBC',
-                },
-                {
-                    title: 'Banamex',
-                    value: 'Banamex',
-                },
-                {
-                    title: 'Santander',
-                    value: 'Santander',
-                },
-                {
-                    title: 'Scotiabank',
-                    value: 'Scotiabank',
-                },
-              ]}
-            />
-          </Form.Item>
           
-          <Form.Item label="CVV">
+          <Form.Item label="ID del videojuego">
+              <InputNumber />
+          </Form.Item>
+
+          <Form.Item label="Numero de licencias">
             <InputNumber />
           </Form.Item>
           
