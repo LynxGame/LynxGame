@@ -3,40 +3,56 @@ import {  Carousel, Row, Col , Avatar} from 'antd'
 import { Card } from 'antd';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
-import { Typography, Divider } from 'antd';
+import { Typography } from 'antd';
 import { showVideojuegos } from '../actions';
 import { connect } from 'react-redux';
 
 const { Title, Paragraph, Text } = Typography;
 
+function mapStateToProps(state) {
+    return {
+      videojuegos: state.videojuego.list
+    }
+}
+
 export class Principal extends Component {
+
     componentDidMount() {
         this.props.showVideojuegos();
-      }
-    render() {  
+    }
 
-        return (
-            <>
-            <div>
-            </div>
-                <Carousel autoplay effect fade>
+    renderCarousel() {
+        console.log(this.props.videojuegos)
+        var puto = this.props.videojuegos[1]
+        console.log(puto.nombre)
+        return(
+            <Carousel autoplay effect fade>
                  <div> 
-                    <img src={"this.state.videojuegos[1].Media.baner1"}></img>
+                    <img src={"hpoa"}></img>
                  </div>
                  <div>
-                 <img src={"this.state.videojuegos[1].Media.baner2"}></img>
+                 <img src={"caca"}></img>
                  </div>
                  <div>
                      <img src={"this.state.videojuegos[1].Media.baner3"}></img>
                  </div>
-                 </Carousel>
+            </Carousel>
+        )
+    }
+
+    render() {  
+        return (
+            <>
+                <div>
+                {this.renderCarousel()}
+                </div>
                 <Row gutter={[24, 24]} justify="space-between">
                     <Col span={5} offset={2}>
-                        <Card title={this.props.videojuego[1].id} style={{ width: 270 }}>
+                        <Card title={"aca"} style={{ width: 270 }}>
                         <Avatar shape='square' style={{ 
                         background: 'none'
-                        }} src={this.state.videojuegos[1].Media.preview} size={220}/>
-                            <p>{this.state.videojuegos[1].descripcion}</p>
+                        }} src={"this.state.videojuegos[1].Media.preview"} size={220}/>
+                            <p>{"this.state.videojuegos[1].descripcion"}</p>
                             
                             <Link to="/ViewGame">
                             <Button  type="primary" key="ViewGame">View</Button>
@@ -249,9 +265,5 @@ export class Principal extends Component {
         )
     }
 }
-function mapStateToProps(state) {
-    return {
-      videojuegos: state.videojuego.list
-    }
-  }
+
 export default connect(mapStateToProps, {showVideojuegos})(Principal)
