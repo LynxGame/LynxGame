@@ -22,9 +22,14 @@ const LoginForm = () => {
     }).catch(error => {
       console.log(error)
     });
+    axios.post('https://us-central1-lynx-game.cloudfunctions.net/getOneCliente',values).then(response => {
+      //console.log(response)
+      var Cliente = new Object(response.data);
+      console.log(Cliente)
+    }).catch(error => {
+      console.log(error)
+    });
   };
-
-  
 
   return (
     <Form form={form} name="horizontal" layout="horizontal" onFinish={onFinish}>
