@@ -95,7 +95,7 @@ export class Toolbar extends Component {
                         </Menu.Item>
                         <Menu.Item>
                        
-                            <Button type="primary" onClick={this.showSesion}><UserOutlined />Iniciar Sesion</Button>
+                            <Button type="primary" onClick={this.showSesion}><UserOutlined />Iniciar Sesion </Button>
                             
                             <Drawer title="Inicia Sesion" width={500} onClose={this.closeSesion} visible={this.state.sesion} bodyStyle={{ paddingBottom: 80 }}>
                                 <LoginForm/>

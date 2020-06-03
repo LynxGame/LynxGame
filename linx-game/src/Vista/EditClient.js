@@ -71,7 +71,7 @@ export class EditClient extends Component {
 
   componentDidMount() {
     this.props.showClientes();
-    this.props.showClientesNoCredit();
+    //this.props.showClientesNoCredit();
   }
 
   render() {
