@@ -15,6 +15,7 @@ import ToolbarUser from './ToolbarUser';
 import Compra from './Compra';
 import EditGames from './EditGames';
 import EditClient from './EditClient';
+import AllGames from './AllGames';
 
 const { Header, Footer, Content } = Layout;
 
@@ -36,6 +37,7 @@ function App() {
             <Route path="/Compra" component={Compra} />
             <Route path="/EditGames" component={EditGames,ToolbarAdmin} />
             <Route path="/EditClient" component={EditClient}/>
+            <Route path="/AllGames" component={AllGames}/>
         </Content>
       </Layout>
       <Footer>
