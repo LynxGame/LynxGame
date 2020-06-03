@@ -15,7 +15,7 @@ const createstoreWithMiddleWare = applyMiddleware(thunk)(createStore);
 ReactDOM.render(
   <Provider store={createstoreWithMiddleWare(rootReducer)}>
   <Router>
-    //Route path="/" component={App} />
+    {/*<Route path="/" component={App} />*/}
     <Route path="/" component={Admin} />
   </Router>
   </Provider>,
