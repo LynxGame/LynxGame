@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import LoginForm from './LoginForm';
 import CreateAccountForm from './CreateAccountFrom';
 import Compra from './Compra';
-import Adminprofile from './Adminprofile';
 
 const { Search } = Input;
 const { SubMenu } =  Menu;
@@ -80,9 +79,6 @@ export class Toolbar extends Component {
                     <Menu mode="horizontal" style={{ textAlign: 'right' }}>
                         <Menu.Item>
                             <Button type="primary" onClick={this.showSesion}><UserOutlined />Salir de administrador</Button>
-                            <Drawer title="Inicia Sesion" width={500} onClose={this.closeSesion} visible={this.state.sesion} bodyStyle={{ paddingBottom: 80 }}>
-                                <LoginForm/>
-                            </Drawer>
                         </Menu.Item>
                     </Menu>
                 </Col>
