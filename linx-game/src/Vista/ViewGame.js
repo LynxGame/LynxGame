@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Typography, Divider } from 'antd';
 import { Layout } from 'antd';
 import { Rate } from 'antd';
+import { ToolbarUser } from './ToolbarUser';
 
 const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful']
 const { Header, Footer, Sider, Content } = Layout;

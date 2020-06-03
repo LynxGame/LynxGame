@@ -34,7 +34,7 @@ function App() {
             <Route path="/Pay" component={Pay}/>
             <Route path="/ViewGame" component={ViewGame}/>
             <Route path="/Compra" component={Compra} />
-            <Route path="/EditGames" component={EditGames} />
+            <Route path="/EditGames" component={EditGames,ToolbarAdmin} />
             <Route path="/EditClient" component={EditClient}/>
         </Content>
       </Layout>
