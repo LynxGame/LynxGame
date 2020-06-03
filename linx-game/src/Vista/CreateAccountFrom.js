@@ -17,7 +17,7 @@ const CreateAccountForm = () => {
   
   const [form] = Form.useForm();
   const [, forceUpdate] = useState(); // To disable submit button at the beginning.
-  const {posts} = this.state;
+  //const {posts} = this.state;
 
   useEffect(() => {
     forceUpdate({});
