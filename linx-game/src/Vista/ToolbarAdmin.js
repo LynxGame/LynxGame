@@ -1,15 +1,27 @@
 import React, { Component } from 'react'
 import { Menu, Avatar, Row, Col, Button, Drawer, Form, Input } from 'antd'
-import { UserOutlined, UserAddOutlined, EditOutlined, SketchOutlined, BookOutlined, TagsOutlined, FireOutlined } from '@ant-design/icons';
+import { CheckCircleTwoTone,CloseCircleTwoTone,UserOutlined, UserAddOutlined, EditOutlined, SketchOutlined, BookOutlined, TagsOutlined, FireOutlined,CheckOutlined,CloseOutlined } from '@ant-design/icons';
 import {Biblioteca} from './Biblioteca';
 import { Link } from 'react-router-dom';
 import LoginForm from './LoginForm';
 import CreateAccountForm from './CreateAccountFrom';
 import Compra from './Compra';
-
+import { Popover } from 'antd';
 const { Search } = Input;
 const { SubMenu } =  Menu;
-
+const popoption = (
+    <div>
+        <CloseCircleTwoTone twoToneColor="#52c41a"/>
+        <Link to="/">
+            Aceptar
+        </Link>
+        <p></p>
+        <CloseCircleTwoTone twoToneColor="#FF0000"/>
+        <Link to="">
+            Cancelar 
+        </Link>
+    </div>
+  );
 export class Toolbar extends Component {
     state = { visible: false, sesion: false };
 
@@ -47,6 +59,16 @@ export class Toolbar extends Component {
         sesion: false,
         });
     }
+    hide = () => {
+        this.setState({
+          visible: false,
+        });
+      };
+    
+      handleVisibleChange = visible => {
+        this.setState({ visible });
+      };
+      
 
     render() {
         return (
@@ -79,7 +101,15 @@ export class Toolbar extends Component {
                 <Col xs={{ span: 12, offset: 0 }} md={{ span: 10, offset: 0}} lg={{ span: 9, offset:0 }}>
                     <Menu mode="horizontal" style={{ textAlign: 'right' }}>
                         <Menu.Item>
-                            <Button type="primary" onClick={this.showSesion}><UserOutlined />Salir de administrador</Button>
+                        <Popover
+                                content={popoption}
+                                title="¿Seguro que quieres salir de tu perfil?"
+                                trigger="click"
+                                visible={this.state.visible}
+                                onVisibleChange={this.handleVisibleChange}
+                                >
+                            <Button type="primary" ><UserOutlined />Salir de administrador</Button>
+                        </Popover>
                         </Menu.Item>
                     </Menu>
                 </Col>
