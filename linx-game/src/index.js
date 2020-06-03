@@ -9,15 +9,15 @@ import thunk from "redux-thunk";
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
-const createstoreWithMiddleWWare = applyMiddleware(thunk)(createStore);
-
-
+const createstoreWithMiddleWare = applyMiddleware(thunk)(createStore);
 
 ReactDOM.render(
+  <Provider store={createstoreWithMiddleWare}>
   <Router>
     //Route path="/" component={App} />
     <Route path="/" component={Admin} />
-  </Router>,
+  </Router>
+  </Provider>,
   document.getElementById('root')
 );
 
