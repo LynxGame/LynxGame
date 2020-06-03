@@ -50,7 +50,7 @@ export const getAllPersonal = functions.https.onRequest(async (request,response)
 exports.getOnePersonal = functions.https.onRequest(async (request,response) => {
 
     response.set('Access-Control-Allow-Origin', '*');
-    const { username , password } = request.body;
+    const { username , password , id } = request.body;
 
     try {
         const connection = await connect();
@@ -59,6 +59,7 @@ exports.getOnePersonal = functions.https.onRequest(async (request,response) => {
         const onePersonal = await repoOnePersonal.createQueryBuilder("personal")
                                             .where("personal.apellidos = :apellidos", { apellidos : username })
                                             .andWhere("personal.password = :password", { password : password})
+                                            .andWhere("personal.id = :id", { id : id})
                                             .getOne();
 
         response.send(onePersonal);
