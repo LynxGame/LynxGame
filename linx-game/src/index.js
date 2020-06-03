@@ -5,6 +5,13 @@ import './index.css';
 import App from './Vista/App';
 import * as serviceWorker from './Vista/serviceWorker';
 import Admin from './Vista/Admin';
+import thunk from "redux-thunk";
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+
+const createstoreWithMiddleWWare = applyMiddleware(thunk)(createStore);
+
+
 
 ReactDOM.render(
   <Router>
