@@ -1,76 +1,91 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+import { showClientes } from '../actions';
 import { Table, Tag, Space } from 'antd';
 
-const { Column, ColumnGroup } = Table;
-var i=1;
-
 const columns = [
-    {
-      title: 'nombre',
-      dataIndex: 'nombre',
-      width: 150,
-    },
-    {
-      title: 'apellidos',
-      dataIndex: 'apellidos',
-      width: 150,
-    },
-    {
-      title: 'password',
-      dataIndex: 'password',
-    },
-  ];
-  
-  const data = [];
-  for (let i = 0; i < 3; i++) {
-    data.push({
-      id: i,
-      nombre: `Edward King ${i}`,
-      apellidos: 32,
-      password: `London, Park Lane no. ${i}`,
-    });
-  }
+  {
+    title: 'id',
+    dataIndex: 'id',
+    width: 50,
+  },
+  {
+    title: 'nombre',
+    dataIndex: 'nombre',
+    width: 150,
+  },
+  {
+    title: 'apellido',
+    dataIndex: 'apellido',
+    width: 150,
+  },
+  {
+    title: 'username',
+    dataIndex: 'username',
+    width: 150,
+  },
+  {
+    title: 'password',
+    dataIndex: 'password',
+    width: 150,
+  },
+  {
+    title: 'email',
+    dataIndex: 'email',
+    width: 150,
+  },
+  {
+    title: 'edad',
+    dataIndex: 'edad',
+    width: 150,
+  },
+  {
+    title: 'creditos',
+    dataIndex: 'creditos',
+    width: 150,
+  },
+  {
+    title: 'calle',
+    dataIndex: 'calle',
+    width: 150,
+  },
+  {
+    title: 'cp',
+    dataIndex: 'cp',
+    width: 150,
+  },
+  {
+    title: 'numero',
+    dataIndex: 'numero',
+    width: 150,
+  },
+  {
+    title: 'ciudad',
+    dataIndex: 'ciudad',
+    width: 150,
+  },
+];
 
-class EditClient extends Component {
-/*
-    state = {
-        loading: false,
-        cliente:{    
-            id: null,
-            nombre: null,
-            apellidos: null,
-            username: null,
-            email: null,
-            edad: null,
-            password: null,
-            creditos: null,
-            calle: null,
-            cp: null,
-            nmero: null,
-            Tarjeta:{
-                banco: null,
-                numero: null,
-                fecha: null,
-                cvv: null
-            }
-        }
-    }
-*/
-    async componentDidMount() {
-        const  url="https://us-central1-lynx-game.cloudfunctions.net/getAllCliente";
-        const response = await fetch(url);
-        const data = await response.json();
-        this.setState({cliente: data[i], loading: false});
-        console.log(data[i]);
-    }
+export class EditClient extends Component {
+
+  componentDidMount() {
+    this.props.showClientes();
+  }
 
   render() {
     return (
-      <>
-        <Table columns={columns} dataSource={data} pagination={{ pageSize: 50 }} scroll={{ y: 240 }} />
-      </>
+      <div>
+        <h2>Editar Clientes</h2>
+        <Table columns={columns} dataSource={this.props.clientes} pagination={{ pageSize: 5 }} scroll={{ x: 240 }} />
+      </div>
     )
   }
 }
 
-export default EditClient
+function mapStateToProps(state) {
+  return {
+    clientes: state.cliente.list
+  }
+}
+
+export default connect(mapStateToProps, {showClientes})(EditClient)

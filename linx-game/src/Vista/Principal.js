@@ -4,32 +4,15 @@ import { Card } from 'antd';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { Typography, Divider } from 'antd';
-const { Title, Paragraph, Text } = Typography;
-var i=20;
-export class Principal extends Component {
-    
-    state = {
-        loading: false,
-        videojuego:{    
-            nombre: null,
-            descripcion: null,
-            Media:{
-                baner1: null,
-                baner2: null,
-                baner3: null,
-                preview: null
-            }
-        }
-    }
+import { showVideojuegos } from '../actions';
+import { connect } from 'react-redux';
 
-    async componentDidMount() {
-        const  url="https://us-central1-lynx-game.cloudfunctions.net/getAllGames";
-        const response = await fetch(url);
-        const data = await response.json();
-        this.setState({videojuego: data[i], loading: false});
-        console.log(data[i]);
-    }
-    
+const { Title, Paragraph, Text } = Typography;
+
+export class Principal extends Component {
+    componentDidMount() {
+        this.props.showVideojuegos();
+      }
     render() {  
 
         return (
@@ -38,25 +21,22 @@ export class Principal extends Component {
             </div>
                 <Carousel autoplay effect fade>
                  <div> 
-                    <img src={this.state.videojuego.Media.baner1}></img>
+                    <img src={"this.state.videojuegos[1].Media.baner1"}></img>
                  </div>
                  <div>
-                 <img src={this.state.videojuego.Media.baner2}></img>
+                 <img src={"this.state.videojuegos[1].Media.baner2"}></img>
                  </div>
                  <div>
-                     <img src={this.state.videojuego.Media.baner3}></img>
-                 </div>
-                 <div>
-                    <img src={this.state.videojuego.Media.baner1}></img>
+                     <img src={"this.state.videojuegos[1].Media.baner3"}></img>
                  </div>
                  </Carousel>
                 <Row gutter={[24, 24]} justify="space-between">
                     <Col span={5} offset={2}>
-                        <Card title={this.state.videojuego.nombre} style={{ width: 270 }}>
+                        <Card title={this.props.videojuego[1].id} style={{ width: 270 }}>
                         <Avatar shape='square' style={{ 
                         background: 'none'
-                        }} src={this.state.videojuego.Media.preview} size={220}/>
-                            <p>{this.state.videojuego.descripcion}</p>
+                        }} src={this.state.videojuegos[1].Media.preview} size={220}/>
+                            <p>{this.state.videojuegos[1].descripcion}</p>
                             
                             <Link to="/ViewGame">
                             <Button  type="primary" key="ViewGame">View</Button>
@@ -269,5 +249,9 @@ export class Principal extends Component {
         )
     }
 }
-
-export default Principal
+function mapStateToProps(state) {
+    return {
+      videojuegos: state.videojuego.list
+    }
+  }
+export default connect(mapStateToProps, {showVideojuegos})(Principal)

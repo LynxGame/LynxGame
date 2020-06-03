@@ -41,7 +41,7 @@ export class EditGames extends Component {
 
   componentDidMount() {
     this.props.showVideojuegos();
-  }
+  } 
 
   render() {
     return (
