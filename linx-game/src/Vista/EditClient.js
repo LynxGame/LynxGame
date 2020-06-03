@@ -6,80 +6,113 @@ import { Table } from 'antd';
 
 const columns = [
   {
-    title: 'id',
+    title: 'ID',
     dataIndex: 'id',
     width: 50,
   },
   {
-    title: 'nombre',
+    title: 'Nombre',
     dataIndex: 'nombre',
     width: 150,
   },
   {
-    title: 'apellido',
-    dataIndex: 'apellido',
+    title: 'Apellido',
+    dataIndex: 'apellidos',
     width: 150,
   },
   {
-    title: 'username',
+    title: 'Username',
     dataIndex: 'username',
     width: 150,
   },
   {
-    title: 'password',
-    dataIndex: 'password',
-    width: 150,
-  },
-  {
-    title: 'email',
+    title: 'Email',
     dataIndex: 'email',
     width: 150,
   },
   {
-    title: 'edad',
+    title: 'Edad',
     dataIndex: 'edad',
     width: 150,
   },
   {
-    title: 'creditos',
+    title: 'Creditos',
     dataIndex: 'creditos',
     width: 150,
   },
   {
-    title: 'calle',
+    title: 'Calle',
     dataIndex: 'calle',
     width: 150,
   },
   {
-    title: 'cp',
+    title: 'CP',
     dataIndex: 'cp',
-    width: 150,
+    width: 50,
   },
   {
-    title: 'numero',
+    title: 'Numero',
     dataIndex: 'numero',
-    width: 150,
+    width: 50,
   },
   {
-    title: 'ciudad',
+    title: 'Ciudad',
     dataIndex: 'ciudad',
     width: 150,
   },
+];
+
+const columns2 = [
+  {
+    title: 'ID',
+    dataIndex: 'id',
+    width: 50,
+  },
+  {
+    title: 'Nombre',
+    dataIndex: 'nombre',
+    width: 150,
+  },
+  {
+    title: 'Apellido',
+    dataIndex: 'apellidos',
+    width: 150,
+  },
+  {
+    title: 'Tarjeta ID',
+    dataIndex: 'Tarjeta',
+    render: Tarjeta => `${Tarjeta.id}`,
+  },
+  {
+    title: 'Numero de Tarjeta',
+    dataIndex: 'Tarjeta',
+    render: Tarjeta => `${Tarjeta.numero}`
+  },
+  {
+    title: 'Banco',
+    dataIndex: 'Tarjeta',
+    render: Tarjeta => `${Tarjeta.banco}`
+  },
+  {
+    title: 'Fecha de Venciento',
+    dataIndex: 'Tarjeta',
+    render: Tarjeta => `${Tarjeta.fecha}`
+  }
 ];
 
 export class EditClient extends Component {
 
   componentDidMount() {
     this.props.showClientes();
-    //this.props.showClientesNoCredit();
+    this.props.showClientesNoCredit();
   }
 
   render() {
     return (
       <div>
         <h2>Editar Clientes</h2>
-        <Table columns={columns} dataSource={this.props.clientes} pagination={{ pageSize: 5 }} scroll={{ x: 240 }} />
-        
+        <Table columns={columns} dataSource={this.props.clientesNoCard} pagination={{ pageSize: 5 }} sroll={{ x: 240 }} />
+        <Table columns={columns2} dataSource={this.props.clientes} pagination={{ pageSize: 5 }} scroll={{ x: 240 }} />
       </div>
       
     )
@@ -89,8 +122,8 @@ export class EditClient extends Component {
 function mapStateToProps(state) {
   return {
     clientes: state.cliente.list,
-    //clientents: state.clientent.list
+    clientesNoCard: state.clienteNoCard.list
   }
 }
 
-export default connect(mapStateToProps, {showClientes})(EditClient)
+export default connect(mapStateToProps, {showClientes, showClientesNoCredit})(EditClient)
