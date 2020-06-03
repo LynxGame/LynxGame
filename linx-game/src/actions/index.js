@@ -11,5 +11,27 @@ export function showVideojuegos() {
     }
 }
 
+export const muestraClientes = 'muestraClientes'
+ 
+export function showClientes() {
+    return (dispatch, getState) => {
+        axios.get('https://us-central1-lynx-game.cloudfunctions.net/getAllCliente')
+            .then((response) => {
+                dispatch( { type: muestraClientes, payload: response.data } ) 
+            }) 
+    }
+}
+
+export const muestraPersonal = 'muestraPersonal'
+ 
+export function showPersonal() {
+    return (dispatch, getState) => {
+        axios.get('https://us-central1-lynx-game.cloudfunctions.net/getAllPersonal')
+            .then((response) => {
+                dispatch( { type: muestraPersonal, payload: response.data } ) 
+            }) 
+    }
+}
+
 
     
