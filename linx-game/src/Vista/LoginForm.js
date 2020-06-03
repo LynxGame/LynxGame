@@ -59,7 +59,6 @@ const LoginForm = () => {
           placeholder="Contraseña"
         />
       </Form.Item>
-//
       <Form.Item
         name={['id']}
         rules={[
@@ -75,7 +74,6 @@ const LoginForm = () => {
           placeholder="codigo de seguridad"
         />
       </Form.Item>
-//
       <Form.Item shouldUpdate>
         {() => (
           <Button

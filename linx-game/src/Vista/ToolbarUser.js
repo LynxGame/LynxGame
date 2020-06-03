@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Menu, Avatar, Row, Col, Button, Drawer, Input } from 'antd'
-import { UserOutlined, UserAddOutlined, EditOutlined, TagsOutlined, BookOutlined , FireOutlined } from '@ant-design/icons';
+import { UserOutlined, EditOutlined, BookOutlined, TagsOutlined, FireOutlined } from '@ant-design/icons';
+import {Biblioteca} from './Biblioteca';
 import { Link } from 'react-router-dom';
 import LoginForm from './LoginForm';
 import CreateAccountForm from './CreateAccountFrom';
@@ -73,12 +74,12 @@ export class Toolbar extends Component {
                                 <Menu.Item key="setting:8" icon={<FireOutlined />}>Sales</Menu.Item>
                             </Menu.ItemGroup>
                         </SubMenu>
-                        <Menu.Item key="juegos" src='./src/Biblioteca.js' icon={<BookOutlined />} disabled>
+                        <Menu.Item key="juegos" src='./src/Biblioteca.js' icon={<BookOutlined />}>
                             <Link to="/Biblioteca">
                                 Mis Juegos
                             </Link>
                         </Menu.Item>
-                        <Menu.Item key="editProfile" icon={<EditOutlined />} disabled>
+                        <Menu.Item key="editProfile" icon={<EditOutlined />}>
                             <Link to="/EditarPerfil">
                                 Editar Perfil
                             </Link>
@@ -87,16 +88,13 @@ export class Toolbar extends Component {
                 </Col>
                 <Col xs={{ span: 12, offset: 0 }} md={{ span: 10, offset: 0}} lg={{ span: 9, offset:0 }}>
                     <Menu mode="horizontal" style={{ textAlign: 'right' }}>
-                        <Menu.Item key="crearCuenta">
-                            <Button type="primary" onClick={this.showDrawer}><UserAddOutlined />Crear Cuenta</Button>
-                            <Drawer title="Crear una nueva cuenta" width={500} onClose={this.onClose} visible={this.state.visible} bodyStyle={{ paddingBottom: 80 }} style={{ }}>
-                        <CreateAccountForm/>
-                    </Drawer>
+                        <Menu.Item key="editProfile" width={500} onClose={this.onClose} visible={this.state.visible} bodyStyle={{ paddingBottom: 80 }} style={{ }}>
+                            Usuario $NAME$
                         </Menu.Item>
                         <Menu.Item>
-                            <Button type="primary" onClick={this.showSesion}><UserOutlined />Iniciar Sesion</Button>
+                            <Button type="primary" onClick={this.showSesion}><UserOutlined />Cerrar Sesion</Button>
                             <Drawer title="Inicia Sesion" width={500} onClose={this.closeSesion} visible={this.state.sesion} bodyStyle={{ paddingBottom: 80 }}>
-                                <LoginForm/>
+                                <Toolbar/>
                             </Drawer>
                         </Menu.Item>
                     </Menu>
