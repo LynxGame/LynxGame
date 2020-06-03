@@ -2,6 +2,49 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { showVideojuegos } from '../actions';
 import { muestraJuegos } from '../actions';
+import { Table, Tag, Space } from 'antd';
+
+
+const columns = [
+  {
+    title: 'id',
+    dataIndex: 'id',
+    width: 150,
+  },
+  {
+    title: 'nombre',
+    dataIndex: 'nombre',
+    width: 150,
+  },
+  {
+    title: 'descripcion',
+    dataIndex: 'descripcion',
+    width: 150,
+  },
+  {
+    title: 'fecha',
+    dataIndex: 'fecha',
+    width: 150,
+  },
+  {
+    title: 'clasificion',
+    dataIndex: 'clasificion',
+    width: 150,
+  },
+  {
+    title: 'licencias_disp',
+    dataIndex: 'licencias_disp',
+    width: 150,
+  },
+  {
+    title: 'genero',
+    dataIndex: 'genero',
+    sorter: true,
+    render: genero => `${genero.nombre}`,
+    width: '20%',
+  },
+
+];
 
 export class EditGames extends Component {
 
@@ -12,25 +55,28 @@ export class EditGames extends Component {
   renderVideojuegosList() {
     return this.props.videojuegos.map((videojuego => {
         return(
-        <li key={videojuego.id}>{videojuego.descripcion}</li>
+        
+          <Table columns={columns} dataSource={this.props.videojuegos} pagination={{ pageSize: 5 }} scroll={{ x: 240 }} />
+
         )
         }))
   }
 
   render() {
+
     return (
       <div>
         <h2>Editar Videojuegos</h2>
-        <ul>
+
           {
             this.renderVideojuegosList()
+            
           }
-        </ul>
+
       </div>
     )
   }
 }
-
 
 function mapStateToProps(state) {
   return {
