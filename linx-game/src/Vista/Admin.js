@@ -17,7 +17,6 @@ export class Admin extends Component {
                 <Header style={{padding:"0rem 0rem", position: 'sticky', zIndex:1,  top: "0" }}><ToolbarAdmin/></Header>
                     <Layout>
                         <Content style={{height:'auto', alignContent:'center'}}>
-                            <Route exact path="/Adminprofile" component={Adminprofile} />
                             <Route path="/Compra" component={Compra} />
                             <Route path="/EditGames" component={EditGames} />
                             <Route path="/EditClient" component={EditClient}/>
