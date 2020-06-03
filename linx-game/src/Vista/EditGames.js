@@ -3,12 +3,11 @@ import { connect } from 'react-redux';
 import { showVideojuegos } from '../actions';
 import { Table, Tag, Space } from 'antd';
 
-
 const columns = [
   {
     title: 'id',
     dataIndex: 'id',
-    width: 150,
+    width: 50,
   },
   {
     title: 'nombre',
@@ -45,11 +44,9 @@ export class EditGames extends Component {
   }
 
   renderVideojuegosList() {
-    return this.props.videojuegos.map((videojuego => {
+    return this.props.videojuegos.map((videojuegos => {
         return(
-        
           <Table columns={columns} dataSource={this.props.videojuegos} pagination={{ pageSize: 5 }} scroll={{ x: 240 }} />
-
         )
         }))
   }
@@ -71,4 +68,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, {showVideojuegos})(EditGames)
-
