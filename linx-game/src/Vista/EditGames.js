@@ -43,19 +43,11 @@ export class EditGames extends Component {
     this.props.showVideojuegos();
   }
 
-  renderVideojuegosList() {
-    return this.props.videojuegos.map((videojuegos => {
-        return(
-          <Table columns={columns} dataSource={this.props.videojuegos} pagination={{ pageSize: 5 }} scroll={{ x: 240 }} />
-        )
-        }))
-  }
-
   render() {
     return (
       <div>
         <h2>Editar Videojuegos</h2>
-          {this.renderVideojuegosList()}
+        <Table columns={columns} dataSource={this.props.videojuegos} pagination={{ pageSize: 5 }} scroll={{ x: 240 }} />
       </div>
     )
   }
