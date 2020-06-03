@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Route, BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './Vista/App';
 import * as serviceWorker from './Vista/serviceWorker';
-import Admin from './Vista/Admin';
 import thunk from "redux-thunk";
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
@@ -15,8 +14,7 @@ const createstoreWithMiddleWare = applyMiddleware(thunk)(createStore);
 ReactDOM.render(
   <Provider store={createstoreWithMiddleWare(rootReducer)}>
   <Router>
-    {/*<Route path="/" component={App} />*/}
-    <Route path="/Vista/Admin" component={Admin} />
+    <App />
   </Router>
   </Provider>,
   document.getElementById('root')

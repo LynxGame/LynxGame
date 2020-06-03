@@ -73,7 +73,7 @@ export class Toolbar extends Component {
                                 <Menu.Item key="setting:8" icon={<FireOutlined />}>Sales</Menu.Item>
                             </Menu.ItemGroup>
                         </SubMenu>
-                        <Menu.Item key="juegos" src='./src/Biblioteca.js' icon={<BookOutlined />} disabled>
+                        <Menu.Item key="juegos" icon={<BookOutlined />} disabled>
                             <Link to="/Biblioteca">
                                 Mis Juegos
                             </Link>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { showVideojuegos } from '../actions';
-import { Table, Tag, Space } from 'antd';
+import { Table } from 'antd';
 
 const columns = [
   {

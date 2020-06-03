@@ -1,14 +1,10 @@
 import React, { Component } from 'react'
-import { Menu, Avatar, Row, Col, Button, Drawer, Form, Input } from 'antd'
-import { CheckCircleTwoTone,CloseCircleTwoTone,UserOutlined, UserAddOutlined, EditOutlined, SketchOutlined, BookOutlined, TagsOutlined, FireOutlined,CheckOutlined,CloseOutlined } from '@ant-design/icons';
+import { Menu, Avatar, Row, Col, Button, Input } from 'antd'
+import { CloseCircleTwoTone,UserOutlined, EditOutlined, BookOutlined, TagsOutlined } from '@ant-design/icons';
 import {Biblioteca} from './Biblioteca';
 import { Link } from 'react-router-dom';
-import LoginForm from './LoginForm';
-import CreateAccountForm from './CreateAccountFrom';
-import Compra from './Compra';
 import { Popover } from 'antd';
-const { Search } = Input;
-const { SubMenu } =  Menu;
+
 const popoption = (
     <div>
         <CloseCircleTwoTone twoToneColor="#52c41a"/>
@@ -81,12 +77,12 @@ export class Toolbar extends Component {
                         </Link>
                         //Aqui va nombre
                         </Menu.Item>
-                        <Menu.Item key="Compra" src='./src/Compra.js' icon={<TagsOutlined />}>
+                        <Menu.Item key="Compra" icon={<TagsOutlined />}>
                             <Link to="/Compra">
                                 Comprar Licencias
                             </Link>
                         </Menu.Item>
-                        <Menu.Item key="juegos" src='./src/EditGames.js' icon={<BookOutlined />}>
+                        <Menu.Item key="juegos"  icon={<BookOutlined />}>
                             <Link to="/EditGames">
                                 Editar juegos
                             </Link>
