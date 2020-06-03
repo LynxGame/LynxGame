@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { showVideojuegos } from '../actions';
-import { muestraJuegos } from '../actions';
 import { Table, Tag, Space } from 'antd';
 
 
@@ -36,13 +35,6 @@ const columns = [
     dataIndex: 'licencias_disp',
     width: 150,
   },
-  {
-    title: 'genero',
-    dataIndex: 'genero',
-    sorter: true,
-    render: genero => `${genero.nombre}`,
-    width: '20%',
-  },
 
 ];
 
@@ -63,16 +55,10 @@ export class EditGames extends Component {
   }
 
   render() {
-
     return (
       <div>
         <h2>Editar Videojuegos</h2>
-
-          {
-            this.renderVideojuegosList()
-            
-          }
-
+          {this.renderVideojuegosList()}
       </div>
     )
   }
