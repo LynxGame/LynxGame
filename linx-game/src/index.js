@@ -8,11 +8,12 @@ import Admin from './Vista/Admin';
 import thunk from "redux-thunk";
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import rootReducer from './reducers';
 
 const createstoreWithMiddleWare = applyMiddleware(thunk)(createStore);
 
 ReactDOM.render(
-  <Provider store={createstoreWithMiddleWare}>
+  <Provider store={createstoreWithMiddleWare(rootReducer)}>
   <Router>
     //Route path="/" component={App} />
     <Route path="/" component={Admin} />

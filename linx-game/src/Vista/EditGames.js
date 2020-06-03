@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { showVideojuegos } from '../reducers';
+import { showVideojuegos } from '../actions';
 import { muestraJuegos } from '../actions';
 
 export class EditGames extends Component {
@@ -12,7 +12,7 @@ export class EditGames extends Component {
   renderVideojuegosList() {
     return this.props.videojuegos.map((videojuego => {
         return(
-        <li key={videojuego.id}>{videojuego.nombre}</li>
+        <li key={videojuego.id}>{videojuego.descripcion}</li>
         )
         }))
   }
@@ -20,7 +20,7 @@ export class EditGames extends Component {
   render() {
     return (
       <div>
-        <h2>Putos Juegos</h2>
+        <h2>Editar Videojuegos</h2>
         <ul>
           {
             this.renderVideojuegosList()
