@@ -222,6 +222,15 @@ export const getAllCliente = functions.https.onRequest(async(request,response)=>
     response.send(allCliente);
 })
 
+export const getAllClienteNoCredit = functions.https.onRequest(async(request,response)=>{
+    const connection = await connect();
+    const repoCNoCredit = connection.getRepository(Cliente);
+
+    const allNoCredits = await repoCNoCredit.find();
+
+    response.send(allNoCredits);
+})
+
 exports.getOneCliente = functions.https.onRequest(async(request,response)=>{
 
     const { username , password , id } = request.body;
