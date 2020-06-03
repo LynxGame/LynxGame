@@ -23,8 +23,8 @@ export class Principal extends Component {
 
     renderCarousel() {
         console.log(this.props.videojuegos)
-        var puto = this.props.videojuegos[1]
-        console.log(puto.nombre)
+        //var puto = this.props.videojuegos[1];
+        //console.log(this.props.videojuegos.list)
         return(
             <Carousel autoplay effect fade>
                  <div> 

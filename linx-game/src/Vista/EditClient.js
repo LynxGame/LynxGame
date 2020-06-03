@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { showClientes } from '../actions';
+import { showClientesNoCredit } from '../actions';
 import { Table } from 'antd';
 
 const columns = [
@@ -70,6 +71,7 @@ export class EditClient extends Component {
 
   componentDidMount() {
     this.props.showClientes();
+    this.props.showClientesNoCredit();
   }
 
   render() {
@@ -77,14 +79,17 @@ export class EditClient extends Component {
       <div>
         <h2>Editar Clientes</h2>
         <Table columns={columns} dataSource={this.props.clientes} pagination={{ pageSize: 5 }} scroll={{ x: 240 }} />
+        
       </div>
+      
     )
   }
 }
 
 function mapStateToProps(state) {
   return {
-    clientes: state.cliente.list
+    clientes: state.cliente.list,
+    //clientents: state.clientent.list
   }
 }
 

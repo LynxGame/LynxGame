@@ -1,14 +1,26 @@
 import React, { Component } from 'react'
 import { Menu, Avatar, Row, Col, Button, Drawer, Input } from 'antd'
-import { UserOutlined, EditOutlined, BookOutlined, TagsOutlined, FireOutlined } from '@ant-design/icons';
+import { UserOutlined, EditOutlined, BookOutlined, TagsOutlined, FireOutlined,CloseCircleTwoTone } from '@ant-design/icons';
 import {Biblioteca} from './Biblioteca';
 import { Link } from 'react-router-dom';
 import LoginForm from './LoginForm';
 import CreateAccountForm from './CreateAccountFrom';
-
+import { Popover } from 'antd';
 const { Search } = Input;
 const { SubMenu } =  Menu;
-
+const popoption = (
+    <div>
+        <CloseCircleTwoTone twoToneColor="#52c41a"/>
+        <Link to="/">
+            Aceptar
+        </Link>
+        <p></p>
+        <CloseCircleTwoTone twoToneColor="#FF0000"/>
+        <Link to="">
+            Cancelar 
+        </Link>
+    </div>
+  );
 export class Toolbar extends Component {
     state = { visible: false, sesion: false };
 
@@ -46,6 +58,16 @@ export class Toolbar extends Component {
         sesion: false,
         });
     }
+    hide = () => {
+        this.setState({
+          visible: false,
+        });
+      };
+    
+      handleVisibleChange = visible => {
+        this.setState({ visible });
+      };
+      
 
     render() {
         return (
@@ -92,10 +114,15 @@ export class Toolbar extends Component {
                             Usuario $NAME$
                         </Menu.Item>
                         <Menu.Item>
+                        <Popover
+                                content={popoption}
+                                title="¿Seguro que quieres salir de tu perfil?"
+                                trigger="click"
+                                visible={this.state.visible}
+                                onVisibleChange={this.handleVisibleChange}
+                                >
                             <Button type="primary" onClick={this.showSesion}><UserOutlined />Cerrar Sesion</Button>
-                            <Drawer title="Cerrar Sesion" width={500} onClose={this.closeSesion} visible={this.state.sesion} bodyStyle={{ paddingBottom: 80 }}>
-                                <Toolbar/>
-                            </Drawer>
+                            </Popover>
                         </Menu.Item>
                     </Menu>
                 </Col>

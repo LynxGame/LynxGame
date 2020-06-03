@@ -37,6 +37,7 @@ const columns = [
 
 ];
 
+
 export class EditGames extends Component {
 
   componentDidMount() {
@@ -44,6 +45,7 @@ export class EditGames extends Component {
   } 
 
   render() {
+    
     return (
       <div>
         <h2>Editar Videojuegos</h2>

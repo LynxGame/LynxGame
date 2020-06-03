@@ -22,6 +22,17 @@ export function showClientes() {
     }
 }
 
+export const muestraClientesSinCredito = 'muestraClientesSinCredito'
+ 
+export function showClientesNoCredit() {
+    return (dispatch, getState) => {
+        axios.get('https://us-central1-lynx-game.cloudfunctions.net/getAllClienteNoCredit')
+            .then((response) => {
+                dispatch( { type: muestraClientesSinCredito, payload: response.data } ) 
+            }) 
+    }
+}
+
 export const muestraPersonal = 'muestraPersonal'
  
 export function showPersonal() {
