@@ -11,5 +11,16 @@ export function showVideojuegos() {
     }
 }
 
+export const muestraClientes = 'muestraClientes'
+ 
+export function showVideojuegos() {
+    return (dispatch, getState) => {
+        axios.get('https://us-central1-lynx-game.cloudfunctions.net/getAllCliente')
+            .then((response) => {
+                dispatch( { type: muestraClientes, payload: response.data } ) 
+            }) 
+    }
+}
+
 
     
