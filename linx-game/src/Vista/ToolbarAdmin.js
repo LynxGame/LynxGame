@@ -17,7 +17,7 @@ const popoption = (
         </Link>
         <p></p>
         <CloseCircleTwoTone twoToneColor="#FF0000"/>
-        <Link to="">
+        <Link to="/ToolbarAdmin">
             Cancelar 
         </Link>
     </div>
