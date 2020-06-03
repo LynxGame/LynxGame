@@ -6,7 +6,6 @@ import Pie from './Pie';
 import Compra from './Compra';
 import EditGames from './EditGames';
 import EditClient from './EditClient';
-import Adminprofile from './Adminprofile';
 
 const { Header, Footer, Content } = Layout;
 
