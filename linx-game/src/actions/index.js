@@ -22,5 +22,16 @@ export function showClientes() {
     }
 }
 
+export const muestraPersonal = 'muestraPersonal'
+ 
+export function showPersonal() {
+    return (dispatch, getState) => {
+        axios.get('https://us-central1-lynx-game.cloudfunctions.net/getAllPersonal')
+            .then((response) => {
+                dispatch( { type: muestraPersonal, payload: response.data } ) 
+            }) 
+    }
+}
+
 
     
