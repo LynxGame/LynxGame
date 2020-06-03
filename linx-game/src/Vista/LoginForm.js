@@ -17,16 +17,12 @@ const LoginForm = () => {
   const onFinish = values => {
     console.log('Finish:', values);
     axios.post('https://us-central1-lynx-game.cloudfunctions.net/getOnePersonal',values).then(response => {
-      //console.log(response)
       var Personal = new Object(response.data);
       console.log(Personal)
-      //return <Link to="/EditGames"></Link>
-  
     }).catch(error => {
       console.log(error)
     });
     axios.post('https://us-central1-lynx-game.cloudfunctions.net/getOneCliente',values).then(response => {
-      //console.log(response)
       var Cliente = new Object(response.data);
       console.log(Cliente)
     }).catch(error => {
