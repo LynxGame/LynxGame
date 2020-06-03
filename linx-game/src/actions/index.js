@@ -13,7 +13,7 @@ export function showVideojuegos() {
 
 export const muestraClientes = 'muestraClientes'
  
-export function showVideojuegos() {
+export function showClientes() {
     return (dispatch, getState) => {
         axios.get('https://us-central1-lynx-game.cloudfunctions.net/getAllCliente')
             .then((response) => {
