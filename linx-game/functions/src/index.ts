@@ -178,6 +178,21 @@ export const getAllVentas = functions.https.onRequest(async(request,response)=>{
     response.send(allVenta);
 })
 
+export const getAllVentasID = functions.https.onRequest(async(request,response)=>{
+    const { id } = request.body;
+
+    const connection = await connect();
+
+    const repoVenta = connection.getRepository(Venta).createQueryBuilder("venta")
+    .innerJoinAndSelect("venta.cliente","cliente")
+    .innerJoinAndSelect("venta.videojuegos","videojuegos")
+    .where("cliente.id = :id",{id:id})
+    
+    const allVenta = await repoVenta.getMany();
+
+    response.send(allVenta);
+})
+
 //Cambiar Cliente
 export const crearCliente = functions.https.onRequest(async(request,response)=>{
 
