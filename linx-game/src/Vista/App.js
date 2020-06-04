@@ -15,7 +15,7 @@ import EditGames from './EditGames';
 import EditClient from './EditClient';
 import AllGames from './AllGames';
 import Venta from './Venta';
-import { EditAdmins } from './EditAdmins';
+import EditAdmins from './EditAdmins';
 
 const { Header, Footer, Content } = Layout;
 
