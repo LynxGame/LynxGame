@@ -33,6 +33,9 @@ const EditarPerfil = () => {
           }}
           layout="horizontal" onFinish={onFinish} form={form}
         >
+          <Form.Item label="ID" name={['id']} rules={[{required: true, message: 'Ingresa tu id de cliente'} ]}>
+              <Input />
+          </Form.Item>
           <Form.Item label="Nombre(s)" name={['nombre']} rules={[{required: true, message: 'Ingresa tu nombre'} ]}>
               <Input />
           </Form.Item>
@@ -45,13 +48,16 @@ const EditarPerfil = () => {
           <Form.Item label="Email" name={['email']} rules={[{required: true, message: 'Ingresa tu email'} ]}>
             <Input />
           </Form.Item>
+          <Form.Item label="Edad" name={['edad']} rules={[{required: true, message: 'Ingresa tu edad'} ]}>
+            <Input />
+          </Form.Item>
           <Form.Item label="Password" name={['password']} rules={[{required: true, message: 'Ingresa tu password'} ]}>
             <Input />
           </Form.Item>
           <Form.Item label="Calle" name={['calle']} rules={[{required: true, message: 'Ingresa tu calle'} ]}>
             <Input />
           </Form.Item>
-          <Form.Item label="cp" name={['cp']} rules={[{required: true, message: 'Ingresa tu cp'} ]}>
+          <Form.Item label="Codigo Postal" name={['cp']} rules={[{required: true, message: 'Ingresa tu cp'} ]}>
             <InputNumber />
           </Form.Item>
           <Form.Item label="Numero" name={['numero']} rules={[{required: true, message: 'Ingresa tu numero'} ]}>
@@ -64,10 +70,6 @@ const EditarPerfil = () => {
           <Button
             type="primary"
             htmlType="submit"
-            disabled={
-              !form.isFieldsTouched(true) ||
-              form.getFieldsError().filter(({ errors }) => errors.length).length
-            }
             >
             Editar Perfil
           </Button>

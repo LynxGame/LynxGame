@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { showVideojuegos } from '../actions';
-import { Table } from 'antd';
+import { Table , Button , Drawer} from 'antd';
+import DEGame from './DEGame';
 
 const columns = [
   {
@@ -40,6 +41,30 @@ const columns = [
 
 export class EditGames extends Component {
 
+  state={
+    visible:false
+};
+
+handleClick = e => {
+    console.log('click ', e);
+    this.setState({
+    current: e.key,
+    });
+};
+
+showDrawer = () => {
+    this.setState({
+    visible: true,
+    });
+};
+
+onClose = () => {
+    this.setState({
+    visible: false,
+    });
+};
+
+
   componentDidMount() {
     this.props.showVideojuegos();
   } 
@@ -49,8 +74,18 @@ export class EditGames extends Component {
     return (
       <div>
         <h2>Editar Videojuegos</h2>
+        <Button  type="primary" key="Editar Videojuegos" onClick={this.showDrawer}>Actualizar Precio</Button> 
+      <Drawer
+      title="Editar Videojuegos"
+      width={720}
+      onClose={this.onClose}
+      visible={this.state.visible}
+      bodyStyle={{ paddingBottom: 80 }}
+      ><DEGame/>
+      </Drawer>
         <Table columns={columns} dataSource={this.props.videojuegos} pagination={{ pageSize: 5 }} scroll={{ y: 440 }} />
       </div>
+      
     )
   }
 }
