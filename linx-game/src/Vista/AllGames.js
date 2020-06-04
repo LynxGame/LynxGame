@@ -17,13 +17,12 @@ export class AllGames extends Component {
       return (
 
 
-        <div className="site-card-wrapper">
-        <Row gutter={[24, 24]} justify="space-between">
-        <Col span={2} offset={2}>
-        <Card
-        hoverable
-        style={{ width: 1080 }}
-        >
+          <div className="site-card-wrapper">
+                <Card style={{ marginTop: 16 }}
+                 type="inner"
+                 title={videojuego.nombre}>
+                <Meta description={videojuego.descripcion}/>
+                </Card>
                 <Carousel autoplay effect fade>
                  <div> 
                     <img src={videojuego.Media.baner1}></img>
@@ -36,12 +35,8 @@ export class AllGames extends Component {
                  </div>
             </Carousel>
             <br></br>
-        <Meta title={videojuego.nombre} description={videojuego.descripcion}/>
-        </Card>
-        </Col>
-        </Row>
-        </div>
 
+            </div>
       )
     })
   }
