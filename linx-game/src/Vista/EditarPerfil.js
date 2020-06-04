@@ -1,6 +1,6 @@
-import React, { useState , useEffect , Component } from 'react';
-import {Form, Button , Input , InputNumber} from 'antd';
 import axios from 'axios';
+import React, { Component,useState,useEffect } from 'react'
+import { Row,Col,Button,Form,Input} from 'antd';
 
 
 const Editar = () => {

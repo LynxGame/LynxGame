@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Input, Button ,Col,Row} from 'antd';
-import { UserOutlined, LockOutlined ,EditOutlined,GlobalOutlined,NumberOutlined} from '@ant-design/icons';
+import { Form, Input, Button } from 'antd';
+import { UserOutlined, LockOutlined ,GlobalOutlined,NumberOutlined} from '@ant-design/icons';
 import axios from 'axios';
 
 const CreateAccountForm = () => {
