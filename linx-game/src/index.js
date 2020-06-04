@@ -20,7 +20,18 @@ ReactDOM.render(
     <Route exact path="/" component={App}/>
     <Route path="/Admin" component={Admin}/>
     <Route path="/User" component={User}/>
+
+    <Router>
+    <Route path="/Admin" component={Admin}/>
+    </Router>
+
+    <Router>
+    <Route path="/User" component={User}/>
+    </Router>
+
+
   </Router>
+
   </Provider>,
   document.getElementById('root')
 );
