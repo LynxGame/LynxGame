@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { showVideojuegos } from '../actions';
 import { Carousel,Card,  } from 'antd';
-const { Meta } = Card;
+import { Typography, Space } from 'antd';
 
+const { Text, Link } = Typography;
+const { Meta } = Card;
 
 export class AllGames extends Component {
 
@@ -17,11 +19,7 @@ export class AllGames extends Component {
 
 
           <div className="site-card-wrapper">
-                <Card style={{ marginTop: 16 }}
-                 type="inner"
-                 title={videojuego.nombre}>
-                <Meta description={videojuego.descripcion}/>
-                </Card>
+
                 <Carousel autoplay effect fade>
                  <div> 
                     <img src={videojuego.Media.baner1} alt="Cargando..."/>
@@ -33,7 +31,15 @@ export class AllGames extends Component {
                      <img src={videojuego.Media.baner3} alt="Cargando..."/>
                  </div>
             </Carousel>
-            <br></br>
+            <Card style={{ marginTop: 1 }}
+                 type="inner"
+                 title={videojuego.nombre}>
+                   <Meta  title='Fecha' description={videojuego.fecha}/>
+                   <br></br><Meta title='Clasificacion' description={videojuego.clasificion}/>
+                   <br></br><Meta  title='Descripcion' description={videojuego.descripcion}/>
+                   <br></br>
+                </Card>
+            <br></br><br></br>
 
             </div>
       )
