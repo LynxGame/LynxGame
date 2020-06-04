@@ -90,7 +90,7 @@ export class Principal extends Component {
                             <Button  type="primary" key="ViewGame">View</Button>
                             </Link>
                             <Link to="/Pay">
-                            <Button type="primary" key="pay">Comprar</Button> 
+                            <Button  type="primary" key="pay">Comprar</Button> 
                             </Link>
                         </Card>    
                     </Col>
