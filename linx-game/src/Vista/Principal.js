@@ -99,10 +99,15 @@ export class Principal extends Component {
                                 por la compañía EA Digital Illusions CE 
                                 y distribuido por Electronic Arts.</p>
                             <br></br>
-                            <Link to="/Venta">
-                            
-                            <Button  type="primary" key="venta" >Comprar</Button> 
-                            </Link>
+                            <Button  type="primary" key="venta" onClick={this.showDrawer}>Comprar</Button> 
+                            <Drawer
+                            title="Venta"
+                            width={720}
+                            onClose={this.onClose}
+                            visible={this.state.visible}
+                            bodyStyle={{ paddingBottom: 80 }}
+                            ><Venta/>
+                            </Drawer>
                         </Card>    
                     </Col>
                     <Col span={6} >
@@ -115,9 +120,15 @@ export class Principal extends Component {
                                 en primera persona táctico 
                                 multijugador de 5 vs 5</p>
                                 <br></br><br></br>
-                            <Link to="/Venta">
-                            <Button  type="primary" key="venta">Comprar</Button> 
-                            </Link>
+                                <Button  type="primary" key="venta" onClick={this.showDrawer}>Comprar</Button> 
+                            <Drawer
+                            title="Venta"
+                            width={720}
+                            onClose={this.onClose}
+                            visible={this.state.visible}
+                            bodyStyle={{ paddingBottom: 80 }}
+                            ><Venta/>
+                            </Drawer>
                         </Card>    
                     </Col>
                     <Col span={5} >
@@ -130,9 +141,15 @@ export class Principal extends Component {
                                 quien co-desarrollo el juego con 
                                 Dimps.</p>
                                 <br></br><br></br>
-                            <Link to="/Venta">
-                            <Button  type="primary" key="venta">Comprar</Button> 
-                            </Link>
+                                <Button  type="primary" key="venta" onClick={this.showDrawer}>Comprar</Button> 
+                            <Drawer
+                            title="Venta"
+                            width={720}
+                            onClose={this.onClose}
+                            visible={this.state.visible}
+                            bodyStyle={{ paddingBottom: 80 }}
+                            ><Venta/>
+                            </Drawer>
                         </Card>  
                     </Col>
                 </Row>
@@ -158,9 +175,15 @@ export class Principal extends Component {
                         }} src='https://cutt.ly/cyHZwWi' size={220}/>
                             <p>Age of Empires es un videojuego de estrategia en tiempo real para computadoras personales, el primero de la serie homónima.</p>
                             <br></br><br></br>
-                            <Link to="/Venta">
-                            <Button  type="primary" key="venta">Comprar</Button> 
-                            </Link>
+                            <Button  type="primary" key="venta" onClick={this.showDrawer}>Comprar</Button> 
+                            <Drawer
+                            title="Venta"
+                            width={720}
+                            onClose={this.onClose}
+                            visible={this.state.visible}
+                            bodyStyle={{ paddingBottom: 80 }}
+                            ><Venta/>
+                            </Drawer>
                         </Card>    
                     </Col>
 
@@ -171,9 +194,15 @@ export class Principal extends Component {
                         }} src='https://cutt.ly/dyHXe5l' size={220}/>
                             <p>BioShock es un videojuego de disparos en primera persona, desarrollado por Irrational Games.</p>
                             <br></br><br></br><br></br>
-                            <Link to="/Venta">
-                            <Button  type="primary" key="venta">Comprar</Button> 
-                            </Link>
+                            <Button  type="primary" key="venta" onClick={this.showDrawer}>Comprar</Button> 
+                            <Drawer
+                            title="Venta"
+                            width={720}
+                            onClose={this.onClose}
+                            visible={this.state.visible}
+                            bodyStyle={{ paddingBottom: 80 }}
+                            ><Venta/>
+                            </Drawer>
                         </Card>    
                     </Col>
                     <Col span={6} >
@@ -183,9 +212,15 @@ export class Principal extends Component {
                         }} src='https://cutt.ly/tyHNmOZ' object-fit= "scale-down"  size={220}/>
                             <p>Grand Theft Auto: San Andreas es un videojuego de acción-aventura de mundo abierto desarrollado por Rockstar North y publicado por Rockstar Games.</p>
                             <br></br>
-                            <Link to="/Venta">
-                            <Button  type="primary" key="venta">Comprar</Button> 
-                            </Link>
+                            <Button  type="primary" key="venta" onClick={this.showDrawer}>Comprar</Button> 
+                            <Drawer
+                            title="Venta"
+                            width={720}
+                            onClose={this.onClose}
+                            visible={this.state.visible}
+                            bodyStyle={{ paddingBottom: 80 }}
+                            ><Venta/>
+                            </Drawer>
                         </Card>    
                     </Col>
                     <Col span={6} >
@@ -195,9 +230,15 @@ export class Principal extends Component {
                         }} src='https://cutt.ly/SyKW8Rs' size={220}/>
                             <p>The Elder Scrolls: Arena es un videojuego de rol desarrollado para PCs. Es la primera entrega de la serie The Elder Scrolls.</p>
                             <br></br><br></br>
-                            <Link to="/Venta">
-                            <Button  type="primary" key="venta">Comprar</Button> 
-                            </Link>
+                            <Button  type="primary" key="venta" onClick={this.showDrawer}>Comprar</Button> 
+                            <Drawer
+                            title="Venta"
+                            width={720}
+                            onClose={this.onClose}
+                            visible={this.state.visible}
+                            bodyStyle={{ paddingBottom: 80 }}
+                            ><Venta/>
+                            </Drawer>
                         </Card>  
                     </Col>
                 </Row>
@@ -222,10 +263,15 @@ export class Principal extends Component {
                         background: 'none'
                         }} src='https://cutt.ly/tyHZLqv' size={220}/>
                             <p>Minecraft es un videojuego de construcción, de tipo «mundo abierto» o sandbox creado originalmente por el sueco Markus Persson</p>
-                            
-                            <Link to="/Venta">
-                            <Button  type="primary" key="venta">Comprar</Button> 
-                            </Link>
+                            <Button  type="primary" key="venta" onClick={this.showDrawer}>Comprar</Button> 
+                            <Drawer
+                            title="Venta"
+                            width={720}
+                            onClose={this.onClose}
+                            visible={this.state.visible}
+                            bodyStyle={{ paddingBottom: 80 }}
+                            ><Venta/>
+                            </Drawer>
                         </Card>    
                     </Col>
 
@@ -236,9 +282,15 @@ export class Principal extends Component {
                         }} src='https://cutt.ly/yyHBwBv' size={220}/>
                             <p>Gos of War III, es la quinta entrega de la serie de God of War y la secuela de God of War y God of War II.</p>
                             <br></br>
-                            <Link to="/Venta">
-                            <Button  type="primary" key="venta">Comprar</Button> 
-                            </Link>
+                            <Button  type="primary" key="venta" onClick={this.showDrawer}>Comprar</Button> 
+                            <Drawer
+                            title="Venta"
+                            width={720}
+                            onClose={this.onClose}
+                            visible={this.state.visible}
+                            bodyStyle={{ paddingBottom: 80 }}
+                            ><Venta/>
+                            </Drawer>
                         </Card>    
                     </Col>
                     <Col span={6} >
@@ -247,10 +299,15 @@ export class Principal extends Component {
                         background: 'none'
                         }} src='https://cutt.ly/DyKEgOv' size={220}/>
                             <p>Skyrim es un RPG del tipo mundo abierto desarrollado por Bethesda Game Studios. Es la quinta entrega de videojuegos de acción y fantasía de la serie The Elder Scrolls</p>
-
-                            <Link to="/Venta">
-                            <Button  type="primary" key="venta">Comprar</Button> 
-                            </Link>
+                            <Button  type="primary" key="venta" onClick={this.showDrawer}>Comprar</Button> 
+                            <Drawer
+                            title="Venta"
+                            width={720}
+                            onClose={this.onClose}
+                            visible={this.state.visible}
+                            bodyStyle={{ paddingBottom: 80 }}
+                            ><Venta/>
+                            </Drawer>
                         </Card>    
                     </Col>
                     <Col span={6} >
@@ -260,9 +317,15 @@ export class Principal extends Component {
                         }} src='https://cutt.ly/WyKERIr' size={220}/>
                             <p>The Witcher 3: Wild Hunt es un videojuego de rol desarrollado por CD Projekt RED. CD Projekt RED es el desarrollador</p>
                             <br></br>
-                            <Link to="/Venta">
-                            <Button  type="primary" key="venta">Comprar</Button> 
-                            </Link>
+                            <Button  type="primary" key="venta" onClick={this.showDrawer}>Comprar</Button> 
+                            <Drawer
+                            title="Venta"
+                            width={720}
+                            onClose={this.onClose}
+                            visible={this.state.visible}
+                            bodyStyle={{ paddingBottom: 80 }}
+                            ><Venta/>
+                            </Drawer>
                         </Card>  
                     </Col>
                 </Row>
