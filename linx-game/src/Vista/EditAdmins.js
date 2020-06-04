@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { showPersonal } from '../actions';
 import { Table , Button, Drawer} from 'antd';
-import EditarPerfil from './EditarPerfil';
+import EditarPersonal from './EditarPersonal';
 
 const columns = [
   {
@@ -77,7 +77,7 @@ componentDidMount() {
           onClose={this.onClose}
           visible={this.state.visible}
           bodyStyle={{ paddingBottom: 80 }}
-        ><EditarPerfil/>
+        ><EditarPersonal/>
       </Drawer>
        <Table columns={columns} dataSource={this.props.personals} pagination={{ pageSize: 5 }} sroll={{ x: 240 }} />
       </div>

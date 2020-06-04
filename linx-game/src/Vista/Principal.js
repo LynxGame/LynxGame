@@ -77,9 +77,7 @@ export class Principal extends Component {
                                 en tercera persona, lanzado por Sony 
                                 Computer Entertainment y desarrollado por 
                                 Naughty Dog</p>
-                            <Link to="/Venta">
-                            <Button  type="primary" key="venta">Comprar</Button> 
-                            </Link>
+                            <Button  type="primary" key="venta" onClick={this.showDrawer}>Comprar</Button> 
                             <Drawer
                             title="Venta"
                             width={720}
