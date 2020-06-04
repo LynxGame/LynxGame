@@ -446,6 +446,19 @@ export const updateVideojuegos = functions.https.onRequest(async(request,respons
     }
 })
 
+export const updateVideojuegosLic = functions.https.onRequest(async(request,response)=>{
+    const { id, num_lic} = request.body;
+    
+    try {
+        const connection = await connect();
+        const update = connection.createQueryBuilder().update(Videojuegos).set({licencias_disp: num_lic})
+        .where("id=:id",{id:id}).execute();
+
+        response.send(update)
+    } catch (error) {
+        response.send(error)
+    }
+})
 
 //Cliente
 
