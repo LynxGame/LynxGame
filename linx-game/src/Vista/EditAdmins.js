@@ -43,13 +43,6 @@ export class EditAdmins extends Component {
     visible:false
     };
 
-  handleClick = e => {
-      console.log('click ', e);
-      this.setState({
-      current: e.key,
-      });
-  };
-
   showDrawer = () => {
       this.setState({
       visible: true,
