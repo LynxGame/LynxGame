@@ -1,18 +1,31 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { showVideojuegos } from '../actions';
-import { Carousel,Card,  } from 'antd';
-import { Typography, Space } from 'antd';
+import { Carousel,Card,Drawer  } from 'antd';
+import { Button } from 'antd';
+import { Link } from 'react-router-dom';
+import Venta from './Venta';
 
-const { Text, Link } = Typography;
 const { Meta } = Card;
 
 export class AllGames extends Component {
-
+  state={
+    visible:false
+    };
   componentDidMount() {
     this.props.showVideojuegos();
   } 
+  showDrawer = () => {
+    this.setState({
+    visible: true,
+    });
+};
 
+onClose = () => {
+    this.setState({
+    visible: false,
+    });
+};
   renderUsersList() {
     return this.props.videojuegos.map((videojuego) => {
       return (
@@ -38,8 +51,18 @@ export class AllGames extends Component {
                    <br></br><Meta title='Clasificacion' description={videojuego.clasificion}/>
                    <br></br><Meta  title='Descripcion' description={videojuego.descripcion}/>
                    <br></br>
+                    <Button  type="primary" key="Venta" onClick={this.showDrawer}>Comprar Videojuego</Button> 
+                    <Drawer
+                      title="Venta"
+                      width={720}
+                      onClose={this.onClose}
+                      visible={this.state.visible}
+                      bodyStyle={{ paddingBottom: 80 }}
+                    ><Venta/>
+                  </Drawer>
+                   <br></br>
                 </Card>
-            <br></br><br></br>
+            <br></br><br></br>  
 
             </div>
       )
