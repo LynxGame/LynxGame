@@ -21,11 +21,11 @@ import EditAdmins from './EditAdmins';
 
 const { Header, Footer, Content } = Layout;
 
-function App() {
+function Admin() {
   return (
     <Layout>
       <Header style={{padding:"0rem 0rem", position: 'sticky', zIndex:1,  top: "0" }}>
-        <Toolbar />
+        <ToolbarAdmin/>
       </Header>
       <Layout>
         <Content style={{height:'auto', alignContent:'center'}}>
@@ -33,12 +33,8 @@ function App() {
             <Route path="/EditarPerfil" component={EditarPerfil}/>
             <Route path="/EliminarPerfil" component={EliminarPerfil}/>
             <Route path="/EliminarTarjeta" component={EliminarTarjeta}/>
-            <Route path="/Biblioteca" component={Biblioteca}/>
-            <Route path="/Venta" component={Venta}/>
-            <Route path="/ViewGame" component={ViewGame}/>
             <Route path="/EditGames" component={EditGames} />
             <Route path="/EditClient" component={EditClient}/>
-            <Route path="/AllGames" component={AllGames}/>
             <Route path="/EditAdmins" component={EditAdmins}/>
         </Content>
       </Layout>
@@ -49,4 +45,4 @@ function App() {
   );
 }
 
-export default App;
+export default Admin;
