@@ -16,7 +16,9 @@ const LoginForm = () => {
     console.log('Finish:', values);
     axios.post('https://us-central1-lynx-game.cloudfunctions.net/getOnePersonal',values).then(response => {
       var Personal = new Object(response.data);
-      console.log(Personal)
+      if(values.nombre == Personal.nombre){
+        console.log('La sesion esta chida')
+      }
     }).catch(error => {
       console.log(error)
     });
@@ -75,7 +77,6 @@ const LoginForm = () => {
           <Button
             type="primary"
             htmlType="submit"
-
             disabled={
               !form.isFieldsTouched(true) ||
               form.getFieldsError().filter(({ errors }) => errors.length).length

@@ -4,18 +4,9 @@ import { UserOutlined, LockOutlined ,GlobalOutlined,NumberOutlined} from '@ant-d
 import axios from 'axios';
 
 const CreateAccountForm = () => {
-
-
-    axios.get('https://us-central1-lynx-game.cloudfunctions.net/getAllPersonal')
-    .then(response =>{
-      console.log(response);
-    })
-    .catch(error =>{
-      console.log(error);
-    });
   
   
-  const [form] = Form.useForm();
+  const [formLogin] = Form.useForm();
   const [, forceUpdate] = useState(); // To disable submit button at the beginning.
   //const {posts} = this.state;
 
@@ -25,10 +16,15 @@ const CreateAccountForm = () => {
 
   const onFinish = values => {
     console.log('Finish:', values);
+      axios.post('https://us-central1-lynx-game.cloudfunctions.net/crearCliente',values).then(response => {
+        console.log(response.data);
+      }).catch(error => {
+        console.log(error)
+      });
   };
 
   return(
-    <Form form={form} name="horizontal_login" layout="horizontal" onFinish={onFinish}>
+    <Form form={formLogin} name="horizontal_login" layout="horizontal" onFinish={onFinish}>
         <Form.Item
             name={"nombre"}
             label={"Nombre"}
@@ -43,7 +39,7 @@ const CreateAccountForm = () => {
               <Input placeholder="Nombre" prefix={<UserOutlined className="site-form-item-icon" />} />
     </Form.Item>
     <Form.Item
-        name={"apellido"}
+        name={"apellidos"}
         label={"Apellidos"}
         rules={[
             {
@@ -56,7 +52,7 @@ const CreateAccountForm = () => {
     </Form.Item>
     
     <Form.Item
-        name={"correo"}
+        name={"email"}
         label={"Email"}
         rules={[
             {
@@ -82,7 +78,7 @@ const CreateAccountForm = () => {
     </Form.Item>
 
     <Form.Item
-            name={"contraseña"}
+            name={"password"}
             label={"Contraseña"}
             rules={[
               {
@@ -96,7 +92,6 @@ const CreateAccountForm = () => {
     </Form.Item>
 
     <Form.Item
-            name={"Contraseña2"}
             label={"Confirma tu contraseña"}
             rules={[
               {
@@ -123,14 +118,71 @@ const CreateAccountForm = () => {
               <Input placeholder="Edad" prefix={<NumberOutlined className="site-form-item-icon" />} />
     </Form.Item>
 
+    <Form.Item
+            name={"calle"}
+            label={"Calle"}
+            rules={[
+              {
+                required: true,
+                message: 'Inserta tu edad!',
+              },
+            ]}
+        >
+              
+              <Input placeholder="Calle" prefix={<NumberOutlined className="site-form-item-icon" />} />
+    </Form.Item>
+
+    <Form.Item
+            name={"cp"}
+            label={"CP"}
+            rules={[
+              {
+                required: true,
+                message: 'Inserta tu edad!',
+              },
+            ]}
+        >
+              
+              <Input placeholder="CP" prefix={<NumberOutlined className="site-form-item-icon" />} />
+    </Form.Item>
+
+    
+    <Form.Item
+            name={"ciudad"}
+            label={"Ciudad"}
+            rules={[
+              {
+                required: true,
+                message: 'Inserta tu edad!',
+              },
+            ]}
+        >
+              
+              <Input placeholder="Ciudad" prefix={<NumberOutlined className="site-form-item-icon" />} />
+    </Form.Item>
+
+    <Form.Item
+            name={"numero"}
+            label={"Numero"}
+            rules={[
+              {
+                required: true,
+                message: 'Inserta tu edad!',
+              },
+            ]}
+        >
+              
+              <Input placeholder="Numero" prefix={<NumberOutlined className="site-form-item-icon" />} />
+    </Form.Item>
+
     <Form.Item shouldUpdate>
         {() => (
           <Button
             type="primary"
             htmlType="submit"
             disabled={
-              !form.isFieldsTouched(true) ||
-              form.getFieldsError().filter(({ errors }) => errors.length).length
+              !formLogin.isFieldsTouched(true) ||
+              formLogin.getFieldsError().filter(({ errors }) => errors.length).length
             }
           >
             Crear Nueva Cuenta

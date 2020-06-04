@@ -55,10 +55,7 @@ export class Principal extends Component {
                             <Button  type="primary" key="ViewGame">View</Button>
                             </Link>
                     
-                            <Drawer title="Comprar" width={500} onClose={this.closeCompra} visible={this.state.compra} bodyStyle={{ paddingBottom: 80 }}>
-                            <Button type="dashed" key="pay">Buy $70USD</Button>
-                            <Pay/>
-                            </Drawer>
+                            
                             
                                                     
                         </Card>    
