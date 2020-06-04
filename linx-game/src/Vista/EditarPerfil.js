@@ -1,9 +1,9 @@
 import axios from 'axios';
-import React, { Component,useState,useEffect } from 'react'
-import { Row,Col,Button,Form,Input} from 'antd';
+import React, { useState,useEffect } from 'react'
+import {Button,Form,Input, InputNumber} from 'antd';
 
 
-const Editar = () => {
+const EditarPerfil = () => {
 
     const [form] = Form.useForm();
 
@@ -52,10 +52,10 @@ const Editar = () => {
             <Input />
           </Form.Item>
           <Form.Item label="cp" name={['cp']} rules={[{required: true, message: 'Ingresa tu cp'} ]}>
-            <Input />
+            <InputNumber />
           </Form.Item>
           <Form.Item label="Numero" name={['numero']} rules={[{required: true, message: 'Ingresa tu numero'} ]}>
-            <Input />
+            <InputNumber />
           </Form.Item>
           <Form.Item label="Ciudad" name={['ciudad']} rules={[{required: true, message: 'Ingresa tu ciudad'} ]}>
             <Input />
@@ -77,4 +77,4 @@ const Editar = () => {
       </div>
     );
 };
-  export default Editar
+  export default EditarPerfil
