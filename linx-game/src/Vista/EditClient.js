@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { showClientes } from '../actions';
 import { showClientesNoCredit } from '../actions';
-import { Table } from 'antd';
+import { Table , Button, Drawer} from 'antd';
+import EditarPerfil from './EditarPerfil';
 
 const columns = [
   {
@@ -107,11 +108,52 @@ export class EditClient extends Component {
     this.props.showClientesNoCredit();
   }
 
+  state={
+    visible:false
+};
+
+handleClick = e => {
+    console.log('click ', e);
+    this.setState({
+    current: e.key,
+    });
+};
+
+showDrawer = () => {
+    this.setState({
+    visible: true,
+    });
+};
+
+onClose = () => {
+    this.setState({
+    visible: false,
+    });
+};
+
   render() {
     return (
       <div>
         <h2>Editar Clientes</h2>
+        <Button  type="primary" key="Editar Cliente" onClick={this.showDrawer}>Actualizar Informacion del cliente</Button> 
+        <Drawer
+          title="Editar Cliente"
+          width={720}
+          onClose={this.onClose}
+          visible={this.state.visible}
+          bodyStyle={{ paddingBottom: 80 }}
+        ><EditarPerfil/>
+      </Drawer>
         <Table columns={columns} dataSource={this.props.clientesNoCard} pagination={{ pageSize: 5 }} sroll={{ x: 240 }} />
+        <Button  type="primary" key="Borrar Cliente" onClick={this.showDrawer}>Borrar a un cliente</Button> 
+        <Drawer
+          title="Borrar Cliente"
+          width={720}
+          onClose={this.onClose}
+          visible={this.state.visible}
+          bodyStyle={{ paddingBottom: 80 }}
+        ><EditarPerfil/>
+      </Drawer>
         <Table columns={columns2} dataSource={this.props.clientes} pagination={{ pageSize: 5 }} scroll={{ x: 240 }} />
       </div>
       

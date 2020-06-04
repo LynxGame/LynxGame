@@ -74,16 +74,16 @@ onClose = () => {
     return (
       <div>
         <h2>Editar Videojuegos</h2>
-        <Table columns={columns} dataSource={this.props.videojuegos} pagination={{ pageSize: 5 }} scroll={{ y: 440 }} />
-        <Button  type="primary" key="venta" onClick={this.showDrawer}>Actualizar Precio</Button> 
+        <Button  type="primary" key="Editar Videojuegos" onClick={this.showDrawer}>Actualizar Precio</Button> 
       <Drawer
-      title="Venta"
+      title="Editar Videojuegos"
       width={720}
       onClose={this.onClose}
       visible={this.state.visible}
       bodyStyle={{ paddingBottom: 80 }}
       ><DEGame/>
       </Drawer>
+        <Table columns={columns} dataSource={this.props.videojuegos} pagination={{ pageSize: 5 }} scroll={{ y: 440 }} />
       </div>
       
     )
