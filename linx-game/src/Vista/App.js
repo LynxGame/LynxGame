@@ -7,7 +7,6 @@ import Principal from './Principal';
 import Pie from './Pie';
 import EditarPerfil from './EditarPerfil';
 import Biblioteca from './Biblioteca';
-import Pay from './Pay';
 import {ViewGame} from './ViewGame.js';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import ToolbarAdmin from './ToolbarAdmin';
@@ -15,6 +14,7 @@ import ToolbarUser from './ToolbarUser';
 import EditGames from './EditGames';
 import EditClient from './EditClient';
 import AllGames from './AllGames';
+import Venta from './Venta';
 
 const { Header, Footer, Content } = Layout;
 
@@ -31,7 +31,7 @@ function App() {
             <Route exact path="/" component={Principal} />
             <Route path="/EditarPerfil" component={EditarPerfil} />
             <Route path="/Biblioteca" component={Biblioteca}/>
-            <Route path="/Pay" component={Pay}/>
+            <Route path="/Venta" component={Venta}/>
             <Route path="/ViewGame" component={ViewGame}/>
             <Route path="/EditGames" component={EditGames} />
             <Route path="/EditClient" component={EditClient}/>

@@ -1,9 +1,9 @@
 import React, { useState , useEffect } from 'react';
-import {Form, Button , Input , InputNumber} from 'antd';
+import {Form, Button , Input } from 'antd';
 import axios from 'axios';
 
 
-const Compra = () => {
+const Venta = () => {
 
     const [form] = Form.useForm();
 
@@ -34,22 +34,18 @@ const Compra = () => {
           layout="horizontal" onFinish={onFinish} form={form}
         >
           <Form.Item label="Fecha" name={['fecha']} rules={[{required: true, message: 'Inserta la fecha de hoy'} ]}>
-              <InputNumber />
+              <Input/>
           </Form.Item>
-          <Form.Item label="Videojuego" name={['videojuego']} rules={[{required: true, message: 'Ingresa el nombre del videojuego'} ]}>
-            <InputNumber />
+          <Form.Item label="Videojuego" name={['videojuegos']} rules={[{required: true, message: 'Ingresa el nombre del videojuego'} ]}>
+            <Input/>
           </Form.Item>
-          <Form.Item label="Inserta tu numero de cliente" name={['idcliente']} rules={[{required: true, message: 'Ingresa tu numero ID'} ]}>
+          <Form.Item label="Inserta tu numero de cliente" name={['cliente']} rules={[{required: true, message: 'Ingresa tu numero ID'} ]}>
             <Input />
           </Form.Item>
           <Form.Item shouldUpdate onFinish={onFinish}>
           <Button
             type="primary"
             htmlType="submit"
-            disabled={
-              !form.isFieldsTouched(true) ||
-              form.getFieldsError().filter(({ errors }) => errors.length).length
-            }
             >
             Comprar Juego
           </Button>
@@ -59,4 +55,4 @@ const Compra = () => {
       </div>
     );
 };
-  export default Compra
+  export default Venta

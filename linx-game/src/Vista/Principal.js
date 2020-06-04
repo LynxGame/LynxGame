@@ -1,10 +1,11 @@
 import React, { Component  } from 'react'
-import {  Carousel, Row, Col , Avatar} from 'antd'
+import {  Carousel, Row, Col , Avatar, Drawer} from 'antd'
 import { Card  } from 'antd';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { showVideojuegos } from '../actions';
 import { connect } from 'react-redux';
+import Venta  from './Venta';
 
 function mapStateToProps(state) {
     return {
@@ -13,6 +14,10 @@ function mapStateToProps(state) {
 }
 
 export class Principal extends Component {
+
+    state={
+        visible:false
+    };
 
     handleClick = e => {
         console.log('click ', e);
@@ -27,23 +32,11 @@ export class Principal extends Component {
         });
     };
 
-    showSesion = () => {
-        this.setState({
-        sesion: true,
-        });
-    };
-
     onClose = () => {
         this.setState({
         visible: false,
         });
     };
-
-    closeSesion = () => {
-        this.setState({
-        sesion: false,
-        });
-    }
 
     componentDidMount() {
         this.props.showVideojuegos();
@@ -88,9 +81,15 @@ export class Principal extends Component {
                             <Link to="/ViewGame">
                             <Button  type="primary" key="ViewGame">View</Button>
                             </Link>
-                            <Link to="/Pay">
-                            <Button  type="primary" key="pay">Comprar</Button> 
-                            </Link>
+                            <Button  type="primary" key="venta" onClick={this.showDrawer}>Comprar</Button> 
+                            <Drawer
+                            title="Venta"
+                            width={720}
+                            onClose={this.onClose}
+                            visible={this.state.visible}
+                            bodyStyle={{ paddingBottom: 80 }}
+                            ><Venta/>
+                            </Drawer>
                         </Card>    
                     </Col>
 
