@@ -82,7 +82,12 @@ export class Toolbar extends Component {
                         <Menu.Item>
                             <Search style={{ verticalAlign: "middle" }} placeholder="Introduce un juego..."  enterButton />
                         </Menu.Item>
-                        <SubMenu icon={<TagsOutlined />} title="Juegos">
+                        <Menu.Item key="juegos" icon={<TagsOutlined />}>
+                            <Link to="/AllGames">
+                                Juegos
+                            </Link>
+                        </Menu.Item>
+                        {/*<SubMenu icon={<TagsOutlined />} title="Juegos">
                             <Menu.ItemGroup title="Por Genero">
                                 <Menu.Item key="setting:1">Accion-Aventura</Menu.Item>
                                 <Menu.Item key="setting:2">FPS-Disparos</Menu.Item>
@@ -95,7 +100,7 @@ export class Toolbar extends Component {
                                 <Menu.Item key="setting:7">Free to Play</Menu.Item>
                                 <Menu.Item key="setting:8" icon={<FireOutlined />}>Sales</Menu.Item>
                             </Menu.ItemGroup>
-                        </SubMenu>
+                        </SubMenu>*/}
                         <Menu.Item key="juegos" src='./src/Biblioteca.js' icon={<BookOutlined />}>
                             <Link to="/Biblioteca">
                                 Mis Juegos
