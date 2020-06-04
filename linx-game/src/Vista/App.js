@@ -22,8 +22,8 @@ function App() {
   return (
     <Layout>
       <Header style={{padding:"0rem 0rem", position: 'sticky', zIndex:1,  top: "0" }}>
-      <Route exact path="/Toolbar" component={Toolbar} />
-        <Route path="/" component={ToolbarAdmin} />
+      <Route exact path="/" component={Toolbar} />
+        <Route path="/ToolbarAdmin" component={ToolbarAdmin} />
         <Route path="/ToolbarUser" component={ToolbarUser} />
       </Header>
       <Layout>
