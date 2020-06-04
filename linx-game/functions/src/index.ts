@@ -446,6 +446,20 @@ export const updateVideojuegos = functions.https.onRequest(async(request,respons
     }
 })
 
+export const updateVideojuegosCost = functions.https.onRequest(async(request,response)=>{
+    const { idprecio, id} = request.body;
+    
+    try {
+        const connection = await connect();
+        const update = connection.createQueryBuilder().update(Videojuegos).set({precio: idprecio})
+        .where("id=:id",{id:id}).execute();
+
+        response.send(update)
+    } catch (error) {
+        response.send(error)
+    }
+})
+
 export const updateVideojuegosLic = functions.https.onRequest(async(request,response)=>{
     const { id, num_lic} = request.body;
     
