@@ -4,6 +4,8 @@ import { showClientes } from '../actions';
 import { showClientesNoCredit } from '../actions';
 import { Table , Button, Drawer} from 'antd';
 import EditarPerfil from './EditarPerfil';
+import EliminarPerfil from './EliminarPerfil';
+import EliminarTarjeta from './EliminarTarjeta';
 
 const columns = [
   {
@@ -144,16 +146,25 @@ onClose = () => {
           bodyStyle={{ paddingBottom: 80 }}
         ><EditarPerfil/>
       </Drawer>
-        <Table columns={columns} dataSource={this.props.clientesNoCard} pagination={{ pageSize: 5 }} sroll={{ x: 240 }} />
-        <Button  type="primary" key="Borrar Cliente" onClick={this.showDrawer}>Borrar a un cliente</Button> 
+      <Button  type="primary" key="Eliminar Cliente" onClick={this.showDrawer}>Eliminar a un cliente</Button> 
         <Drawer
-          title="Borrar Cliente"
+          title="Eliminar Perfil"
           width={720}
           onClose={this.onClose}
           visible={this.state.visible}
           bodyStyle={{ paddingBottom: 80 }}
-        ><EditarPerfil/>
+        ><EliminarPerfil/>
       </Drawer>
+      <Button  type="primary" key="Eliminar Tarjeta" onClick={this.showDrawer}>Eliminar una Tarjeta</Button> 
+        <Drawer
+          title="Eliminar Tarjeta"
+          width={720}
+          onClose={this.onClose}
+          visible={this.state.visible}
+          bodyStyle={{ paddingBottom: 80 }}
+        ><EliminarTarjeta/>
+      </Drawer>
+        <Table columns={columns} dataSource={this.props.clientesNoCard} pagination={{ pageSize: 5 }} sroll={{ x: 240 }} />
         <Table columns={columns2} dataSource={this.props.clientes} pagination={{ pageSize: 5 }} scroll={{ x: 240 }} />
       </div>
       
