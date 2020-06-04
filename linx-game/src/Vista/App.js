@@ -17,6 +17,7 @@ import EditGames from './EditGames';
 import EditClient from './EditClient';
 import AllGames from './AllGames';
 import Venta from './Venta';
+import { EditAdmins } from './EditAdmins';
 
 const { Header, Footer, Content } = Layout;
 
@@ -39,6 +40,7 @@ function App() {
             <Route path="/ViewGame" component={ViewGame}/>
             <Route path="/EditGames" component={EditGames} />
             <Route path="/EditClient" component={EditClient}/>
+            <Route path="/EditAdmins" component={EditAdmins}/>
             <Route path="/AllGames" component={AllGames}/>
         </Content>
       </Layout>
