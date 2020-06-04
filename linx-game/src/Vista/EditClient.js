@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { showClientes } from '../actions';
 import { showClientesNoCredit } from '../actions';
-import { Table , Button, Drawer,Divider} from 'antd';
+import { Table , Button, Drawer} from 'antd';
 import EditarPerfil from './EditarPerfil';
 import EliminarPerfil from './EliminarPerfil';
 import EliminarTarjeta from './EliminarTarjeta';
@@ -110,77 +110,57 @@ export class EditClient extends Component {
     this.props.showClientesNoCredit();
   }
 
-    state={
-    visibleEC:false,
-    visibleELT:false,
-    visibleELC:false
-    };
+  state={
+    visible:false
+};
 
-    showEC = () => {
-      this.setState({
-      visibleEC: true,
-      });
-    };
-
-    showELT = () => {
-      this.setState({
-      visibleELT: true,
-      });
-    };
-
-    showELC = () => {
-      this.setState({
-      visibleELC: true,
-      });
-    };
-
-    onCloseEC = () => {
-        this.setState({
-        visibleEC: false,
-        });
-    };
-
-    onCloseELC = () => {
-      this.setState({
-      visibleELC: false,
-      });
-    };
-
-  onCloseELT = () => {
+handleClick = e => {
+    console.log('click ', e);
     this.setState({
-    visibleELT: false,
+    current: e.key,
     });
-    };
+};
 
-render() {
+showDrawer = () => {
+    this.setState({
+    visible: true,
+    });
+};
+
+onClose = () => {
+    this.setState({
+    visible: false,
+    });
+};
+
+  render() {
     return (
       <div>
         <h2>Editar Clientes</h2>
-        <Divider type="vertical" />
-        <Button  type="primary" key="Editar Cliente" onClick={this.showEC}>Actualizar Informacion del cliente</Button> 
+        <Button  type="primary" key="Editar Cliente" onClick={this.showDrawer}>Actualizar Informacion del cliente</Button> 
         <Drawer
           title="Editar Cliente"
           width={720}
-          onClose={this.onCloseEC}
-          visible={this.state.visibleEC}
+          onClose={this.onClose}
+          visible={this.state.visible}
           bodyStyle={{ paddingBottom: 80 }}
-        ><EditarPerfil/></Drawer>
-        <Divider type="vertical" />
-      <Button  type="primary" key="Eliminar Cliente" onClick={this.showELC}>Eliminar a un cliente</Button> 
+        ><EditarPerfil/>
+      </Drawer>
+      <Button  type="primary" key="Eliminar Cliente" onClick={this.showDrawer}>Eliminar a un cliente</Button> 
         <Drawer
           title="Eliminar Perfil"
           width={720}
-          onClose={this.onCloseELC}
-          visible={this.state.visibleELC}
+          onClose={this.onClose}
+          visible={this.state.visible}
           bodyStyle={{ paddingBottom: 80 }}
-        ><EliminarPerfil/></Drawer>
-        <Divider type="vertical" />
-      <Button  type="primary" key="Eliminar Tarjeta" onClick={this.showELT}>Eliminar una Tarjeta</Button> 
+        ><EliminarPerfil/>
+      </Drawer>
+      <Button  type="primary" key="Eliminar Tarjeta" onClick={this.showDrawer}>Eliminar una Tarjeta</Button> 
         <Drawer
           title="Eliminar Tarjeta"
           width={720}
-          onClose={this.onCloseELT}
-          visible={this.state.visibleELT}
+          onClose={this.onClose}
+          visible={this.state.visible}
           bodyStyle={{ paddingBottom: 80 }}
         ><EliminarTarjeta/>
       </Drawer>
