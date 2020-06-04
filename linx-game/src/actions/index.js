@@ -44,12 +44,5 @@ export function showPersonal() {
     }
 }
 
-export const ID_SESION = 'ID_SESION'
-
-export function idUserAction() {
-    return (dispatch, getState) => {
-        axios.post()
-    }
-}
 
     
