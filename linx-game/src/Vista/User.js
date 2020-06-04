@@ -5,31 +5,28 @@ import { Layout } from 'antd';
 import Principal from './Principal';
 import Pie from './Pie';
 import EditarPerfil from './EditarPerfil';
-import EliminarPerfil from './EliminarPerfil';
-import EliminarTarjeta from './EliminarTarjeta';
+import Biblioteca from './Biblioteca';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import ToolbarAdmin from './ToolbarAdmin';
-import EditGames from './EditGames';
-import EditClient from './EditClient';
-import EditAdmins from './EditAdmins';
+import ToolbarUser from './ToolbarUser';
+import AllGames from './AllGames';
+import Venta from './Venta';
+
 
 const { Header, Footer, Content } = Layout;
 
-function Admin() {
+function User() {
   return (
     <Layout>
       <Header style={{padding:"0rem 0rem", position: 'sticky', zIndex:1,  top: "0" }}>
-        <ToolbarAdmin/>
+        <ToolbarUser/>
       </Header>
       <Layout>
         <Content style={{height:'auto', alignContent:'center'}}>
             <Route exact path="/" component={Principal} />
             <Route path="/EditarPerfil" component={EditarPerfil}/>
-            <Route path="/EliminarPerfil" component={EliminarPerfil}/>
-            <Route path="/EliminarTarjeta" component={EliminarTarjeta}/>
-            <Route path="/EditGames" component={EditGames} />
-            <Route path="/EditClient" component={EditClient}/>
-            <Route path="/EditAdmins" component={EditAdmins}/>
+            <Route path="/Biblioteca" component={Biblioteca}/>
+            <Route path="/Venta" component={Venta}/>
+            <Route path="/AllGames" component={AllGames}/>
         </Content>
       </Layout>
       <Footer>
@@ -39,4 +36,4 @@ function Admin() {
   );
 }
 
-export default Admin;
+export default User;
