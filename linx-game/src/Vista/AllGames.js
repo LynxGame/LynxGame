@@ -1,65 +1,66 @@
 import React, { Component } from 'react'
-import { Table, Tag, Space } from 'antd';
-import axios from 'axios';
-const { Column, ColumnGroup } = Table;
-var videojuegos=null;
-var cod=null,med=null,ban=null,med2=null,med3=null,cod2;
-
-
+import { connect } from 'react-redux';
+import { showVideojuegos } from '../actions';
+import { Table } from 'antd';
+import { Card, Col, Row } from 'antd';
+const { Meta } = Card;
 const columns = [
-    {
-      title: 'id',
-      dataIndex: 'dem',
-      width: 150,
-    },
-    {
-        title: 'nombre',
-        dataIndex: 'cod2',
-        width: 150,
-      }
-    ];
+  {
+    title: 'id',
+    dataIndex: 'id',
+    width: 50,
+  },
+  {
+    title: 'nombre',
+    dataIndex: 'nombre',
+    width: 150,
+  },
+  {
+    title: 'descripcion',
+    dataIndex: 'descripcion',
+    width: 150,
+  },
+  {
+    title: 'fecha',
+    dataIndex: 'fecha',
+    width: 150,
+  },
+  {
+    title: 'clasificion',
+    dataIndex: 'clasificion',
+    width: 150,
+  },
+  {
+    title: 'licencias_disp',
+    dataIndex: 'licencias_disp',
+    width: 150,
+  },
 
-    let dem = [];
-const promises = [];
-
-for (let i = 0; i < 5; i++) {  
-  promises .push(
-
-axios.get('https://us-central1-lynx-game.cloudfunctions.net/getAllGames').then(response => {
-    //console.log(response)
-    videojuegos = response.data;
-    console.log(videojuegos)
-    cod = videojuegos[i].id;
-    console.log(cod)  
-    cod2 = videojuegos[i].nombre;
-    console.log(cod2)  
-
-    dem.push(cod2);
-
-}).catch(error => {
-    console.log(error)
-  })
-
-  )
-}
-
-Promise.all(promises).then(() => console.log(dem));
-
-  const data = [];
-  for (let i = 1; i < 3; i++) {
-    data.push({
-      id: `${dem}`,
-      nombre: `${cod2}`,
-    });
-  }
+];
 
 
-class AllGames extends Component {
+export class AllGames extends Component {
+
+  componentDidMount() {
+    this.props.showVideojuegos();
+  } 
+
   render() {
     return (
-      <>
-       <Table columns={columns} dataSource={dem} pagination={{ pageSize: 50 }} scroll={{ y: 240 }} />
-      </>
-    )}
+      <div>
+        <h2>Editar Videojuegos</h2>
+        <Table columns={columns} dataSource={this.props.videojuegos} pagination={{ pageSize: 5 }} scroll={{ y: 440 }} />
+      </div>
+      
+    )
+  }
 }
-export default AllGames     
+
+function mapStateToProps(state) {
+  return {
+    videojuegos: state.videojuego.list
+    
+  }
+}
+
+export default connect(mapStateToProps, {showVideojuegos})(AllGames)
