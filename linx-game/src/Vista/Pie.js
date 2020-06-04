@@ -22,13 +22,13 @@ export class Pie extends Component {
                 <Button type="link" icon={<YoutubeFilled style={{fontSize: '40px'}}/>} href="https://www.youtube.com"/>
             </Col>
             <Col xs={{ span: 1, offset: 2 }} md={{ span: 1, offset: 1}} lg={{ span: 1, offset: 0 }}>
-                <Button type="link" icon={<FacebookFilled style={{fontSize: '40px'}}/>} href="https://www.facebook.com/CarlosCata27"/>
+                <Button type="link" icon={<FacebookFilled style={{fontSize: '40px'}}/>} href="https://www.facebook.com/LynxxT/"/>
             </Col>
             <Col xs={{ span: 1, offset: 2 }} md={{ span: 1, offset: 1}} lg={{ span: 1, offset: 0 }}>
-                <Button type="link" icon={<TwitterCircleFilled style={{fontSize: '40px'}}/>} href="https://www.twitter.com/CarlosCata27"/>
+                <Button type="link" icon={<TwitterCircleFilled style={{fontSize: '40px'}}/>} href="https://www.twitter.com/Carlos_Cata27"/>
             </Col>
             <Col xs={{ span: 1, offset: 2 }} md={{ span: 1, offset: 1}} lg={{ span: 1, offset: 0 }}>
-                <Button type="link" icon={<InstagramFilled style={{fontSize: '40px'}}/>} href="https://www.Instagram.com/Carlos_Cata27"/>
+                <Button type="link" icon={<InstagramFilled style={{fontSize: '40px'}}/>} href="https://www.instagram.com/lynxt_e"/>
             </Col>
             <Col xs={{ span: 1, offset: 2 }} md={{ span: 1, offset: 1}} lg={{ span: 1, offset: 0 }}>
                 <Button type="link" icon={<IconFont type="icon-twitch" style={{fontSize: '40px'}}/>} href="https://www.Twitch.com/CarlosKta27"/>
