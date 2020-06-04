@@ -78,8 +78,8 @@ export class EditAdmins extends Component {
           visible={this.state.visible}
           bodyStyle={{ paddingBottom: 80 }}
         ><EditarPersonal/>
-      </Drawer>
-       <Table columns={columns} dataSource={this.props.personales} pagination={{ pageSize: 5 }} sroll={{ x: 240 }} />
+      </Drawer> 
+      <Table columns={columns} dataSource={this.props.personales} pagination={{ pageSize: 5 }} scroll={{ y: 440 }} />
       </div>
     )
   }
@@ -91,4 +91,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, {showPersonal})(EditAdmins)
+export default connect(mapStateToProps, {showPersonal })(EditAdmins)

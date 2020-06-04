@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState,useEffect } from 'react'
-import {Button,Form,Input, InputNumber} from 'antd';
+import {Button,Form,Input} from 'antd';
 
 
 const EditarPersonal = () => {

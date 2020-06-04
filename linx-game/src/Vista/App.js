@@ -40,8 +40,8 @@ function App() {
             <Route path="/ViewGame" component={ViewGame}/>
             <Route path="/EditGames" component={EditGames} />
             <Route path="/EditClient" component={EditClient}/>
-            <Route path="/EditAdmins" component={EditAdmins}/>
             <Route path="/AllGames" component={AllGames}/>
+            <Route path="/EditAdmins" component={EditAdmins}/>
         </Content>
       </Layout>
       <Footer>
