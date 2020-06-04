@@ -1,11 +1,10 @@
 import React, { Component  } from 'react'
 import {  Carousel, Row, Col , Avatar} from 'antd'
-import { Card , Drawer } from 'antd';
+import { Card  } from 'antd';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { showVideojuegos } from '../actions';
 import { connect } from 'react-redux';
-import Pay from './Pay';
 
 function mapStateToProps(state) {
     return {
@@ -56,13 +55,13 @@ export class Principal extends Component {
         return(
             <Carousel autoplay effect fade>
                  <div> 
-                    <img src='https://cutt.ly/qyKElnj' height="500"></img>
+                    <img src='https://cutt.ly/qyKElnj' height="500" alt="Cargando..."></img>
                  </div>
                  <div>
-                 <img src='https://cutt.ly/QyHZ1Ks' height="500"></img>
+                 <img src='https://cutt.ly/QyHZ1Ks' height="500" alt="Cargando..."></img>
                  </div>
                  <div>
-                     <img src='https://cutt.ly/ryH1jSI' height="500"></img>
+                     <img src='https://cutt.ly/ryH1jSI' height="500" alt="Cargando..."></img>
                  </div>
             </Carousel>
         )
@@ -142,13 +141,13 @@ export class Principal extends Component {
                 <h2>Top Juegos antiguos</h2>
                 <Carousel autoplay effect fade>
                 <div>
-                <img src='https://cutt.ly/XyHLWzZ' height="500"></img>
+                <img src='https://cutt.ly/XyHLWzZ' height="500" alt="Cargando..."></img>
                 </div>
                 <div>
-                <img src='https://cutt.ly/RyHMPfN' height="500"></img>
+                <img src='https://cutt.ly/RyHMPfN' height="500" alt="Cargando..."></img>
                 </div>
                 <div>
-                <img src='https://cutt.ly/zyKW0Fq' height="500"></img>
+                <img src='https://cutt.ly/zyKW0Fq' height="500" alt="Cargando..."></img>
                 </div>
                 </Carousel>
 
@@ -203,13 +202,13 @@ export class Principal extends Component {
                 <h2>Top Mas Vendidos</h2>
                 <Carousel autoplay effect fade>
                 <div>
-                <img src='https://cutt.ly/myHZ7MO' height="500"></img>
+                <img src='https://cutt.ly/myHZ7MO' height="500" alt="Cargando..."></img>
                 </div>
                 <div>
-                <img src='https://cutt.ly/nyKWDUP' height="500"></img>
+                <img src='https://cutt.ly/nyKWDUP' height="500" alt="Cargando..."></img>
                 </div>
                 <div>
-                <img src='https://cutt.ly/FyHZ9G1' height="500"></img>
+                <img src='https://cutt.ly/FyHZ9G1' height="500" alt="Cargando..."></img>
                 </div>
                 </Carousel>
 
