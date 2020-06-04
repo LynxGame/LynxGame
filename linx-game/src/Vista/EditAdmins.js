@@ -43,26 +43,26 @@ export class EditAdmins extends Component {
     visible:false
     };
 
-handleClick = e => {
-    console.log('click ', e);
-    this.setState({
-    current: e.key,
-    });
-};
+  handleClick = e => {
+      console.log('click ', e);
+      this.setState({
+      current: e.key,
+      });
+  };
 
-showDrawer = () => {
-    this.setState({
-    visible: true,
-    });
-};
+  showDrawer = () => {
+      this.setState({
+      visible: true,
+      });
+  };
 
-onClose = () => {
-    this.setState({
-    visible: false,
-    });
-};
+  onClose = () => {
+      this.setState({
+      visible: false,
+      });
+  };
 
-componentDidMount() {
+  componentDidMount() {
     this.props.showPersonal();
   }
 
@@ -79,16 +79,15 @@ componentDidMount() {
           bodyStyle={{ paddingBottom: 80 }}
         ><EditarPersonal/>
       </Drawer>
-       <Table columns={columns} dataSource={this.props.personals} pagination={{ pageSize: 5 }} sroll={{ x: 240 }} />
+       <Table columns={columns} dataSource={this.props.personales} pagination={{ pageSize: 5 }} sroll={{ x: 240 }} />
       </div>
-      
     )
   }
 }
 
 function mapStateToProps(state) {
   return {
-    personals: state.personal.list
+    personales: state.personal.list
   }
 }
 
