@@ -15,13 +15,14 @@ const LoginForm = () => {
   const onFinish = values => {
     console.log('Finish:', values);
     axios.post('https://us-central1-lynx-game.cloudfunctions.net/getOnePersonal',values).then(response => {
-      if(response.data.nombre != null){ console.log('Ya esta papi') }
+      console.log(response.data);
+      if(response.data.nombre === values.username){ console.log('Ya esta papi') }
     }).catch(error => {
       console.log(error)
     });
     axios.post('https://us-central1-lynx-game.cloudfunctions.net/getOneCliente',values).then(response => {
-      var Cliente = new Object(response.data);
-      console.log(Cliente)
+      console.log(response.data);
+      if(response.data.apellidos === values.username){ console.log('Ya esta papi') }
     }).catch(error => {
       console.log(error)
     });
