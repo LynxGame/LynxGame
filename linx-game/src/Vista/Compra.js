@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Form,Input,Button,Radio,Select,Cascader,DatePicker,InputNumber,TreeSelect,Switch,} from 'antd';
   
-export class Pay extends Component {
+export class Compra extends Component {
     render() {
     return (
       <div>
@@ -14,28 +14,21 @@ export class Pay extends Component {
           }}
           layout="horizontal"
         >
-          <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-          
           <Form.Item label="ID del videojuego">
               <InputNumber />
           </Form.Item>
-
           <Form.Item label="Numero de licencias">
             <InputNumber />
           </Form.Item>
-          
           <Form.Item label="Fecha">
             <DatePicker picker='month' bordered={false} />
           </Form.Item>
-
-          <br></br>
           <Form.Item label="Presiona el siguiente boton">
-          <Button type="primary">Comprar!</Button>
+          <Button type="primary">Comprar Licencias</Button>
           </Form.Item>
         </Form>
-        <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
       </div>
     );
   };
 }
-  export default Pay
+  export default Compra

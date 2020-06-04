@@ -89,18 +89,15 @@ export class Toolbar extends Component {
                     <Menu mode="horizontal" style={{ textAlign: 'right' }}>
                         <Menu.Item key="crearCuenta">
                             <Button type="primary" onClick={this.showDrawer}><UserAddOutlined />Crear Cuenta</Button>
-                            <Drawer title="Crear una nueva cuenta" width={500} onClose={this.onClose} visible={this.state.visible} bodyStyle={{ paddingBottom: 80 }} style={{ }}>
+                            <Drawer title="Crear una nueva cuenta" width={500} onClose={this.onClose} visible={this.state.visible} bodyStyle={{ paddingBottom: 80 }}>
                         <CreateAccountForm/>
                     </Drawer>
                         </Menu.Item>
                         <Menu.Item>
-                       
                             <Button type="primary" onClick={this.showSesion}><UserOutlined />Iniciar Sesion </Button>
-                            
                             <Drawer title="Inicia Sesion" width={500} onClose={this.closeSesion} visible={this.state.sesion} bodyStyle={{ paddingBottom: 80 }}>
                                 <LoginForm/>
                             </Drawer>
-                            
                         </Menu.Item>
                     </Menu>
                 </Col>

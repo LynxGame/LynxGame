@@ -12,7 +12,6 @@ import {ViewGame} from './ViewGame.js';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import ToolbarAdmin from './ToolbarAdmin';
 import ToolbarUser from './ToolbarUser';
-import Compra from './Compra';
 import EditGames from './EditGames';
 import EditClient from './EditClient';
 import AllGames from './AllGames';
@@ -34,7 +33,6 @@ function App() {
             <Route path="/Biblioteca" component={Biblioteca}/>
             <Route path="/Pay" component={Pay}/>
             <Route path="/ViewGame" component={ViewGame}/>
-            <Route path="/Compra" component={Compra} />
             <Route path="/EditGames" component={EditGames,ToolbarAdmin} />
             <Route path="/EditClient" component={EditClient}/>
             <Route path="/AllGames" component={AllGames}/>
