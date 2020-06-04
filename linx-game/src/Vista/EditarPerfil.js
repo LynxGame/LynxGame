@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { showPersonal } from '../actions';
-import { Table } from 'antd';
-import { Layout, Avatar ,Row,Col,Button,Form,Input} from 'antd';
+import { Row,Col,Button,Form,Input} from 'antd';
 
 export class EditarPerfil extends Component {
 

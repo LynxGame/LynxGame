@@ -1,11 +1,5 @@
 import React, { Component } from 'react'
-import { Layout, Row,Col,Button,Card,Avatar} from 'antd';
-
-
-const BrowserRouter = require("react-router-dom").BrowserRouter;
-const Route = require("react-router-dom").Route;
-const Link = require("react-router-dom").Link;
-const { Header, Footer, Sider, Content } = Layout;
+import { Row,Col,Button,Card,Avatar} from 'antd';
 
 export class Biblioteca extends Component {
     render() {

@@ -1,67 +1,62 @@
-import React, {Component} from 'react';
-import {Form,Input,Button,Radio,Select,Cascader,DatePicker,InputNumber,TreeSelect,Switch,} from 'antd';
+import React, { useState , useEffect } from 'react';
+import {Form, Button , Input , InputNumber} from 'antd';
+import axios from 'axios';
+
+
+const Compra = () => {
+
+    const [form] = Form.useForm();
+
+    const [, forceUpdate] = useState(); // To disable submit button at the beginning.
+
+    useEffect(() => {
+      forceUpdate({});
+    }, []);
+
+    const onFinish = values => {
+      console.log('Finish:', values);
+      axios.post('https://us-central1-lynx-game.cloudfunctions.net/crearVenta',values).then(response => {
+        console.log(response.data);
+      }).catch(error => {
+        console.log(error)
+      });
+    };
   
-export class Pay extends Component {
-    render() {
     return (
       <div>
         <Form
           labelCol={{
-            span: 4,
+            span: 8,
           }}
           wrapperCol={{
-            span: 14,
+            span: 16,
           }}
-          layout="horizontal"
+          layout="horizontal" onFinish={onFinish} form={form}
         >
-          <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-          <Form.Item label="Numero de Tarjeta">
-            <Input />
+          <Form.Item label="Fecha" name={['fecha']} rules={[{required: true, message: 'Inserta la fecha de hoy'} ]}>
+              <InputNumber />
           </Form.Item>
-        
-          <Form.Item label="Banco">
-            <TreeSelect
-              treeData={[
-                {
-                  title: 'BBVA',
-                  value: 'BBVA',
-                },
-                {
-                  title: 'HSBC',
-                  value: 'HSBC',
-                },
-                {
-                    title: 'Banamex',
-                    value: 'Banamex',
-                },
-                {
-                    title: 'Santander',
-                    value: 'Santander',
-                },
-                {
-                    title: 'Scotiabank',
-                    value: 'Scotiabank',
-                },
-              ]}
-            />
-          </Form.Item>
-          
-          <Form.Item label="CVV">
+          <Form.Item label="Videojuego" name={['videojuego']} rules={[{required: true, message: 'Ingresa el nombre del videojuego'} ]}>
             <InputNumber />
           </Form.Item>
-          
-          <Form.Item label="Fecha">
-            <DatePicker picker='month' bordered={false} />
+          <Form.Item label="Inserta tu numero de cliente" name={['idcliente']} rules={[{required: true, message: 'Ingresa tu numero ID'} ]}>
+            <Input />
           </Form.Item>
-
-          <br></br>
-          <Form.Item label="Presiona el siguiente boton">
-          <Button type="primary">Comprar!</Button>
-          </Form.Item>
+          <Form.Item shouldUpdate onFinish={onFinish}>
+          <Button
+            type="primary"
+            htmlType="submit"
+            disabled={
+              !form.isFieldsTouched(true) ||
+              form.getFieldsError().filter(({ errors }) => errors.length).length
+            }
+            >
+            Comprar Juego
+          </Button>
+      </Form.Item>
         </Form>
-        <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+
       </div>
     );
-  };
-}
-  export default Pay
+};
+  export default Compra

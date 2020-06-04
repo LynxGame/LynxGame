@@ -1,15 +1,12 @@
-import React, {Component,Fragment} from 'react';
-import {  Carousel, Row, Col , Avatar} from 'antd'
+import React, {Component} from 'react';
+import {  Carousel, Col  } from 'antd'
 import { Card } from 'antd';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
-import { Typography, Divider } from 'antd';
-import { Layout } from 'antd';
+import { Typography } from 'antd';
 import { Rate } from 'antd';
-import { ToolbarUser } from './ToolbarUser';
 
 const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful']
-const { Header, Footer, Sider, Content } = Layout;
 const { Title, Paragraph, Text } = Typography;
 var i=0;
 
@@ -49,23 +46,23 @@ async componentDidMount() {
         <div> 
           <Carousel autoplay effect fade >
                 <div> 
-                    <img src={this.state.videojuego.Media.baner1}></img>
+                    <img src={this.state.videojuego.Media.baner1}alt="Cargando..."></img>
                 </div>
                 <div>
-                <img src={this.state.videojuego.Media.baner2}></img>
+                <img src={this.state.videojuego.Media.baner2}alt="Cargando..."></img>
                 </div>
                 <div>
-                     <img src={this.state.videojuego.Media.baner3}></img>
+                     <img src={this.state.videojuego.Media.baner3}alt="Cargando..."></img>
                 </div>
                 <div>
-                    <img src={this.state.videojuego.Media.baner1}></img>
+                    <img src={this.state.videojuego.Media.baner1}alt="Cargando..."></img>
                 </div>
                 </Carousel>
                 <br></br>
                  <Col span={5} offset={2}>
                       <Card style={{ width: 1270 }}>
                         <Title>{this.state.videojuego.nombre}</Title>
-                        <img src={this.state.videojuego.Media.preview}></img>
+                        <img src={this.state.videojuego.Media.preview}alt="Cargando..."></img>
                         <Paragraph >{this.state.videojuego.descripcion}</Paragraph>
                         
                             <Link to="/ViewGame">
