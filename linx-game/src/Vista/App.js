@@ -23,8 +23,8 @@ function App() {
     <Layout>
       <Header style={{padding:"0rem 0rem", position: 'sticky', zIndex:1,  top: "0" }}>
       <Route exact path="/Toolbar" component={Toolbar} />
-        <Route path="/" component={ToolbarAdmin} />
-        <Route path="/ToolbarUser" component={ToolbarUser} />
+        <Route path="/ToolbarAdmin" component={ToolbarAdmin} />
+        <Route path="/" component={ToolbarUser} />
       </Header>
       <Layout>
         <Content style={{height:'auto', alignContent:'center'}}>
