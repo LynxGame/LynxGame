@@ -44,5 +44,16 @@ export function showPersonal() {
     }
 }
 
+export const muestraVenta = 'muestraVenta'
+ 
+export function showVenta() {
+    return (dispatch, getState) => {
+        axios.get('https://us-central1-lynx-game.cloudfunctions.net/getAllVentas')
+            .then((response) => {
+                dispatch( { type: muestraVenta, payload: response.data } ) 
+            }) 
+    }
+}
+
 
     
