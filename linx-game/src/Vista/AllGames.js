@@ -2,41 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { showVideojuegos } from '../actions';
 import { Table } from 'antd';
-import { Card, Col, Row } from 'antd';
+import { Carousel,Card, Col, Row } from 'antd';
 const { Meta } = Card;
-const columns = [
-  {
-    title: 'id',
-    dataIndex: 'id',
-    width: 50,
-  },
-  {
-    title: 'nombre',
-    dataIndex: 'nombre',
-    width: 150,
-  },
-  {
-    title: 'descripcion',
-    dataIndex: 'descripcion',
-    width: 150,
-  },
-  {
-    title: 'fecha',
-    dataIndex: 'fecha',
-    width: 150,
-  },
-  {
-    title: 'clasificion',
-    dataIndex: 'clasificion',
-    width: 150,
-  },
-  {
-    title: 'licencias_disp',
-    dataIndex: 'licencias_disp',
-    width: 150,
-  },
-
-];
 
 
 export class AllGames extends Component {
@@ -45,15 +12,49 @@ export class AllGames extends Component {
     this.props.showVideojuegos();
   } 
 
+  renderUsersList() {
+    return this.props.videojuegos.map((videojuego) => {
+      return (
+
+
+        <div className="site-card-wrapper">
+        <Row gutter={[24, 24]} justify="space-between">
+        <Col span={2} offset={2}>
+        <Card
+        hoverable
+        style={{ width: 1080 }}
+        >
+                <Carousel autoplay effect fade>
+                 <div> 
+                    <img src={videojuego.Media.baner1}></img>
+                 </div>
+                 <div>
+                 <img src={videojuego.Media.baner2}></img>
+                 </div>
+                 <div>
+                     <img src={videojuego.Media.baner3}></img>
+                 </div>
+            </Carousel>
+            <br></br>
+        <Meta title={videojuego.nombre} description={videojuego.descripcion}/>
+        </Card>
+        </Col>
+        </Row>
+        </div>
+
+      )
+    })
+  }
+
   render() {
     return (
       <div>
-        <h2>Editar Videojuegos</h2>
-        <Table columns={columns} dataSource={this.props.videojuegos} pagination={{ pageSize: 5 }} scroll={{ y: 440 }} />
+        {this.renderUsersList()}
       </div>
       
     )
   }
+  
 }
 
 function mapStateToProps(state) {
