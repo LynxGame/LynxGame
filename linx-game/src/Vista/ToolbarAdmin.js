@@ -65,7 +65,7 @@ export class Toolbar extends Component {
                         Profile Data
                         </Menu.Item>
                         <Menu.Item key="Compra" icon={<TagsOutlined />} onClick={this.showCompra}> 
-                        Compra Licencias                          
+                        Comprar Licencias                          
                         <Drawer title="Compra Licencias" width={500} onClose={this.closeCompra} visible={this.state.compra} bodyStyle={{ paddingBottom: 80 }}>
                                 <Compra />
                         </Drawer>
@@ -84,9 +84,7 @@ export class Toolbar extends Component {
                 </Col>
                 <Col xs={{ span: 12, offset: 0 }} md={{ span: 10, offset: 0}} lg={{ span: 9, offset:0 }}>
                     <Menu mode="horizontal" style={{ textAlign: 'right' }}>
-                        
                         <Menu.Item>
-                        
                         <Popover
                                 content={popoption}
                                 title="¿Seguro que quieres salir de tu perfil?"
