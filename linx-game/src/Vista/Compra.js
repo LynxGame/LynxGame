@@ -36,7 +36,7 @@ const Compra = () => {
           <Form.Item label="ID del videojuego" name={['videojuegos']} rules={[{required: true, message: 'Ingresa el ID de los videojuegos a comprar'} ]}>
               <InputNumber />
           </Form.Item>
-          <Form.Item label="Numero de licencias" name={['licencias']} rules={[{required: true, message: 'Ingresa el numero de licencias a comprar'} ]}>
+          <Form.Item label="Numero de licencias" name={['licencia']} rules={[{required: true, message: 'Ingresa el numero de licencias a comprar'} ]}>
             <InputNumber />
           </Form.Item>
           <Form.Item label="Fecha" name={['fecha']} rules={[{required: true, message: 'Ingresa la fecha a comprar'} ]}>
