@@ -309,7 +309,7 @@ export const getAllDesarrollador = functions.https.onRequest(async(request,respo
 //Compra
 export const crearCompra = functions.https.onRequest(async(request,response)=>{
 
-    const { fecha,licencia,videojuegos} = request.body;
+    const {fecha,licencia,videojuegos} = request.body;
 
     try{
         const connection=await connect();
@@ -433,7 +433,7 @@ export const deletePersonal = functions.https.onRequest(async(request,response)=
 //Videojuegos
 
 export const updateVideojuegos = functions.https.onRequest(async(request,response)=>{
-    const { idprecio , id, num_lic} = request.body;
+    const { idprecio, id, num_lic} = request.body;
     
     try {
         const connection = await connect();
