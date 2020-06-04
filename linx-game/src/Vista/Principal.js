@@ -240,7 +240,7 @@ export class Principal extends Component {
                         <Avatar shape='square' style={{ 
                         background: 'none'
                         }} src='https://cutt.ly/DyKEgOv' size={220}/>
-                            <p>Skyrim es un RPG del tipo mundo abierto desarrollado por Bethesda Game Studios y publicado por Bethesda Softworks. Skyrim es la quinta entrega de videojuegos de acción y fantasía de la serie The Elder Scrolls</p>
+                            <p>Skyrim es un RPG del tipo mundo abierto desarrollado por Bethesda Game Studios. Es la quinta entrega de videojuegos de acción y fantasía de la serie The Elder Scrolls</p>
 
                             <Button type="primary">View</Button>
                             <Button type="dashed">Buy $70USD</Button>
@@ -251,7 +251,7 @@ export class Principal extends Component {
                         <Avatar shape='square' style={{ 
                         background: 'none'
                         }} src='https://cutt.ly/WyKERIr' size={220}/>
-                            <p>The Witcher 3: Wild Hunt es un videojuego de rol desarrollado por CD Projekt RED. CD Projekt RED es el desarrollador mientras que la distribución corre a cargo de la Warner Bros.</p>
+                            <p>The Witcher 3: Wild Hunt es un videojuego de rol desarrollado por CD Projekt RED. CD Projekt RED es el desarrollador</p>
 
                             <Button type="primary">View</Button>
                             <Button type="dashed">Buy $70USD</Button>
