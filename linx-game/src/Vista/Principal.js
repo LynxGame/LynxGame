@@ -1,11 +1,10 @@
 import React, { Component  } from 'react'
 import {  Carousel, Row, Col , Avatar} from 'antd'
-import { Card , Drawer } from 'antd';
+import { Card  } from 'antd';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { showVideojuegos } from '../actions';
 import { connect } from 'react-redux';
-import Pay from './Pay';
 
 function mapStateToProps(state) {
     return {
@@ -56,13 +55,13 @@ export class Principal extends Component {
         return(
             <Carousel autoplay effect fade>
                  <div> 
-                    <img src='https://cutt.ly/qyKElnj' height="500"></img>
+                    <img src='https://cutt.ly/qyKElnj' height="500" alt="Cargando..."></img>
                  </div>
                  <div>
-                 <img src='https://cutt.ly/QyHZ1Ks' height="500"></img>
+                 <img src='https://cutt.ly/QyHZ1Ks' height="500" alt="Cargando..."></img>
                  </div>
                  <div>
-                     <img src='https://cutt.ly/ryH1jSI' height="500"></img>
+                     <img src='https://cutt.ly/ryH1jSI' height="500" alt="Cargando..."></img>
                  </div>
             </Carousel>
         )
@@ -142,13 +141,13 @@ export class Principal extends Component {
                 <h2>Top Juegos antiguos</h2>
                 <Carousel autoplay effect fade>
                 <div>
-                <img src='https://cutt.ly/XyHLWzZ' height="500"></img>
+                <img src='https://cutt.ly/XyHLWzZ' height="500" alt="Cargando..."></img>
                 </div>
                 <div>
-                <img src='https://cutt.ly/RyHMPfN' height="500"></img>
+                <img src='https://cutt.ly/RyHMPfN' height="500" alt="Cargando..."></img>
                 </div>
                 <div>
-                <img src='https://cutt.ly/zyKW0Fq' height="500"></img>
+                <img src='https://cutt.ly/zyKW0Fq' height="500" alt="Cargando..."></img>
                 </div>
                 </Carousel>
 
@@ -203,13 +202,13 @@ export class Principal extends Component {
                 <h2>Top Mas Vendidos</h2>
                 <Carousel autoplay effect fade>
                 <div>
-                <img src='https://cutt.ly/myHZ7MO' height="500"></img>
+                <img src='https://cutt.ly/myHZ7MO' height="500" alt="Cargando..."></img>
                 </div>
                 <div>
-                <img src='https://cutt.ly/nyKWDUP' height="500"></img>
+                <img src='https://cutt.ly/nyKWDUP' height="500" alt="Cargando..."></img>
                 </div>
                 <div>
-                <img src='https://cutt.ly/FyHZ9G1' height="500"></img>
+                <img src='https://cutt.ly/FyHZ9G1' height="500" alt="Cargando..."></img>
                 </div>
                 </Carousel>
 
@@ -242,7 +241,7 @@ export class Principal extends Component {
                         <Avatar shape='square' style={{ 
                         background: 'none'
                         }} src='https://cutt.ly/DyKEgOv' size={220}/>
-                            <p>Skyrim es un RPG del tipo mundo abierto desarrollado por Bethesda Game Studios y publicado por Bethesda Softworks. Skyrim es la quinta entrega de videojuegos de acción y fantasía de la serie The Elder Scrolls</p>
+                            <p>Skyrim es un RPG del tipo mundo abierto desarrollado por Bethesda Game Studios. Es la quinta entrega de videojuegos de acción y fantasía de la serie The Elder Scrolls</p>
 
                             <Button type="primary">View</Button>
                             <Button type="dashed">Buy $70USD</Button>
@@ -253,7 +252,7 @@ export class Principal extends Component {
                         <Avatar shape='square' style={{ 
                         background: 'none'
                         }} src='https://cutt.ly/WyKERIr' size={220}/>
-                            <p>The Witcher 3: Wild Hunt es un videojuego de rol desarrollado por CD Projekt RED. CD Projekt RED es el desarrollador mientras que la distribución corre a cargo de la Warner Bros.</p>
+                            <p>The Witcher 3: Wild Hunt es un videojuego de rol desarrollado por CD Projekt RED. CD Projekt RED es el desarrollador</p>
 
                             <Button type="primary">View</Button>
                             <Button type="dashed">Buy $70USD</Button>

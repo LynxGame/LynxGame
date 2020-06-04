@@ -1,6 +1,6 @@
 import axios from 'axios';
-import React, { Component,useState,useEffect } from 'react'
-import { Row,Col,Button,Form,Input, InputNumber} from 'antd';
+import React, { useState,useEffect } from 'react'
+import {Button,Form,Input, InputNumber} from 'antd';
 
 
 const EditarPerfil = () => {
