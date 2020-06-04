@@ -6,6 +6,8 @@ import { Layout } from 'antd';
 import Principal from './Principal';
 import Pie from './Pie';
 import EditarPerfil from './EditarPerfil';
+import EliminarPerfil from './EliminarPerfil';
+import EliminarTarjeta from './EliminarTarjeta';
 import Biblioteca from './Biblioteca';
 import {ViewGame} from './ViewGame.js';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
@@ -30,7 +32,9 @@ function App() {
       <Layout>
         <Content style={{height:'auto', alignContent:'center'}}>
             <Route exact path="/" component={Principal} />
-            <Route path="/EditarPerfil" component={EditarPerfil} />
+            <Route path="/EditarPerfil" component={EditarPerfil}/>
+            <Route path="/EliminarPerfil" component={EliminarPerfil}/>
+            <Route path="/EliminarTarjeta" component={EliminarTarjeta}/>
             <Route path="/Biblioteca" component={Biblioteca}/>
             <Route path="/Venta" component={Venta}/>
             <Route path="/ViewGame" component={ViewGame}/>
