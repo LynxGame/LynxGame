@@ -15,6 +15,37 @@ function mapStateToProps(state) {
 
 export class Principal extends Component {
 
+    handleClick = e => {
+        console.log('click ', e);
+        this.setState({
+        current: e.key,
+        });
+    };
+
+    showDrawer = () => {
+        this.setState({
+        visible: true,
+        });
+    };
+
+    showSesion = () => {
+        this.setState({
+        sesion: true,
+        });
+    };
+
+    onClose = () => {
+        this.setState({
+        visible: false,
+        });
+    };
+
+    closeSesion = () => {
+        this.setState({
+        sesion: false,
+        });
+    }
+
     componentDidMount() {
         this.props.showVideojuegos();
     }
@@ -58,13 +89,9 @@ export class Principal extends Component {
                             <Link to="/ViewGame">
                             <Button  type="primary" key="ViewGame">View</Button>
                             </Link>
-                    
-                            <Drawer title="Comprar" width={500} onClose={this.closeCompra} visible={this.state.compra} bodyStyle={{ paddingBottom: 80 }}>
-                            <Button type="dashed" key="pay">Buy $70USD</Button>
-                            <Pay/>
-                            </Drawer>
-                            
-                                                    
+                            <Link to="/Pay">
+                            <Button type="primary" key="pay">Comprar</Button> 
+                            </Link>
                         </Card>    
                     </Col>
 
