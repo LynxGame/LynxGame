@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { showVideojuegos } from '../actions';
 import { Carousel,Card,Drawer  } from 'antd';
 import { Button } from 'antd';
-import { Link } from 'react-router-dom';
 import Venta from './Venta';
 
 const { Meta } = Card;

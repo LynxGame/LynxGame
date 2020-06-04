@@ -78,18 +78,17 @@ componentDidMount() {
           visible={this.state.visible}
           bodyStyle={{ paddingBottom: 80 }}
         ><EditarPersonal/>
-      </Drawer>
-       <Table columns={columns} dataSource={this.props.personals} pagination={{ pageSize: 5 }} sroll={{ x: 240 }} />
+      </Drawer> 
+      <Table columns={columns} dataSource={this.props.personales} pagination={{ pageSize: 5 }} scroll={{ y: 440 }} />
       </div>
-      
     )
   }
 }
 
 function mapStateToProps(state) {
-  return {
-    personals: state.personal.list
-  }
+    return {
+      personales: state.personal.list
+    }
 }
 
-export default connect(mapStateToProps, {showPersonal})(EditAdmins)
+export default connect(mapStateToProps, {showPersonal })(EditAdmins)
