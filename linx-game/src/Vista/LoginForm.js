@@ -15,10 +15,7 @@ const LoginForm = () => {
   const onFinish = values => {
     console.log('Finish:', values);
     axios.post('https://us-central1-lynx-game.cloudfunctions.net/getOnePersonal',values).then(response => {
-      var Personal = new Object(response.data);
-      if(values.nombre == Personal.nombre){
-        console.log('La sesion esta chida')
-      }
+      if(response.data.nombre != null){ console.log('Ya esta papi') }
     }).catch(error => {
       console.log(error)
     });
