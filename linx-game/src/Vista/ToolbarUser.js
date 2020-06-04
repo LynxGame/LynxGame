@@ -1,20 +1,17 @@
 import React, { Component } from 'react'
 import { Menu, Avatar, Row, Col, Button, Input } from 'antd'
-import { UserOutlined, EditOutlined, BookOutlined, TagsOutlined,CloseCircleTwoTone } from '@ant-design/icons';
+import { CheckOutlined,UserOutlined, EditOutlined, BookOutlined, TagsOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { Popover } from 'antd';
 const { Search } = Input;
 const popoption = (
     <div>
-        <CloseCircleTwoTone twoToneColor="#52c41a"/>
+        <CheckOutlined/>
         <Link to="/">
-            Aceptar
+            Si, Cerrar sesion
         </Link>
         <p></p>
-        <CloseCircleTwoTone twoToneColor="#FF0000"/>
-        <Link to="">
-            Cancelar 
-        </Link>
+            Presiona ENTER para Cancelar
     </div>
   );
 export class Toolbar extends Component {
