@@ -100,9 +100,10 @@ export class Principal extends Component {
                                 disparos en primera persona desarrollado 
                                 por la compañía EA Digital Illusions CE 
                                 y distribuido por Electronic Arts.</p>
-
+                            <br></br>
                             <Link to="/Venta">
-                            <Button  type="primary" key="venta">Comprar</Button> 
+                            
+                            <Button  type="primary" key="venta" >Comprar</Button> 
                             </Link>
                         </Card>    
                     </Col>
@@ -115,7 +116,7 @@ export class Principal extends Component {
                                 es un videojuego de disparos 
                                 en primera persona táctico 
                                 multijugador de 5 vs 5</p>
-
+                                <br></br><br></br>
                             <Link to="/Venta">
                             <Button  type="primary" key="venta">Comprar</Button> 
                             </Link>
@@ -130,7 +131,7 @@ export class Principal extends Component {
                                 de peleas publicado por Capcom, 
                                 quien co-desarrollo el juego con 
                                 Dimps.</p>
-
+                                <br></br><br></br>
                             <Link to="/Venta">
                             <Button  type="primary" key="venta">Comprar</Button> 
                             </Link>
@@ -157,8 +158,8 @@ export class Principal extends Component {
                         <Avatar shape='square' style={{ 
                         background: 'none'
                         }} src='https://cutt.ly/cyHZwWi' size={220}/>
-                            <p>Age of Empires es un videojuego de estrategia en tiempo real para computadoras personales, el primero de la serie homónima</p>
-                            
+                            <p>Age of Empires es un videojuego de estrategia en tiempo real para computadoras personales, el primero de la serie homónima.</p>
+                            <br></br><br></br>
                             <Link to="/Venta">
                             <Button  type="primary" key="venta">Comprar</Button> 
                             </Link>
@@ -170,8 +171,8 @@ export class Principal extends Component {
                         <Avatar shape='square' style={{ 
                         background: 'none'
                         }} src='https://cutt.ly/dyHXe5l' size={220}/>
-                            <p>BioShock es un videojuego de disparos en primera persona, desarrollado por Irrational Games</p>
-
+                            <p>BioShock es un videojuego de disparos en primera persona, desarrollado por Irrational Games.</p>
+                            <br></br><br></br><br></br>
                             <Link to="/Venta">
                             <Button  type="primary" key="venta">Comprar</Button> 
                             </Link>
@@ -183,7 +184,7 @@ export class Principal extends Component {
                         background: 'none'
                         }} src='https://cutt.ly/tyHNmOZ' object-fit= "scale-down"  size={220}/>
                             <p>Grand Theft Auto: San Andreas es un videojuego de acción-aventura de mundo abierto desarrollado por Rockstar North y publicado por Rockstar Games.</p>
-
+                            <br></br>
                             <Link to="/Venta">
                             <Button  type="primary" key="venta">Comprar</Button> 
                             </Link>
@@ -195,7 +196,7 @@ export class Principal extends Component {
                         background: 'none'
                         }} src='https://cutt.ly/SyKW8Rs' size={220}/>
                             <p>The Elder Scrolls: Arena es un videojuego de rol desarrollado para PCs. Es la primera entrega de la serie The Elder Scrolls.</p>
-
+                            <br></br><br></br>
                             <Link to="/Venta">
                             <Button  type="primary" key="venta">Comprar</Button> 
                             </Link>
@@ -236,7 +237,7 @@ export class Principal extends Component {
                         background: 'none'
                         }} src='https://cutt.ly/yyHBwBv' size={220}/>
                             <p>Gos of War III, es la quinta entrega de la serie de God of War y la secuela de God of War y God of War II.</p>
-
+                            <br></br>
                             <Link to="/Venta">
                             <Button  type="primary" key="venta">Comprar</Button> 
                             </Link>
@@ -260,7 +261,7 @@ export class Principal extends Component {
                         background: 'none'
                         }} src='https://cutt.ly/WyKERIr' size={220}/>
                             <p>The Witcher 3: Wild Hunt es un videojuego de rol desarrollado por CD Projekt RED. CD Projekt RED es el desarrollador</p>
-
+                            <br></br>
                             <Link to="/Venta">
                             <Button  type="primary" key="venta">Comprar</Button> 
                             </Link>
