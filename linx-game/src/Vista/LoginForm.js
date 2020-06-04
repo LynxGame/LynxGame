@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Input, Button } from 'antd';
-import { UserOutlined, LockOutlined,BorderOutlined } from '@ant-design/icons';
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
-import { Popover } from 'antd';
 
 const LoginForm = () => {
   const [form] = Form.useForm();
@@ -29,15 +27,6 @@ const LoginForm = () => {
       console.log(error)
     });
   };
-
-  const popoption = (
-    <div>
-        <BorderOutlined />
-        <Redirect to="/">
-            I'm not a robot
-        </Redirect>
-    </div>
-  );
 
   return (
     <Form form={form} name="horizontal" layout="horizontal" onFinish={onFinish}>
@@ -83,12 +72,6 @@ const LoginForm = () => {
         />
       </Form.Item>
       <Form.Item shouldUpdate onFinish={onFinish}>
-        {() => (
-        <Popover
-        content={onFinish}
-        title="| reCAPTCHA |"
-        trigger="click"
-        >
           <Button
             type="primary"
             htmlType="submit"
@@ -100,8 +83,6 @@ const LoginForm = () => {
             >
             Iniciar Sesion
           </Button>
-        </Popover>
-        )}
       </Form.Item>
     </Form>
   );

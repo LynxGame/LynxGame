@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Menu, Avatar, Row, Col, Button, Input, Drawer } from 'antd'
 import { CloseCircleTwoTone,UserOutlined, EditOutlined, BookOutlined, TagsOutlined } from '@ant-design/icons';
-import { Compra } from './Compra'
+import Compra  from './Compra'
 import { Link } from 'react-router-dom';
 import { Popover } from 'antd';
 
