@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { showVideojuegos } from '../actions';
-import { Table } from 'antd';
-import { Carousel,Card, Col, Row } from 'antd';
+import { Carousel,Card,  } from 'antd';
 const { Meta } = Card;
 
 
@@ -25,13 +24,13 @@ export class AllGames extends Component {
                 </Card>
                 <Carousel autoplay effect fade>
                  <div> 
-                    <img src={videojuego.Media.baner1}></img>
+                    <img src={videojuego.Media.baner1} alt="Cargando..."/>
                  </div>
                  <div>
-                 <img src={videojuego.Media.baner2}></img>
+                 <img src={videojuego.Media.baner2} alt="Cargando..."/>
                  </div>
                  <div>
-                     <img src={videojuego.Media.baner3}></img>
+                     <img src={videojuego.Media.baner3} alt="Cargando..."/>
                  </div>
             </Carousel>
             <br></br>

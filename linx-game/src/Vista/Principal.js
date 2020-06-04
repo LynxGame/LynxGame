@@ -1,13 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component  } from 'react'
 import {  Carousel, Row, Col , Avatar} from 'antd'
-import { Card } from 'antd';
+import { Card , Drawer } from 'antd';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
-import { Typography } from 'antd';
 import { showVideojuegos } from '../actions';
 import { connect } from 'react-redux';
-
-const { Title, Paragraph, Text } = Typography;
+import Pay from './Pay';
 
 function mapStateToProps(state) {
     return {
@@ -23,7 +21,6 @@ export class Principal extends Component {
 
     renderCarousel() {
         console.log(this.props.videojuegos)
-        //var puto = this.props.videojuegos[1];
         console.log(this.props.videojuegos.list)
         return(
             <Carousel autoplay effect fade>
@@ -62,11 +59,12 @@ export class Principal extends Component {
                             <Button  type="primary" key="ViewGame">View</Button>
                             </Link>
                     
-                            <Link to="/Pay">
+                            <Drawer title="Comprar" width={500} onClose={this.closeCompra} visible={this.state.compra} bodyStyle={{ paddingBottom: 80 }}>
                             <Button type="dashed" key="pay">Buy $70USD</Button>
-                            <Text delete>$50USD</Text>
-                            </Link>
-                        
+                            <Pay/>
+                            </Drawer>
+                            
+                                                    
                         </Card>    
                     </Col>
 

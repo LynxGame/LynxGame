@@ -1,126 +1,80 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux';
-import { showPersonal } from '../actions';
-import { Table } from 'antd';
-import { Layout, Avatar ,Row,Col,Button,Form,Input} from 'antd';
+import axios from 'axios';
+import React, { Component,useState,useEffect } from 'react'
+import { Row,Col,Button,Form,Input} from 'antd';
 
-export class EditarPerfil extends Component {
 
-  componentDidMount() {
-    this.props.showPersonal();
-  }
+const Editar = () => {
 
-  render() {
+    const [form] = Form.useForm();
+
+    const [, forceUpdate] = useState(); // To disable submit button at the beginning.
+
+    useEffect(() => {
+      forceUpdate({});
+    }, []);
+
+    const onFinish = values => {
+      console.log('Finish:', values);
+      axios.post('https://us-central1-lynx-game.cloudfunctions.net/updateCliente',values).then(response => {
+        console.log(response.data);
+      }).catch(error => {
+        console.log(error)
+      });
+    };
+  
     return (
-      <Form style={{ }}>
-                <div style={{ textAlign: 'center'}}>
-                    <h2>Datos Basicos</h2>
-                </div>
-                
-                <Row gutter={16}>
-                    <Col span={12}>
-                        <Form.Item
-                            name="Nombre"
-                            label="Nombre"
-                            rules={[{ required: true, message: 'Por favor ingresa tu nombre' }]}
-                        >
-                        <Input placeholder="Ingresa tu nombre" />
-                        </Form.Item>
-                    </Col>
-                    <Col span={12}>
-                        <Form.Item
-                            name="Apellidos"
-                            label="Apellidos"
-                            rules={[{ required: true, message: 'Ingresa tus apellidos' }]}
-                        >
-                        <Input style={{ width: '100%' }} placeholder="Aqui van tus apellidos" />
-                        </Form.Item>
-                    </Col>
-                </Row>
-                
-                <Row gutter={16}>
-                    <Col span={12}>
-                        <Form.Item name="correo" label="Correo" rules={[{ required: true, message: 'Por favor, necesitamos tu correo' }]}>
-                            <Input style={{ width: '100%' }} placeholder="Ingresa tu correo"/>
-                        </Form.Item>
-                    </Col>
-                    <Col span={12}>
-                    <Form.Item name="Edad" label="Edad" rules={[{ required: true, message: 'Ingresa tu edad' }]}>
-                            <Input style={{ width: '100%' }} placeholder="Ingresa tu edad"/>
-                        </Form.Item>
-                    </Col>
-                </Row>
-                <div style={{ textAlign: 'center'}}>
-                    <h2>Datos Bancarios</h2>
-                </div>
-                <Row gutter={16}>
-                    <Col span={12}>
-                        <Form.Item name="Numero" label="Numero de tarjeta" rules={[{ required: true, message: 'Ingresa un numero de tarjeta valido' }]}>
-                            <Input style={{ width: '100%' }} placeholder="Ingresa tu numero de tarjeta"/>
-                        </Form.Item>
-                    </Col>
-                    <Col span={12}>
-                        <Form.Item name="ccv" label="CCV" rules={[{ required: true, message: 'Ingresa un CCV valido' }]}>
-                            <Input style={{ width: '100%' }} placeholder="Ingresa tu CCV"/>
-                        </Form.Item>
-                    </Col>
-                </Row>
-                <Row gutter={16}>
-                    <Col span={12}>
-                        <Form.Item name="Fecha" label="Fecha de Caducidad" rules={[{ required: true, message: 'Ingresa una fecha de caducidad correcta' }]}>
-                            <Input style={{ width: '100%' }} placeholder="Ingresa la fecha de caducidad"/>
-                        </Form.Item>
-                    </Col>
-                    <Col span={12}>
-                    <Form.Item name="banco" label="Nombre tu banco" rules={[{ required: true, message: 'Debes completar este campo' }]}>
-                            <Input style={{ width: '100%' }} placeholder="Ingresa el nombre de tu banco"/>
-                        </Form.Item>
-                    </Col>
-                </Row>
-                <div style={{ textAlign: 'center'}}>
-                    <h2>Datos Domiciliarios</h2>
-                </div>
-                <Row gutter={16}>
-                    <Col span={12}>
-                        <Form.Item name="Calle" label="Nombre de la calle" rules={[{ required: true, message: 'Ingresa una calle valida' }]}>
-                            <Input style={{ width: '100%' }} placeholder="Calle, Avenida, Privada"/>
-                        </Form.Item>
-                    </Col>
-                    <Col span={12}>
-                        <Form.Item name="ext" label="Numero Exterior" rules={[{ required: true, message: 'Ingresa un numero ext valido' }]}>
-                            <Input style={{ width: '100%' }} placeholder="EXT"/>
-                        </Form.Item>
-                    </Col>
-                </Row>
-                <Row gutter={16}>
-                    <Col span={12}>
-                        <Form.Item name="int" label="Numero Interior" rules={[{ required: true, message: 'Ingresa un numero int valido' }]}>
-                            <Input style={{ width: '100%' }} placeholder="INT"/>
-                        </Form.Item>
-                    </Col>
-                    <Col span={12}>
-                        <Form.Item name="cp" label="Codigo Postal" rules={[{ required: true, message: 'Debes completar este campo' }]}>
-                            <Input style={{ width: '100%' }} placeholder="Codigo Postal"/>
-                        </Form.Item>
-                    </Col>
-                </Row>
-                    <div style={{ textAlign: 'center'}} >
-                        <Button onClick={this.onClose} style={{ marginRight: 8 }}>
-                            Cancelar
-                        </Button>
-                        <Button onClick={this.onClose} type="primary">
-                            Registrarse
-                        </Button>
-                    </div>
-            </Form>
-    )
-  }
-}
+      <div>
+        <Form
+          labelCol={{
+            span: 8,
+          }}
+          wrapperCol={{
+            span: 16,
+          }}
+          layout="horizontal" onFinish={onFinish} form={form}
+        >
+          <Form.Item label="Nombre(s)" name={['nombre']} rules={[{required: true, message: 'Ingresa tu nombre'} ]}>
+              <Input />
+          </Form.Item>
+          <Form.Item label="Apellido(s)" name={['apellidos']} rules={[{required: true, message: 'Ingresa tus apellidos'} ]}>
+            <Input />
+          </Form.Item>
+          <Form.Item label="Username" name={['username']} rules={[{required: true, message: 'Ingresa tu username'} ]}>
+            <Input />
+          </Form.Item>
+          <Form.Item label="Email" name={['email']} rules={[{required: true, message: 'Ingresa tu email'} ]}>
+            <Input />
+          </Form.Item>
+          <Form.Item label="Password" name={['password']} rules={[{required: true, message: 'Ingresa tu password'} ]}>
+            <Input />
+          </Form.Item>
+          <Form.Item label="Calle" name={['calle']} rules={[{required: true, message: 'Ingresa tu calle'} ]}>
+            <Input />
+          </Form.Item>
+          <Form.Item label="cp" name={['cp']} rules={[{required: true, message: 'Ingresa tu cp'} ]}>
+            <Input />
+          </Form.Item>
+          <Form.Item label="Numero" name={['numero']} rules={[{required: true, message: 'Ingresa tu numero'} ]}>
+            <Input />
+          </Form.Item>
+          <Form.Item label="Ciudad" name={['ciudad']} rules={[{required: true, message: 'Ingresa tu ciudad'} ]}>
+            <Input />
+          </Form.Item>
+          <Form.Item shouldUpdate onFinish={onFinish}>
+          <Button
+            type="primary"
+            htmlType="submit"
+            disabled={
+              !form.isFieldsTouched(true) ||
+              form.getFieldsError().filter(({ errors }) => errors.length).length
+            }
+            >
+            Editar Perfil
+          </Button>
+      </Form.Item>
+        </Form>
 
-function mapStateToProps(state) {
-  return {
-    personals: state.personal.list
-  }
-}
-
-export default connect(mapStateToProps, {showPersonal})(EditarPerfil)
+      </div>
+    );
+};
+  export default Editar
