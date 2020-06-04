@@ -7,14 +7,14 @@ export class Compra extends Component {
       <div>
         <Form
           labelCol={{
-            span: 4,
+            span: 8,
           }}
           wrapperCol={{
-            span: 14,
+            span: 16,
           }}
           layout="horizontal"
         >
-          <Form.Item label="ID del videojuego">
+          <Form.Item label="ID del videojuego" >
               <InputNumber />
           </Form.Item>
           <Form.Item label="Numero de licencias">
@@ -23,8 +23,10 @@ export class Compra extends Component {
           <Form.Item label="Fecha">
             <DatePicker picker='month' bordered={false} />
           </Form.Item>
-          <Form.Item label="Presiona el siguiente boton">
+          <Form.Item label="">
           <Button type="primary">Comprar Licencias</Button>
+          <br></br><br></br>
+          Presiona ESC para salir
           </Form.Item>
         </Form>
       </div>

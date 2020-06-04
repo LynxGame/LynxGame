@@ -49,7 +49,7 @@ export class EditGames extends Component {
     return (
       <div>
         <h2>Editar Videojuegos</h2>
-        <Table columns={columns} dataSource={this.props.videojuegos} pagination={{ pageSize: 5 }} scroll={{ x: 240 }} />
+        <Table columns={columns} dataSource={this.props.videojuegos} pagination={{ pageSize: 5 }} scroll={{ y: 440 }} />
       </div>
     )
   }
