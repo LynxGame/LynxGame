@@ -56,13 +56,13 @@ export class Principal extends Component {
         return(
             <Carousel autoplay effect fade>
                  <div> 
-                    <img src={"hpoa"}alt="Cargando..."></img>
+                    <img src='https://cutt.ly/qyKElnj' height="500"></img>
                  </div>
                  <div>
-                 <img src={"caca"}alt="Cargando..."></img>
+                 <img src='https://cutt.ly/QyHZ1Ks' height="500"></img>
                  </div>
                  <div>
-                     <img src={"this.state.videojuegos[1].Media.baner3"}alt="Cargando..."></img>
+                     <img src='https://cutt.ly/ryH1jSI' height="500"></img>
                  </div>
             </Carousel>
         )
@@ -76,11 +76,15 @@ export class Principal extends Component {
                 </div>
                 <Row gutter={[24, 24]} justify="space-between">
                     <Col span={5} offset={2}>
-                        <Card title={"aca"} style={{ width: 270 }}>
+                        <Card title="UNCHARTED 4" align="center" style={{ width: 270, height:500 }}>
                         <Avatar shape='square' style={{ 
                         background: 'none'
-                        }} src={"this.state.videojuegos[1].Media.preview"} size={220}/>
-                            <p>{"this.state.videojuegos[1].descripcion"}</p>
+                        }} src='https://cutt.ly/jyKEIdm' size={220}/>
+                            <p>Uncharted 4: El desenlace del ladrón, 
+                                es un videojuego de acción-aventura 
+                                en tercera persona, lanzado por Sony 
+                                Computer Entertainment y desarrollado por 
+                                Naughty Dog</p>
                             
                             <Link to="/ViewGame">
                             <Button  type="primary" key="ViewGame">View</Button>
@@ -92,42 +96,42 @@ export class Principal extends Component {
                     </Col>
 
                     <Col span={6} >
-                        <Card title="CALL OF DUTY WARZONE" style={{ width: 270 }}>
+                        <Card title="BATTLEFIELD 3" align="center" style={{ width: 270, height:500  }}>
                         <Avatar shape='square' style={{ 
                         background: 'none'
-                        }} src='https://store-images.s-microsoft.com/image/apps.46452.13835473807186336.9510cd97-f71a-49b0-9e5c-0877f4bc9de3.611f3905-926e-456a-b549-6b68564b2769' size={220}/>
-                            <p>Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego</p>
+                        }} src='https://cutt.ly/vyKELVk' size={220}/>
+                            <p>Battlefield 3 Es un videojuego de 
+                                disparos en primera persona desarrollado 
+                                por la compañía EA Digital Illusions CE 
+                                y distribuido por Electronic Arts.</p>
 
                             <Button type="primary">View</Button>
                             <Button type="dashed">Buy $70USD</Button>
                         </Card>    
                     </Col>
                     <Col span={6} >
-                    <Card title="RAINBOWSIX SIEGE" style={{ width: 270 }}>
+                    <Card title="RAINBOW SIX SIEGE" align="center" style={{ width: 270, height:500  }}>
                         <Avatar shape='square' style={{ 
                         background: 'none'
-                        }} src='https://store.ubi.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/es_ES/dw66734897/images/large/56c494ad88a7e300458b4d5a.jpg?sw=341&sh=450&sm=fit' size={220}/>
-                            <p>Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego</p>
+                        }} src='https://cutt.ly/5yHXOHA' size={220}/>
+                            <p>Tom Clancy Rainbow Six Siege 
+                                es un videojuego de disparos 
+                                en primera persona táctico 
+                                multijugador de 5 vs 5</p>
 
                             <Button type="primary">View</Button>
                             <Button type="dashed">Buy $70USD</Button>
                         </Card>    
                     </Col>
                     <Col span={5} >
-                    <Card title="MAINCRA" style={{ width: 270 }}>
+                    <Card title="Street Fighter V" align="center" style={{ width: 270, height:500 }}>
                         <Avatar shape='square' style={{ 
                         background: 'none'
-                        }} src='https://lh3.googleusercontent.com/yAtZnNL-9Eb5VYSsCaOC7KAsOVIJcY8mpKa0MoF-0HCL6b0OrFcBizURHywpuip-D6Y' size={220}/>
-                            <p>Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego</p>
+                        }} src='https://cutt.ly/UyKWX5l' size={220}/>
+                            <p>Street Fighter V es un juego 
+                                de peleas publicado por Capcom, 
+                                quien co-desarrollo el juego con 
+                                Dimps.</p>
 
                             <Button type="primary">View</Button>
                             <Button type="dashed">Buy $70USD</Button>
@@ -135,32 +139,26 @@ export class Principal extends Component {
                     </Col>
                 </Row>
 
-                <h2>Top Ahi dice Gratis</h2>
+                <h2>Top Juegos antiguos</h2>
                 <Carousel autoplay effect fade>
                 <div>
-                <img src='https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_Minecraft.jpg'alt="Cargando..."/>
+                <img src='https://cutt.ly/XyHLWzZ' height="500"></img>
                 </div>
                 <div>
-                <img src='https://generacionxbox.com/wp-content/uploads/2016/11/rainbow-six-siege-expansiones-generacion-xbox-940x529.jpg.webp'alt="Cargando..."></img>
+                <img src='https://cutt.ly/RyHMPfN' height="500"></img>
                 </div>
                 <div>
-                <img src='https://areajugones.sport.es/wp-content/uploads/2019/07/borderlands-3-normal-hero-01-ps4-us-02apr19.jpg.webp'alt="Cargando..."></img>
-                </div>
-                <div>
-                <img src='https://media.vandal.net/i/1200x630/4-2020/2020471014495_1.jpg'alt="Cargando..."></img>
+                <img src='https://cutt.ly/zyKW0Fq' height="500"></img>
                 </div>
                 </Carousel>
 
                 <Row gutter={[24, 24]}>
                     <Col span={6} >
-                        <Card title="BORDERLANDS 3" style={{ width: 270 }}>
+                        <Card title="AGE OF EMPIRES" align="center" style={{ width: 270, height:500 }}>
                         <Avatar shape='square' style={{ 
                         background: 'none'
-                        }} src='https://i.blogs.es/a8e05e/bor1/1366_2000.jpg' size={220}/>
-                            <p>Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego</p>
+                        }} src='https://cutt.ly/cyHZwWi' size={220}/>
+                            <p>Age of Empires es un videojuego de estrategia en tiempo real para computadoras personales, el primero de la serie homónima</p>
                             
                             <Button type="primary">View</Button>
                             <Button type="dashed">Buy $70USD</Button>
@@ -168,42 +166,33 @@ export class Principal extends Component {
                     </Col>
 
                     <Col span={6} >
-                        <Card title="CALL OF DUTY WARZONE" style={{ width: 270 }}>
+                        <Card title="BIOSHOCK" align="center" style={{ width: 270, height:500 }}>
                         <Avatar shape='square' style={{ 
                         background: 'none'
-                        }} src='https://store-images.s-microsoft.com/image/apps.46452.13835473807186336.9510cd97-f71a-49b0-9e5c-0877f4bc9de3.611f3905-926e-456a-b549-6b68564b2769' size={220}/>
-                            <p>Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego</p>
+                        }} src='https://cutt.ly/dyHXe5l' size={220}/>
+                            <p>BioShock es un videojuego de disparos en primera persona, desarrollado por Irrational Games</p>
 
                             <Button type="primary">View</Button>
                             <Button type="dashed">Buy $70USD</Button>
                         </Card>    
                     </Col>
                     <Col span={6} >
-                    <Card title="RAINBOWSIX SIEGE" style={{ width: 270 }}>
+                    <Card title="GRAND THEFT AUTO SAN ANDREAS" align="center" style={{ width: 270, height:500 }}>
                         <Avatar shape='square' style={{ 
                         background: 'none'
-                        }} src='https://store.ubi.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/es_ES/dw66734897/images/large/56c494ad88a7e300458b4d5a.jpg?sw=341&sh=450&sm=fit' size={220}/>
-                            <p>Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego</p>
+                        }} src='https://cutt.ly/tyHNmOZ' object-fit= "scale-down"  size={220}/>
+                            <p>Grand Theft Auto: San Andreas es un videojuego de acción-aventura de mundo abierto desarrollado por Rockstar North y publicado por Rockstar Games.</p>
 
                             <Button type="primary">View</Button>
                             <Button type="dashed">Buy $70USD</Button>
                         </Card>    
                     </Col>
                     <Col span={6} >
-                    <Card title="MAINCRA" style={{ width: 270 }}>
+                    <Card title="THE ELDER OF SCROLLS ARENA" align="center" style={{ width: 270, height:500 }}>
                         <Avatar shape='square' style={{ 
                         background: 'none'
-                        }} src='https://lh3.googleusercontent.com/yAtZnNL-9Eb5VYSsCaOC7KAsOVIJcY8mpKa0MoF-0HCL6b0OrFcBizURHywpuip-D6Y' size={220}/>
-                            <p>Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego</p>
+                        }} src='https://cutt.ly/SyKW8Rs' size={220}/>
+                            <p>The Elder Scrolls: Arena es un videojuego de rol desarrollado para PCs. Es la primera entrega de la serie The Elder Scrolls.</p>
 
                             <Button type="primary">View</Button>
                             <Button type="dashed">Buy $70USD</Button>
@@ -214,29 +203,23 @@ export class Principal extends Component {
                 <h2>Top Mas Vendidos</h2>
                 <Carousel autoplay effect fade>
                 <div>
-                <img src='https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_Minecraft.jpg' alt="Cargando..."></img>
+                <img src='https://cutt.ly/myHZ7MO' height="500"></img>
                 </div>
                 <div>
-                <img src='https://generacionxbox.com/wp-content/uploads/2016/11/rainbow-six-siege-expansiones-generacion-xbox-940x529.jpg.webp' alt="Cargando..."></img>
+                <img src='https://cutt.ly/nyKWDUP' height="500"></img>
                 </div>
                 <div>
-                <img src='https://areajugones.sport.es/wp-content/uploads/2019/07/borderlands-3-normal-hero-01-ps4-us-02apr19.jpg.webp' alt="Cargando..."></img>
-                </div>
-                <div>
-                <img src='https://media.vandal.net/i/1200x630/4-2020/2020471014495_1.jpg' alt="Cargando..."></img>
+                <img src='https://cutt.ly/FyHZ9G1' height="500"></img>
                 </div>
                 </Carousel>
 
                 <Row gutter={[24, 24]}>
                     <Col span={6} >
-                        <Card title="BORDERLANDS 3" style={{ width: 270 }}>
+                        <Card title="MINECRAFT" align="center" style={{ width: 270, height:500  }}>
                         <Avatar shape='square' style={{ 
                         background: 'none'
-                        }} src='https://i.blogs.es/a8e05e/bor1/1366_2000.jpg' size={220}/>
-                            <p>Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego</p>
+                        }} src='https://cutt.ly/tyHZLqv' size={220}/>
+                            <p>Minecraft es un videojuego de construcción, de tipo «mundo abierto» o sandbox creado originalmente por el sueco Markus Persson</p>
                             
                             <Button type="primary">View</Button>
                             <Button type="dashed">Buy $70USD</Button>
@@ -244,42 +227,33 @@ export class Principal extends Component {
                     </Col>
 
                     <Col span={6} >
-                        <Card title="CALL OF DUTY WARZONE" style={{ width: 270 }}>
+                        <Card title="GOD OF WAR III" align="center" style={{ width: 270, height:500  }}>
                         <Avatar shape='square' style={{ 
                         background: 'none'
-                        }} src='https://store-images.s-microsoft.com/image/apps.46452.13835473807186336.9510cd97-f71a-49b0-9e5c-0877f4bc9de3.611f3905-926e-456a-b549-6b68564b2769' size={220}/>
-                            <p>Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego</p>
+                        }} src='https://cutt.ly/yyHBwBv' size={220}/>
+                            <p>Gos of War III, es la quinta entrega de la serie de God of War y la secuela de God of War y God of War II.</p>
 
                             <Button type="primary">View</Button>
                             <Button type="dashed">Buy $70USD</Button>
                         </Card>    
                     </Col>
                     <Col span={6} >
-                    <Card title="RAINBOWSIX SIEGE" style={{ width: 270 }}>
+                    <Card title="THE ELDER OF SCROLLS 5: SKYRIM" align="center" style={{ width: 270, height:500  }}>
                         <Avatar shape='square' style={{ 
                         background: 'none'
-                        }} src='https://store.ubi.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/es_ES/dw66734897/images/large/56c494ad88a7e300458b4d5a.jpg?sw=341&sh=450&sm=fit' size={220}/>
-                            <p>Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego</p>
+                        }} src='https://cutt.ly/DyKEgOv' size={220}/>
+                            <p>Skyrim es un RPG del tipo mundo abierto desarrollado por Bethesda Game Studios y publicado por Bethesda Softworks. Skyrim es la quinta entrega de videojuegos de acción y fantasía de la serie The Elder Scrolls</p>
 
                             <Button type="primary">View</Button>
                             <Button type="dashed">Buy $70USD</Button>
                         </Card>    
                     </Col>
                     <Col span={6} >
-                    <Card title="MAINCRA" style={{ width: 270 }}>
+                    <Card title="THE WITCHER 3" align="center" style={{ width: 270, height:500  }}>
                         <Avatar shape='square' style={{ 
                         background: 'none'
-                        }} src='https://lh3.googleusercontent.com/yAtZnNL-9Eb5VYSsCaOC7KAsOVIJcY8mpKa0MoF-0HCL6b0OrFcBizURHywpuip-D6Y' size={220}/>
-                            <p>Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego
-                            Descripcion mamalona del videojuego</p>
+                        }} src='https://cutt.ly/WyKERIr' size={220}/>
+                            <p>The Witcher 3: Wild Hunt es un videojuego de rol desarrollado por CD Projekt RED. CD Projekt RED es el desarrollador mientras que la distribución corre a cargo de la Warner Bros.</p>
 
                             <Button type="primary">View</Button>
                             <Button type="dashed">Buy $70USD</Button>
