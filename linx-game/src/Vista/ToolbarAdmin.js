@@ -80,6 +80,11 @@ export class Toolbar extends Component {
                                 Editar Clientes
                             </Link>
                         </Menu.Item>
+                        <Menu.Item key="EditAdmins" icon={<EditOutlined />}>
+                            <Link to="/EditAdmins">
+                                Editar Adminstradores
+                            </Link>
+                        </Menu.Item>
                     </Menu>
                 </Col>
                 <Col xs={{ span: 12, offset: 0 }} md={{ span: 10, offset: 0}} lg={{ span: 9, offset:0 }}>
